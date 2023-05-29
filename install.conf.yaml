@@ -11,6 +11,9 @@
     ~/.oh-my-zsh/custom/aliases.zsh~:
       path: ./config/aliases
       force: true
+    ~/.tmux.conf:
+      path: ./config/tmux
+      force: true
 
 - shell:
     - [git submodule update --init --recursive, Installing submodules]
