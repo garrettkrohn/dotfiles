@@ -6,7 +6,10 @@
 
 - link:
     ~/.zshrc:
-      path: zshrc
+      path: ./config/zshrc
+      force: true
+    ~/.oh-my-zsh/custom/aliases.zsh~:
+      path: ./config/aliases
       force: true
 
 - shell:
