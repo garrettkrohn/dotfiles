@@ -1,19 +1,21 @@
 - defaults:
     link:
       relink: true
+      force: true
 
 - clean: ["~"]
 
 - link:
     ~/.zshrc:
       path: ./config/zshrc
-      force: true
     ~/.oh-my-zsh/custom/aliases.zsh~:
       path: ./config/aliases
-      force: true
     ~/.tmux.conf:
       path: ./config/tmux
-      force: true
+    ~/.config/yabai/yabairc:
+      path: ./config/yabai
+    ~/.config/skhd/skhdrc:
+      path: ./config/skhd
 
 - shell:
     - [git submodule update --init --recursive, Installing submodules]
