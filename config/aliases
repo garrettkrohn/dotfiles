@@ -33,3 +33,6 @@ alias westman="nvim ~/sideProjects/westman"
 alias ta="tmux attach -t"
 alias tn="tmux new -s"
 alias td="tmux detach"
+
+#config
+alias dot="nvim ~/dotfiles/config"
