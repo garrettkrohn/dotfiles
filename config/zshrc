@@ -80,8 +80,13 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git zsh-autosuggestions zsh-vi-mode)
 
+
+# user config
+
+# sources zsh file
 source $ZSH/oh-my-zsh.sh
 
+# sources the alias file
 source ~/dotfiles/config/aliases
 
 export PYENV_ROOT="$HOME/.pyenv"
@@ -90,8 +95,6 @@ eval "$(pyenv init -)"
 
 # ~/.tmux/plugins
 export PATH=$HOME/.tmux/plugins/t-smart-tmux-session-manager/bin:$PATH
-
-# User configuration
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
@@ -119,6 +122,8 @@ export PATH=$HOME/.tmux/plugins/t-smart-tmux-session-manager/bin:$PATH
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+# Kipsu commands
 
 quore_token() {
     QUORE_TOKEN=${1:-"0"}
@@ -160,8 +165,8 @@ bash environment_health_checker.sh help
 
 eval "$(fnm env --use-on-cd)"
 
-alias lvim="/Users/garrettkrohn/.local/bin/lvim"
-
+# github key for kipsu local docker
 export GITHUB_KEY=/Users/garrettkrohn/.ssh/docker_github
 
+# zoxide init
 eval "$(zoxide init zsh)"

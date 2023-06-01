@@ -1,5 +1,19 @@
-# I should reorganize these, big categories include moving windows, moving focus, and splitting
+# .----------------.  .----------------.  .----------------.  .----------------. 
+#| .--------------. || .--------------. || .--------------. || .--------------. |
+#| |    _______   | || |  ___  ____   | || |  ____  ____  | || |  ________    | |
+#| |   /  ___  |  | || | |_  ||_  _|  | || | |_   ||   _| | || | |_   ___ `.  | |
+#| |  |  (__ \_|  | || |   | |_/ /    | || |   | |__| |   | || |   | |   `. \ | |
+#| |   '.___`-.   | || |   |  __'.    | || |   |  __  |   | || |   | |    | | | |
+#| |  |`\____) |  | || |  _| |  \ \_  | || |  _| |  | |_  | || |  _| |___.' / | |
+#| |  |_______.'  | || | |____||____| | || | |____||____| | || | |________.'  | |
+#| |              | || |              | || |              | || |              | |
+#| '--------------' || '--------------' || '--------------' || '--------------' |
+# '----------------'  '----------------'  '----------------'  '----------------' 
 #
+#
+###########################################
+#             Change Focus                #
+###########################################
 # change window focus within space
 alt - j : yabai -m window --focus south
 alt - k : yabai -m window --focus north
@@ -36,6 +50,9 @@ shift + alt - k : yabai -m window --swap north
 shift + alt - h : yabai -m window --swap west
 shift + alt - l : yabai -m window --swap east
 
+###########################################
+#             Move Windows                #
+###########################################
 # move window and split
 ctrl + alt - j : yabai -m window --warp south
 ctrl + alt - k : yabai -m window --warp north
@@ -61,6 +78,9 @@ shift + alt - 5 : yabai -m window --space 5;
 shift + alt - 6 : yabai -m window --space 6;
 shift + alt - 7 : yabai -m window --space 7;
 
+###########################################
+#             Util for Yabai              #
+###########################################
 # stop/start/restart yabai
 ctrl + alt - q : brew services stop yabai
 ctrl + alt - s : brew services start yabai

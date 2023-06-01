@@ -1,4 +1,10 @@
-#default layout (can be bsp, stack or float)
+# __     __          _               _ 
+# \ \   / /         | |             (_)
+#  \ \_/ /    __ _  | |__     __ _   _ 
+#   \   /    / _` | | '_ \   / _` | | |
+#    | |    | (_| | | |_) | | (_| | | |
+#    |_|     \__,_| |_.__/   \__,_| |_|
+#                                     
 yabai -m config layout bsp
 
 # New window spawns to the right if vertical split, or bottom if horizontal split
