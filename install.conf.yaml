@@ -16,6 +16,9 @@
       path: ./config/yabai
     ~/.config/skhd/skhdrc:
       path: ./config/skhd
+    ~/.config/nvim:
+      path: ./config/nvim
 
 - shell:
     - [git submodule update --init --recursive, Installing submodules]
+# run ./install from the dotfiles folder to set up these links
