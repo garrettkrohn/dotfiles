@@ -28,6 +28,7 @@ alias bw="cd ~/code/ansible-playbooks/vagrant_kipsu/acct/assets && npm run build
 alias nloc="cd ~/code/kipsu && nvim ."
 alias nvconfig="cd ~/.config/nvim && nvim ."
 alias westman="nvim ~/sideProjects/westman"
+alias q="exit"
 
 # tmux
 alias ta="tmux attach -t"
@@ -36,3 +37,16 @@ alias td="tmux detach"
 
 #config
 alias dot="nvim ~/dotfiles/config"
+
+# Filesystem aliases
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ....="cd ../../.."
+alias .....="cd ../../../.."
+
+# reload zsh config
+alias reload!='RELOAD=1 source ~/.zshrc'
+
+# Hide/show all desktop icons (useful when presenting)
+alias hidedesktop="defaults write com.apple.finder CreateDesktop -bool false && killall Finder"
+alias showdesktop="defaults write com.apple.finder CreateDesktop -bool true && killall Finder"
