@@ -46,7 +46,7 @@ set -g @plugin 'tmux-plugins/tpm'
 # list of tmux plugins
 set -g @plugin 'christoomey/vim-tmux-navigator' # for navigating panes and vim/nvim with Ctrl-hjkl
 set -g @plugin 'jimeh/tmux-themepack' # to configure tmux theme
-set -g @plugin 'tmux-plugins/tmux-resurrect' # persist tmux sessions after computer restart
+# set -g @plugin 'tmux-plugins/tmux-resurrect' # persist tmux sessions after computer restart
 set -g @plugin 'tmux-plugins/tmux-continuum' # automatically saves sessions for you every 15 minutes
 # set -g @themepack 'powerline/default/cyan' # use this theme for tmux
 set -g @resurrect-capture-pane-contents 'on' # allow tmux-ressurect to capture pane contents
@@ -60,7 +60,7 @@ set -g @plugin 'tmux-plugins/tmux-yank'
 # set -g @plugin "janoamaral/tokyo-night-tmux"
 # set -g @plugin 'dracula/tmux'
 set -g @plugin 'catppuccin/tmux'
-set -g @plugin 'tmux-plugins/tmux-resurrect'
+# set -g @plugin 'tmux-plugins/tmux-resurrect'
 set -g @plugin 'tmux-plugins/tmux-continuum'
 
 # set -g @dracula-show-powerline true 

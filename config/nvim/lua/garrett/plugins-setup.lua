@@ -127,6 +127,14 @@ return packer.startup(function(use)
 		},
 	})
 
+	-- debugging
+	use("mfussenegger/nvim-dap")
+	use("rcarriga/nvim-dap-ui")
+	use("theHamsta/nvim-dap-virtual-text")
+	use("nvim-telescope/telescope-dap.nvim")
+
+	use({ "catppuccin/nvim", as = "catppuccin" })
+
 	if packer_bootstrap then
 		require("packer").sync()
 	end
