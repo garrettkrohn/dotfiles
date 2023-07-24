@@ -138,6 +138,13 @@ return packer.startup(function(use)
 
 	use({ "vimwiki/vimwiki" })
 
+	-- replacer
+	use({
+		"filipdutescu/renamer.nvim",
+		branch = "master",
+		requires = { { "nvim-lua/plenary.nvim" } },
+	})
+
 	-- use({
 	-- 	"https://git.sr.ht/~whynothugo/lsp_lines.nvim",
 	-- 	config = function()
