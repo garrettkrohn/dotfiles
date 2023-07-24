@@ -31,6 +31,6 @@ lualine_nightfly.command = {
 -- configure lualine with modified theme
 lualine.setup({
 	options = {
-		theme = "monokai-pro",
+		theme = "catppuccin-mocha",
 	},
 })

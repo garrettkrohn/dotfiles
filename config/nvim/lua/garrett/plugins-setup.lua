@@ -34,12 +34,12 @@ return packer.startup(function(use)
 
 	-- use("bluz71/vim-nightfly-guicolors") -- preferred colorscheme
 
-	use({
-		"loctvl842/monokai-pro.nvim",
-		config = function()
-			require("monokai-pro").setup()
-		end,
-	})
+	-- use({
+	-- 	"loctvl842/monokai-pro.nvim",
+	-- 	config = function()
+	-- 		require("monokai-pro").setup()
+	-- 	end,
+	-- })
 
 	use("christoomey/vim-tmux-navigator") -- tmux & split window navigation
 
@@ -75,6 +75,7 @@ return packer.startup(function(use)
 	use("saadparwaiz1/cmp_luasnip") -- for autocompletion
 	use("rafamadriz/friendly-snippets") -- useful snippets
 	use("honza/vim-snippets") -- vim snippets
+	use("dcampos/nvim-snippy") -- custom snippets
 
 	-- managing & installing lsp servers, linters & formatters
 	use("williamboman/mason.nvim") -- in charge of managing lsp servers, linters & formatters
@@ -127,6 +128,29 @@ return packer.startup(function(use)
 		},
 	})
 
+	-- debugging
+	use("mfussenegger/nvim-dap")
+	use("rcarriga/nvim-dap-ui")
+	use("theHamsta/nvim-dap-virtual-text")
+	use("nvim-telescope/telescope-dap.nvim")
+
+	use({ "catppuccin/nvim", as = "catppuccin" })
+
+	use({ "vimwiki/vimwiki" })
+
+	-- replacer
+	use({
+		"filipdutescu/renamer.nvim",
+		branch = "master",
+		requires = { { "nvim-lua/plenary.nvim" } },
+	})
+
+	-- use({
+	-- 	"https://git.sr.ht/~whynothugo/lsp_lines.nvim",
+	-- 	config = function()
+	-- 		require("lsp_lines").setup()
+	-- 	end,
+	-- })
 	if packer_bootstrap then
 		require("packer").sync()
 	end
