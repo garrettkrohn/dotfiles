@@ -1,4 +1,4 @@
-py#Aliases here
+#Aliases here
 alias loc="cd ~/code/kipsu"
 alias dcu="docker-compose up -d"
 alias na="nvim ~/dotfiles/config/aliases"
@@ -30,6 +30,7 @@ alias nvconfig="cd ~/.config/nvim && nvim ."
 alias westman="nvim ~/sideProjects/westman"
 alias q="exit"
 alias nrs="npm run start"
+alias c="clear"
 
 # tmux
 alias ta="tmux attach -t"
