@@ -29,10 +29,11 @@ alias nloc="cd ~/code/kipsu && nvim ."
 alias nvconfig="cd ~/.config/nvim && nvim ."
 alias westman="nvim ~/sideProjects/westman"
 alias q="exit"
+<<<<<<< HEAD
 alias nrs="npm run start"
 alias c="clear"
-alias w="nvim ~/vimwiki"
-alias sql="nvim ~/code/aep_cs_scripts"
+=======
+>>>>>>> parent of 1fc0d00 (biggest change is getting snippy set up, but a few other fixes as well)
 
 # tmux
 alias ta="tmux attach -t"
