@@ -38,6 +38,8 @@ alias sql="nvim ~/code/aep_cs_scripts"
 alias ta="tmux attach -t"
 alias tn="tmux new -s"
 alias td="tmux detach"
+alias tls='tmux ls'
+alias tk='tmux kill-session -t'
 
 #config
 alias dot="nvim ~/dotfiles/config"

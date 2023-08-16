@@ -66,11 +66,10 @@ keymap.set("n", "<leader>tx", ":bdelete!<CR>")
 
 -- lazygit keybind
 keymap.set("n", "<leader>gg", ":LazyGit<CR>")
+
 keymap.set("n", "<leader>ca", "<cmd>Lspsaga code_action<CR>") -- see available code actions
 keymap.set(
 	"n",
 	"<leader>gf",
 	"<cmd>lua require'telescope.builtin'.lsp_references(require'telescope.themes'.get_ivy({}))<CR>"
 )
-
-keymap.set("n", "gD", "<Cmd>lua vim.lsp.buf.declaration()<CR>") -- got to declaration

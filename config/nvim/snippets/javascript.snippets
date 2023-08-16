@@ -2,19 +2,19 @@ snippet cl
 	console.log(${1:var});
 
 snippet dc
-	<div className="${1:var}">
-	</div>
+	<div className="${1:var}">$2</div>
 
 snippet d
-	<div>
-
-	</div>
+	<div>$0</div>
 
 snippet fc
-	import react from 'react';
-
-	const ${1:var} = () => {
-
+	const ${TM_FILENAME_BASE} = () => {
+		$0
 	}
 
-	export default ${1:var};
+	export default ${TM_FILENAME_BASE};
+
+snippet f
+	const ${1:var} = () => {
+		$0
+	}

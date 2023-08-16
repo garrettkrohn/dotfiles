@@ -15,7 +15,7 @@
 #             Change Focus                #
 ###########################################
 #
-# in my current setup, alt is right red thumb
+# in my current setup, alt is left red thumb
 #
 # change window focus within space
 alt - j : yabai -m window --focus south

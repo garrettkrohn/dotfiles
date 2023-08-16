@@ -32,15 +32,6 @@ return packer.startup(function(use)
 
 	use("nvim-lua/plenary.nvim") -- lua functions that many plugins use
 
-	-- use("bluz71/vim-nightfly-guicolors") -- preferred colorscheme
-
-	-- use({
-	-- 	"loctvl842/monokai-pro.nvim",
-	-- 	config = function()
-	-- 		require("monokai-pro").setup()
-	-- 	end,
-	-- })
-
 	use("christoomey/vim-tmux-navigator") -- tmux & split window navigation
 
 	use("szw/vim-maximizer") -- maximizes and restores current window
@@ -158,13 +149,6 @@ return packer.startup(function(use)
 			end,
 		}),
 	})
-
-	-- use({
-	-- 	"https://git.sr.ht/~whynothugo/lsp_lines.nvim",
-	-- 	config = function()
-	-- 		require("lsp_lines").setup()
-	-- 	end,
-	-- })
 	if packer_bootstrap then
 		require("packer").sync()
 	end

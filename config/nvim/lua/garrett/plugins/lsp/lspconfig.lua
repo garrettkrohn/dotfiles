@@ -33,12 +33,14 @@ local on_attach = function(client, bufnr)
 	-- 	opts
 	-- ) -- show definition, references
 	keymap.set("n", "<leader>gD", "<Cmd>lua vim.lsp.buf.declaration()<CR>") -- got to declaration
-	keymap.set("n", "<leader>gd", "<Cmd>lua require'telescope.builtin'.lsp_definitions()<CR>") -- see definition and make edits in window
+	keymap.set("n", "<leader>gd", "<Cmd>lua vim.lsp.buf.definition()<CR>") -- see definition and make edits in window
 	keymap.set("n", "<leader>gdd", "<cmd>Lspsaga goto_definition<CR>") --
 	keymap.set("n", "<leader>gi", "<cmd>lua vim.lsp.buf.implementation()<CR>") -- go to implementation
 	keymap.set("n", "<leader>gca", "<cmd>Lspsaga code_action<CR>") -- see available code actions
+	keymap.set("n", "<leader>gs", "<cmd>lua vim.lsp.buf.signature_help()<CR>") -- see available code actions
 	-- keymap.set("n", "<leader>rn", "<cmd>Lspsaga rename<CR>") -- smart rename
-	keymap.set("n", "<leader>ge", "<cmd>lua require'telescope.builtin'.diagnostics()<CR>") -- show  diagnostics for line
+	keymap.set("n", "<leader>gae", "<cmd>lua require'telescope.builtin'.diagnostics()<CR>") -- show  diagnostics for line
+	keymap.set("n", "<leader>ge", "<cmd>lua vim.diagnostic.open_float()<CR>") -- show  diagnostics for line
 	keymap.set("n", "<leader>D", "<cmd>Lspsaga show_cursor_diagnostics<CR>") -- show diagnostics for cursor
 	keymap.set("n", "[d", "<cmd>Lspsaga diagnostic_jump_prev<CR>") -- jump to previous diagnostic in buffer
 	keymap.set("n", "]d", "<cmd>Lspsaga diagnostic_jump_next<CR>") -- jump to next diagnostic in buffer
