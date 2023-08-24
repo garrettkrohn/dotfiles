@@ -148,6 +148,10 @@ restartbackpack() {
     aws ecs update-service --cluster ticket-service-prod --service ticket-service-cron-prod --force-new-deployment --region us-east-1 &> /dev/null
 }
 
+ap() {
+	  pipenv run ansible-playbook $1
+}
+
 versions() {
 cd ~/code/scripts
 ./environment_health_checker.sh versions
@@ -170,3 +174,4 @@ export GITHUB_KEY=/Users/garrettkrohn/.ssh/docker_github
 
 # zoxide init
 eval "$(zoxide init zsh)"
+
