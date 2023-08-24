@@ -173,10 +173,6 @@ return packer.startup(function(use)
 		end,
 	})
 
-	use({
-		"gennaro-tedesco/nvim-jqx",
-	})
-
 	-- replacer
 	use({
 		"filipdutescu/renamer.nvim",
