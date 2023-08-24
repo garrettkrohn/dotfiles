@@ -73,3 +73,5 @@ keymap.set(
 	"<leader>gf",
 	"<cmd>lua require'telescope.builtin'.lsp_references(require'telescope.themes'.get_ivy({}))<CR>"
 )
+
+keymap.set("n", "<leader>po", "<cmd>lua require('rest-nvim').run()<CR>") -- see available code actions
