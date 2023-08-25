@@ -33,6 +33,7 @@ alias nrs="npm run start"
 alias c="clear"
 alias w="nvim ~/vimwiki"
 alias sql="nvim ~/code/aep_cs_scripts"
+alias post="nvim ~/code/postman"
 
 # tmux
 alias ta="tmux attach -t"
