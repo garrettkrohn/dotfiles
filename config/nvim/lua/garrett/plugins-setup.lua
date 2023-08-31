@@ -134,6 +134,7 @@ return packer.startup(function(use)
 		requires = { "nvim-lua/plenary.nvim" },
 		config = function()
 			require("rest-nvim").setup({
+				ces = {},
 				-- Open request results in a horizontal split
 				result_split_horizontal = false,
 				-- Keep the http file buffer above|left when split horizontal|vertical
@@ -170,6 +171,22 @@ return packer.startup(function(use)
 				custom_dynamic_variables = {},
 				yank_dry_run = true,
 			})
+		end,
+	})
+
+	use({
+		"kndndrj/nvim-dbee",
+		requires = {
+			"MunifTanjim/nui.nvim",
+		},
+		run = function()
+			-- Install tries to automatically detect the install method.
+			-- if it fails, try calling it with one of these parameters:
+			--    "curl", "wget", "bitsadmin", "go"
+			require("dbee").install()
+		end,
+		config = function()
+			require("dbee").setup(--[[optional config]])
 		end,
 	})
 

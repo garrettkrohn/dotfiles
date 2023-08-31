@@ -1,6 +1,5 @@
 #Aliases here
 alias loc="cd ~/code/kipsu"
-alias dcu="docker-compose up -d"
 alias na="nvim ~/dotfiles/config/aliases"
 alias boots="cd ~/code/boots_maxwell/"
 alias awslogin="aws ecr get-login-password --region us-east-1 | docker 
@@ -17,13 +16,9 @@ alias ivan="nvim ~/ivan/ivan_website"
 alias phps="open -na "PhpStorm.app" --args "$@""
 alias gitac="git add . && git commit -m "
 alias vzsh="nvim ~/.zshrc"
-alias dc="docker container ls -a"
-alias dcd="docker-compose down"
 alias pbc="php bin/console"
 alias zel="./../../usr/local/bin/zellij"
 alias lg="lazygit"
-alias sloc="docker stop kippy-core kippy-redis kippy-mysql"
-alias dloc="docker image rm acct_kippy acct_mysql redis:alpine"
 alias bw="cd ~/code/ansible-playbooks/vagrant_kipsu/acct/assets && npm run build:widgets"
 alias nloc="cd ~/code/kipsu && nvim ."
 alias nvconfig="cd ~/.config/nvim && nvim ."
@@ -34,6 +29,16 @@ alias c="clear"
 alias w="nvim ~/vimwiki"
 alias sql="nvim ~/code/aep_cs_scripts"
 alias post="nvim ~/code/postman"
+
+# docker
+alias dcu="docker-compose up -d"
+alias dcd="docker-compose down"
+alias sloc="docker stop kippy-core kippy-redis kippy-mysql"
+alias dloc="docker rmi kipsu-kippy kipsu-kippy-ui-builder redis:alpine"
+alias dcls="docker container ls -a"
+alias dils="docker image ls -a"
+alias dvls="docker volume ls -a"
+alias lb="npm install && npm run build:widgets && npm run build:dev"
 
 # tmux
 alias ta="tmux attach -t"
