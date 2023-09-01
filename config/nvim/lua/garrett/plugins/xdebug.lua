@@ -23,15 +23,50 @@ dap.configurations.php = {
 }
 
 require("nvim-dap-virtual-text").setup()
-require("dapui").setup()
+require("dapui").setup({
+	layouts = {
+		{
+			elements = {
+				{
+					id = "scopes",
+					size = 0.5,
+				},
+				{
+					id = "breakpoints",
+					size = 0.25,
+				},
+				{
+					id = "stacks",
+					size = 0.25,
+				},
+			},
+			position = "left",
+			size = 40,
+		},
+		{
+			elements = {
+				{
+					id = "repl",
+					size = 0.75,
+				},
+				{
+					id = "console",
+					size = 0.25,
+				},
+			},
+			position = "bottom",
+			size = 10,
+		},
+	},
+})
 
 vim.keymap.set("n", "<F5>", function()
 	require("dap").continue()
 end)
-vim.keymap.set("n", "<F10>", function()
+vim.keymap.set("n", "<Leader>dn", function()
 	require("dap").step_over()
 end)
-vim.keymap.set("n", "<F11>", function()
+vim.keymap.set("n", "<Leader>di", function()
 	require("dap").step_into()
 end)
 vim.keymap.set("n", "<F12>", function()
@@ -66,9 +101,14 @@ vim.keymap.set("n", "<Leader>ds", function()
 	local widgets = require("dap.ui.widgets")
 	widgets.centered_float(widgets.scopes)
 end)
+
 vim.keymap.set("n", "<Leader>do", function()
 	require("dapui").open()
 end)
-vim.keymap.set("n", "<Leader>dq", function()
-	require("dapui").open()
+vim.keymap.set("n", "<Leader>dx", function()
+	require("dap").close()
+	require("dapui").close()
+end)
+vim.keymap.set("n", "<Leader>dg", function()
+	require("dap").continue()
 end)
