@@ -124,6 +124,7 @@ return packer.startup(function(use)
 	use("rcarriga/nvim-dap-ui")
 	use("theHamsta/nvim-dap-virtual-text")
 	use("nvim-telescope/telescope-dap.nvim")
+	use("xdebug/vscode-php-debug")
 
 	use({ "catppuccin/nvim", as = "catppuccin" })
 
@@ -210,6 +211,14 @@ return packer.startup(function(use)
 			end,
 		}),
 	})
+
+	use({
+		"folke/todo-comments.nvim",
+		requires = {
+			"nvim-lua/plenary.nvim",
+		},
+	})
+
 	if packer_bootstrap then
 		require("packer").sync()
 	end
