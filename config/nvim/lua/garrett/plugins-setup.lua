@@ -219,6 +219,8 @@ return packer.startup(function(use)
 		},
 	})
 
+	use({ "xiyaowong/transparent.nvim" })
+
 	if packer_bootstrap then
 		require("packer").sync()
 	end
