@@ -19,17 +19,19 @@ alias feb="npm install && npm run build:widgets && npm run build:dev"
 alias nb="docker exec -it kippy-core ./composer.phar install && cd ~/code/kipsu/assets/ && fnm use v16.17 && npm install && npm run build:widgets && npm run build:dev"
 
 # docker
+alias do="open -n ~/Applications/Docker.app"
 alias d="Docker"
 alias dcu="docker-compose up -d"
 alias dcd="docker-compose down"
 alias sloc="docker stop kippy-core kippy-redis kippy-mysql"
-alias dloc="docker rmi kipsu-kippy kipsu-kippy-ui-builder redis:alpine"
+alias dloc="docker rmi kipsu-kippy kipsu-kippy-ui-builder redis:alpine && docker volume rm kipsu_kippy-ui-mount"
 alias dcls="docker container ls -a"
 alias dils="docker image ls -a"
 alias dvls="docker volume ls -a"
 alias bw="npm run build:widgets"
 alias pu="docker exec -it kippy-core vendor/bin/phpunit"
 alias ci="docker exec -it kippy-core ./composer.phar install"
+alias dm="docker compose exec kippy ./vendor/bin/doctrine-migrations migrations:migrate"
 
 # tmux
 alias ta="tmux attach -t"
