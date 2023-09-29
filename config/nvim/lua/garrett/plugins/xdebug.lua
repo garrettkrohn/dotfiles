@@ -42,7 +42,7 @@ require("dapui").setup({
 				},
 			},
 			position = "left",
-			size = 40,
+			size = 80,
 		},
 		{
 			elements = {
