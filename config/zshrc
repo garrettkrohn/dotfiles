@@ -175,5 +175,3 @@ export GITHUB_KEY=/Users/garrettkrohn/.ssh/docker_github
 # zoxide init
 eval "$(zoxide init zsh)"
 
-
-. /opt/homebrew/opt/asdf/libexec/asdf.sh
