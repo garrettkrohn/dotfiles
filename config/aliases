@@ -32,6 +32,7 @@ alias bw="npm run build:widgets"
 alias pu="docker exec -it kippy-core vendor/bin/phpunit"
 alias ci="docker exec -it kippy-core ./composer.phar install"
 alias dm="docker compose exec kippy ./vendor/bin/doctrine-migrations migrations:migrate"
+alias ld="DOCKER_HOST=unix:///$HOME/.docker/run/docker.sock lazydocker"
 
 # tmux
 alias ta="tmux attach -t"

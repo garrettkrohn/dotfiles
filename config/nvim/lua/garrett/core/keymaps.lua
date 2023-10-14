@@ -68,10 +68,6 @@ keymap.set("n", "<leader>tx", ":bdelete!<CR>")
 keymap.set("n", "<leader>gg", ":LazyGit<CR>")
 
 keymap.set("n", "<leader>ca", "<cmd>Lspsaga code_action<CR>") -- see available code actions
-keymap.set(
-	"n",
-	"<leader>gf",
-	"<cmd>lua require'telescope.builtin'.lsp_references(require'telescope.themes'.get_ivy({}))<CR>"
-)
+keymap.set("n", "<leader>gf", "<cmd>lua require'telescope.builtin'.lsp_references()<CR>")
 
 keymap.set("n", "<leader>po", "<cmd>lua require('rest-nvim').run()<CR>") -- see available code actions

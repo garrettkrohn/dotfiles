@@ -167,11 +167,12 @@ cd ~/code/scripts
 bash environment_health_checker.sh help
 } 
 
-eval "$(fnm env --use-on-cd)"
-
 # github key for kipsu local docker
 export GITHUB_KEY=/Users/garrettkrohn/.ssh/docker_github
 
 # zoxide init
 eval "$(zoxide init zsh)"
 
+# fnm
+export PATH=/home/$USER/.fnm:$PATH
+eval "$(fnm env --use-on-cd --version-file-strategy=recursive)"
