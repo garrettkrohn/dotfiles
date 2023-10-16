@@ -44,10 +44,10 @@ return packer.startup(function(use)
 	use("numToStr/Comment.nvim")
 
 	-- file explorer
-	use("nvim-tree/nvim-tree.lua")
+	-- use("nvim-tree/nvim-tree.lua")
 
 	-- vs-code like icons
-	use("nvim-tree/nvim-web-devicons")
+	-- use("nvim-tree/nvim-web-devicons")
 
 	-- statusline
 	use("nvim-lualine/lualine.nvim")
@@ -108,7 +108,7 @@ return packer.startup(function(use)
 	-- git integration
 	use("lewis6991/gitsigns.nvim") -- show line modifications on left hand side
 
-	use({ "akinsho/bufferline.nvim", tag = "*", requires = "nvim-tree/nvim-web-devicons" })
+	-- use({ "akinsho/bufferline.nvim", tag = "*", requires = "nvim-tree/nvim-web-devicons" })
 
 	-- nvim v0.7.2
 	use({
@@ -220,6 +220,8 @@ return packer.startup(function(use)
 	})
 
 	use({ "xiyaowong/transparent.nvim" })
+
+	use({ "kelly-lin/ranger.nvim" })
 
 	if packer_bootstrap then
 		require("packer").sync()

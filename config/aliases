@@ -9,6 +9,7 @@ alias c="clear"
 alias w="nvim ~/vimwiki"
 alias sql="nvim ~/code/aep_cs_scripts"
 alias post="nvim ~/code/postman"
+alias n="nvim"
 
 # local kipsu
 alias loc="cd ~/code/kipsu"
@@ -42,7 +43,7 @@ alias tls='tmux ls'
 alias tk='tmux kill-session -t'
 
 #config
-alias dot="nvim ~/dotfiles/config"
+alias dot="cd ~/dotfiles/config && nvim ."
 alias na="nvim ~/dotfiles/config/aliases"
 alias vzsh="nvim ~/.zshrc"
 
@@ -62,3 +63,8 @@ alias showdesktop="defaults write com.apple.finder CreateDesktop -bool true && k
 # Side projects
 alias ivan="nvim ~/ivan/ivan_website"
 alias westman="nvim ~/sideProjects/westman"
+
+# Ranger
+alias r="ranger"
+alias rr="ranger ~"
+
