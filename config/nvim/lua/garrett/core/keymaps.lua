@@ -71,3 +71,9 @@ keymap.set("n", "<leader>ca", "<cmd>Lspsaga code_action<CR>") -- see available c
 keymap.set("n", "<leader>gf", "<cmd>lua require'telescope.builtin'.lsp_references()<CR>")
 
 keymap.set("n", "<leader>po", "<cmd>lua require('rest-nvim').run()<CR>") -- see available code actions
+
+-- harpoon
+keymap.set("n", "<leader>ha", "<cmd>lua require('harpoon.mark').add_file()<CR>")
+keymap.set("n", "<leader>hh", "<cmd>lua require('harpoon.ui').toggle_quick_menu()<CR>")
+keymap.set("n", "<leader>hj", "<cmd>lua require('harpoon.ui').nav_next()<CR>")
+keymap.set("n", "<leader>hk", "<cmd>lua require('harpoon.ui').nav_prev()<CR>")

@@ -223,6 +223,8 @@ return packer.startup(function(use)
 
 	use({ "kelly-lin/ranger.nvim" })
 
+	use({ "ThePrimeagen/harpoon" })
+
 	if packer_bootstrap then
 		require("packer").sync()
 	end
