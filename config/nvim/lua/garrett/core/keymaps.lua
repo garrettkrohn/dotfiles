@@ -38,7 +38,7 @@ keymap.set("n", "<leader>xx", ":%bd|e#<CR>")
 keymap.set("n", "<leader>sm", ":MaximizerToggle<CR>") -- toggle split window maximization
 
 -- ranger
-keymap.set("n", "<leader>e", ":lua require('ranger-nvim').open()<CR>") -- toggle file explorer
+keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>") -- toggle file explorer
 
 -- telescope
 keymap.set("n", "<leader>ff", "<cmd>Telescope find_files<cr>") -- find files within current working directory, respects .gitignore

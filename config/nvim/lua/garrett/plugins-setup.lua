@@ -44,7 +44,7 @@ return packer.startup(function(use)
 	use("numToStr/Comment.nvim")
 
 	-- file explorer
-	-- use("nvim-tree/nvim-tree.lua")
+	use("nvim-tree/nvim-tree.lua")
 
 	-- vs-code like icons
 	-- use("nvim-tree/nvim-web-devicons")
@@ -133,6 +133,7 @@ return packer.startup(function(use)
 	use({
 		"rest-nvim/rest.nvim",
 		requires = { "nvim-lua/plenary.nvim" },
+		commit = "8b62563",
 		config = function()
 			require("rest-nvim").setup({
 				ces = {},
@@ -221,7 +222,7 @@ return packer.startup(function(use)
 
 	use({ "xiyaowong/transparent.nvim" })
 
-	use({ "kelly-lin/ranger.nvim" })
+	-- use({ "kelly-lin/ranger.nvim" })
 
 	use({ "garrettkrohn/harpoon" })
 

@@ -6,10 +6,10 @@ alias lg="lazygit"
 alias q="exit"
 alias nrs="npm run start"
 alias c="clear"
-alias w="nvim ~/vimwiki"
+alias w="cd ~/vimwiki && nvim ."
 alias sql="nvim ~/code/aep_cs_scripts"
-alias post="nvim ~/code/postman"
-alias n="nvim"
+alias post="cd ~/code/postman && nvim ."
+alias n="nvim '+Telescope find_files'"
 
 # local kipsu
 alias loc="cd ~/code/kipsu"
@@ -43,7 +43,7 @@ alias tls='tmux ls'
 alias tk='tmux kill-session -t'
 
 #config
-alias dot="cd ~/dotfiles/config && nvim ."
+alias dot="cd ~/dotfiles/config && n"
 alias na="nvim ~/dotfiles/config/aliases"
 alias vzsh="nvim ~/.zshrc"
 
