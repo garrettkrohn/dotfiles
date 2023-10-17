@@ -1,0 +1,26 @@
+- defaults:
+    link:
+      relink: true
+      force: true
+
+- clean: ["~"]
+
+- link:
+    ~/.zshrc:
+      path: ./config/zshrc
+    ~/.oh-my-zsh/custom/aliases.zsh~:
+      path: ./config/aliases
+    ~/.tmux.conf:
+      path: ./config/tmux
+    ~/.tmuxtheme:
+      path: ./config/tmux
+    ~/.config/yabai/yabairc:
+      path: ./config/yabai
+    ~/.config/skhd/skhdrc:
+      path: ./config/skhd
+    ~/.config/nvim:
+      path: ./config/nvim
+
+- shell:
+    - [git submodule update --init --recursive, Installing submodules]
+# run ./install from the dotfiles folder to set up these links

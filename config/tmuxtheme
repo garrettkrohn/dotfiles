@@ -18,14 +18,14 @@ set -g status-style fg=colour10,bg=colour8
  
 # Left side of status bar
 set -g status-left-length 30
-set -g status-left "#{?client_prefix,#[fg=colour10#,bg=colour0#,bold],#[fg=colour233#,bg=colour10#,bold]} #S #{?client_prefix,#[fg=colour0#,bg=colour243#,nobold],#[fg=colour10#,bg=colour243#,nobold]}#[fg=colour233,bg=colour243,bold] #(whoami) #{?client_prefix,             #[bg=colour10#,fg=colour243],#[fg=colour243#,bg=colour0]}#{?client_prefix,#[fg=colour233#,bg=colour10],#[fg=colour10#,bg=colour0#,bold]} #I:#P #{?client_prefix,#[fg=colour10#,bg=colour8],#[fg=colour0#,bg=colour8#,nobold]}"
+set -g status-left "#{?client_prefix,#[fg=colour10#,bg=colour0#,bold],#[fg=colour233#,bg=colour10#,bold]} #S #{?client_prefix,#[fg=colour0#,bg=colour243#,nobold],#[fg=colour10#,bg=colour243#,nobold]}#[fg=colour233,bg=colour243,bold] #(whoami) #{?client_prefix,             #[bg=colour10#,fg=colour243],#[fg=colour243#,bg=colour0]}#{?client_prefix,#[fg=colour233#,bg=colour10],#[fg=colour10#,bg=colour0#,bold]} #I:#P #{?client_prefix,#[fg=colour10#,bg=colour8],#[fg=colour0#,bg=colour8#,nobold]}j
  
 # Window status (middle)
 set -g window-status-format "#[fg=colour10]#[bg=colour8]  #I:#W#F  "
-set -g window-status-current-format "#[fg=colour0,bg=colour8]#[fg=colour10,bold,bg=colour0] #I:#W#F #[fg=colour0,bg=colour8,nobold]"
+set -g window-status-current-format "#[fg=colour0,bg=colour8]#[fg=colour10,bold,bg=colour0] #I:#W#F #[fg=colour0,bg=colour8,nobold]"
  
 # Right side of status bar
-set -g status-right "#{?client_prefix,#[fg=colour10#,bg=colour8],#[fg=colour0#,bg=colour8]}#{?client_prefix,#[fg=colour233#,bg=colour10#,bold],#[fg=colour10#,bg=colour0,bold]}%l:%M %p #{?client_prefix,#[bg=colour10#,fg=colour243],#[fg=colour243#,                           bg=colour0]}#[fg=colour233,bg=colour243] %b-%d-%y #{?client_prefix,#[fg=colour0#,bg=colour243#,nobold],#[fg=colour10#,bg=colour243#,nobold]}#{?client_prefix,#[fg=colour10#,bg=colour0#,bold],#[fg=colour233#,bg=colour10#,bold]} #H "
+set -g status-right "#{?client_prefix,#[fg=colour10#,bg=colour8],#[fg=colour0#,bg=colour8]}#{?client_prefix,#[fg=colour233#,bg=colour10#,bold],#[fg=colour10#,bg=colour0,bold]}%l:%M %p #{?client_prefix,#[bg=colour10#,fg=colour243],#[fg=colour243#,                           bg=colour0]}#[fg=colour233,bg=colour243] %b-%d-%y #{?client_prefix,#[fg=colour0#,bg=colour243#,nobold],#[fg=colour10#,bg=colour243#,nobold]}#{?client_prefix,#[fg=colour10#,bg=colour0#,bold],#[fg=colour233#,bg=colour10#,bold]} #H "
  
 # Window separator
 set -g window-status-separator ""
