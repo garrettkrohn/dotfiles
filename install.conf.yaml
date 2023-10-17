@@ -12,6 +12,8 @@
       path: ./config/aliases
     ~/.tmux.conf:
       path: ./config/tmux
+    ~/.tmuxtheme:
+      path: ./config/tmuxtheme
     ~/.config/yabai/yabairc:
       path: ./config/yabai
     ~/.config/skhd/skhdrc:
