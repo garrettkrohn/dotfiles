@@ -6,7 +6,7 @@ alias lg="lazygit"
 alias q="exit"
 alias nrs="npm run start"
 alias c="clear"
-alias w="cd ~/vimwiki && nvim ."
+alias w="cd ~/vimwiki && n"
 alias sql="nvim ~/code/aep_cs_scripts"
 alias post="cd ~/code/postman && nvim ."
 alias n="nvim '+Telescope find_files'"
@@ -54,7 +54,7 @@ alias ....="cd ../../.."
 alias .....="cd ../../../.."
 
 # reload zsh config
-alias reload!='RELOAD=1 source ~/.zshrc'
+alias reload='RELOAD=1 source ~/.zshrc'
 
 # Hide/show all desktop icons (useful when presenting)
 alias hidedesktop="defaults write com.apple.finder CreateDesktop -bool false && killall Finder"

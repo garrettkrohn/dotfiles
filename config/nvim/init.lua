@@ -102,7 +102,7 @@ require("lazy").setup({
 	},
 
 	-- debugging
-	"mfussenegger/nvim-dap",
+	{ "mfussenegger/nvim-dap", commit = "b3d4408" },
 	"rcarriga/nvim-dap-ui",
 	"theHamsta/nvim-dap-virtual-text",
 	"nvim-telescope/telescope-dap.nvim",
@@ -158,22 +158,6 @@ require("lazy").setup({
 		end,
 	},
 
-	-- {
-	-- 	"kndndrj/nvim-dbee",
-	-- 	requires = {
-	-- 		"MunifTanjim/nui.nvim",
-	-- 	},
-	-- 	run = function()
-	-- 		-- Install tries to automatically detect the install method.
-	-- 		-- if it fails, try calling it with one of these parameters:
-	-- 		--    "curl", "wget", "bitsadmin", "go"
-	-- 		require("dbee").install()
-	-- 	end,
-	-- 	config = function()
-	-- 		require("dbee").setup(--[[optional config]])
-	-- 	end,
-	-- },
-
 	-- replacer
 	{
 		"filipdutescu/renamer.nvim",
@@ -205,7 +189,7 @@ require("lazy").setup({
 			-- OPTIONAL:
 			--   `nvim-notify` is only needed, if you want to use the notification view.
 			--   If not available, we use `mini` as the fallback
-			"rcarriga/nvim-notify",
+			-- "rcarriga/nvim-notify",
 		},
 	},
 }, {})

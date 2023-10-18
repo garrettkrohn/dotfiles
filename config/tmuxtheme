@@ -11,7 +11,7 @@
 # colour233 = solid black
  
 # Base status bar colors
-set -g status-style fg=colour10,bg=colour8
+set -g status-style bg=default
  
 # Example conditional
 # #{?pane_in_mode,#[fg=white#,bg=red],#[fg=red#,bg=white]}#W .
@@ -28,7 +28,7 @@ set -g window-status-current-format "#[fg=colour0,bg=colour8]#[fg=colour10,bold,
 set -g status-right "#{?client_prefix,#[fg=colour10#,bg=colour8],#[fg=colour0#,bg=colour8]}#{?client_prefix,#[fg=colour233#,bg=colour10#,bold],#[fg=colour10#,bg=colour0,bold]}%l:%M %p #{?client_prefix,#[bg=colour10#,fg=colour243],#[fg=colour243#,                           bg=colour0]}#[fg=colour233,bg=colour243] %b-%d-%y #{?client_prefix,#[fg=colour0#,bg=colour243#,nobold],#[fg=colour10#,bg=colour243#,nobold]}#{?client_prefix,#[fg=colour10#,bg=colour0#,bold],#[fg=colour233#,bg=colour10#,bold]} #H "
  
 # Window separator
-set -g window-status-separator ""
+set -g window-status-separator "  "
  
 # Window status alignment
 set -g status-justify centre

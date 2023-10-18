@@ -12,12 +12,12 @@
 # tmux theme
 source-file "${HOME}/.tmuxtheme"
 
-# set status bar as transparent
-set -g status-style bg=default
-
 set -g default-terminal "screen-256color"
 
 bind-key c command-prompt -p "window name:" "new-window; rename-window '%%'"
+
+# toggle status bar
+bind-key t set-option status
 
 set -g prefix C-a
 unbind C-b
