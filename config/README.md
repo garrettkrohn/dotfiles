@@ -11,4 +11,8 @@ dot files for Garrett Krohn
  
  
 # TODO:
+
+- check out tmuxinator like in this article https://dev.to/iggredible/useful-tmux-configuration-examples-k3g
+
+
 # PERF:
