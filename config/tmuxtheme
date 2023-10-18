@@ -35,16 +35,16 @@ set -g window-status-separator "  "
 set -g status-justify centre
  
 # Pane border
-set -g pane-border-style bg=colour0,fg=colour243
+set -g pane-border-style bg=colour0,fg=colour17
  
 # Active pane border
-set -g pane-active-border-style bg=colour0,fg=colour10
+set -g pane-active-border-style bg=colour0,fg=colour69
  
 # Message
-set -g message-style bg=colour0,fg=colour10
+set -g message-style bg=colour0,fg=colour69
  
 # Command message
-set -g message-command-style bg=colour0,fg=colour10
+set -g message-command-style bg=colour0,fg=colour69
  
 # Mode
-set -g mode-style bg=colour0,fg=colour10
+set -g mode-style bg=colour0,fg=colour69
