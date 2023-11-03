@@ -68,3 +68,4 @@ alias westman="nvim ~/sideProjects/westman"
 alias r="ranger"
 alias rr="ranger ~"
 
+alias jenkins="echo '2336-aep-jenkins_cs_procedures' | pbcopy"
