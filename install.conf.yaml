@@ -20,6 +20,8 @@
       path: ./config/skhd
     ~/.config/nvim:
       path: ./config/nvim
+    ~/.config/starship.toml:
+      path: ./config/starship.toml
 
 - shell:
     - [git submodule update --init --recursive, Installing submodules]
