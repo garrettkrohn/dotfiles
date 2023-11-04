@@ -9,6 +9,11 @@
 #| '--------------' || '--------------' || '--------------' || '--------------' |
 # '----------------'  '----------------'  '----------------'  '----------------' 
 
+
+# alacritty
+alacritty terminal
+set -g default-terminal "alacritty"
+
 # tmux theme
 source-file "${HOME}/.tmuxtheme"
 

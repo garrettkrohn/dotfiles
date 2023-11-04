@@ -192,6 +192,9 @@ require("lazy").setup({
 			-- "rcarriga/nvim-notify",
 		},
 	},
+	{
+		"FabijanZulj/blame.nvim",
+	},
 }, {})
 
 -- require("garrett.plugins-setup")
