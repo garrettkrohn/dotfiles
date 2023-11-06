@@ -42,7 +42,7 @@ font:
   glyph_offset:
     x: 0
     # Keeping this as half of offset to vertically align the text in cursor
-    y: 7
+    y: 2
 
   # Better font rendering for mac
   AppleFontSmoothing: true
