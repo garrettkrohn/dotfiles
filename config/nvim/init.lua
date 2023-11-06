@@ -195,9 +195,12 @@ require("lazy").setup({
 	{
 		"FabijanZulj/blame.nvim",
 	},
+	{
+		"NvChad/nvim-colorizer.lua",
+	},
 }, {})
-
 -- require("garrett.plugins-setup")
+-- require("garrett.plugins.colorizer")
 require("garrett.core.options")
 require("garrett.core.keymaps")
 require("garrett.core.colorscheme")
