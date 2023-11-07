@@ -198,6 +198,8 @@ require("lazy").setup({
 	{
 		"NvChad/nvim-colorizer.lua",
 	},
+	{ "akinsho/toggleterm.nvim", version = "*", config = true },
+	{ "jsborjesson/vim-uppercase-sql" },
 }, {})
 -- require("garrett.plugins-setup")
 -- require("garrett.plugins.colorizer")
