@@ -32,7 +32,7 @@ end
 -- configure lualine with modified theme
 lualine.setup({
 	options = {
-		theme = require("garrett.plugins.lualineTheme").theme(),
+		theme = require("plugins.lualineTheme").theme(),
 	},
 	sections = {
 		lualine_x = {},

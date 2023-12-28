@@ -11,8 +11,11 @@ dot files for Garrett Krohn
  
  
 # TODO:
-
-- check out tmuxinator like in this article https://dev.to/iggredible/useful-tmux-configuration-examples-k3g
-
-
-# PERF:
+- sindres/diffview.nvim
+- maybe gnlhc/glance.nvim
+- lukas-reineke/headlines.nvim
+- smjonas/inc-rename.nvim
+- echasnovski/mini.indentscope
+- acksID/nvim-neoclip.lua
+- pwntester/octo.nvim
+- tobinpalmer/rayso.nvim -- code snippet creation 
