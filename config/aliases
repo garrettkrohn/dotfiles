@@ -17,7 +17,7 @@ alias nloc="cd ~/code/kipsu && nvim ."
 alias phps="open -na "PhpStorm.app" --args "$@""
 alias pbc="php bin/console"
 alias feb="npm install && npm run build:widgets && npm run build:dev"
-alias nb="docker exec -it kippy-core ./composer.phar install && cd ~/code/kipsu/assets/ && fnm use v16.17 && npm install && npm run build:widgets && npm run build:dev"
+alias nb="docker exec -it kippy-core ./composer.phar install && cd ~/code/kipsu/assets/ && fnm use v16.17 && npm install && npm run build:widgets && npm run build:dev && cd .."
 
 # docker
 alias do="open -n ~/Applications/Docker.app"
@@ -41,6 +41,10 @@ alias tn="tmux new -s"
 alias td="tmux detach"
 alias tls='tmux ls'
 alias tk='tmux kill-session -t'
+alias mux='tmuxinator'
+alias msl='mux s loc'
+alias mss='mux s sql'
+alias ms='mux s'
 
 #config
 alias dot="cd ~/dotfiles/config && n"
