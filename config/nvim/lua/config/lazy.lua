@@ -216,6 +216,7 @@ require("lazy").setup({
 			"mfussenegger/nvim-dap",
 		},
 	},
+	{ "echasnovski/mini.nvim", branch = "stable" },
 }, {})
 require("config.options")
 require("config.keymaps")
@@ -238,3 +239,4 @@ require("plugins.xdebug")
 require("plugins.todo-comments")
 require("plugins.rust-tools")
 require("plugins.gitsigns")
+require("plugins.indentscope")
