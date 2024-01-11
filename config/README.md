@@ -4,7 +4,7 @@ dot files for Garrett Krohn
 - sindres/diffview.nvim
 - maybe gnlhc/glance.nvim
 - lukas-reineke/headlines.nvim
-- smjonas/inc-rename.nvim
+- smjonas/inc-rename.nvim -- didn't work on the first try
 - acksID/nvim-neoclip.lua
 - pwntester/octo.nvim
 - tobinpalmer/rayso.nvim -- code snippet creation 

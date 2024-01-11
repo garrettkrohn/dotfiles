@@ -10,6 +10,7 @@ alias w="cd ~/vimwiki && n"
 alias sql="nvim ~/code/aep_cs_scripts"
 alias post="cd ~/code/postman && nvim ."
 alias n="nvim '+Telescope find_files'"
+alias le="cd ~/code/liv-env-scripts/scripts/"
 
 # local kipsu
 alias loc="cd ~/code/kipsu"
@@ -17,6 +18,7 @@ alias nloc="cd ~/code/kipsu && nvim ."
 alias phps="open -na "PhpStorm.app" --args "$@""
 alias pbc="php bin/console"
 alias feb="npm install && npm run build:widgets && npm run build:dev"
+alias nbm="docker exec -it kippy-core ./composer.phar install && cd ~/code/kipsu/assets/ && fnm use v16.17 && npm install && npm run build:widgets && npm run build:dev && cd .. && docker compose exec kippy ./vendor/bin/doctrine-migrations migrations:migrate"
 alias nb="docker exec -it kippy-core ./composer.phar install && cd ~/code/kipsu/assets/ && fnm use v16.17 && npm install && npm run build:widgets && npm run build:dev && cd .."
 
 # docker
@@ -72,4 +74,4 @@ alias westman="nvim ~/sideProjects/westman"
 alias r="ranger"
 alias rr="ranger ~"
 
-alias jenkins="echo '2336-aep-jenkins_cs_procedures' | pbcopy"
+alias jenkins="echo '2346-aep-jenkins_cs_procedures' | pbcopy"

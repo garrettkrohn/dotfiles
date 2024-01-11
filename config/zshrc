@@ -181,3 +181,8 @@ eval "$(zoxide init zsh)"
 # fnm
 export PATH=/home/$USER/.fnm:$PATH
 eval "$(fnm env --use-on-cd --version-file-strategy=recursive)"
+
+# npm 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
+
+# message_scheduler
+export SCHEDULE_MESSAGE_API_KEY=f23dd5bf0633763d5e870e2d7abf37a46b4270f7
