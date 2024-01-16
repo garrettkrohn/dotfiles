@@ -34,6 +34,7 @@ treesitter.setup({
 		"dockerfile",
 		"gitignore",
 		"php",
+		"kotlin",
 	},
 	-- auto install above language parsers
 	auto_install = true,

@@ -96,7 +96,18 @@ lspconfig["tailwindcss"].setup({
 lspconfig["emmet_ls"].setup({
 	capabilities = capabilities,
 	on_attach = on_attach,
-	filetypes = { "html", "typescriptreact", "javascriptreact", "css", "sass", "scss", "less", "svelte", "python" },
+	filetypes = {
+		"html",
+		"typescriptreact",
+		"javascriptreact",
+		"css",
+		"sass",
+		"scss",
+		"less",
+		"svelte",
+		"python",
+		"kotlin",
+	},
 })
 
 -- configure intelephense server (php)
@@ -132,3 +143,5 @@ lspconfig["lua_ls"].setup({
 		},
 	},
 })
+
+lspconfig.kotlin_language_server.setup({})
