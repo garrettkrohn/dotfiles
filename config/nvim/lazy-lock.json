@@ -52,4 +52,3 @@
   "vim-uppercase-sql": { "branch": "master", "commit": "58bfde1d679a1387dabfe292b38d51d84819b267" },
   "vimwiki": { "branch": "dev", "commit": "0bb1b4945bb205a076a35b66174e5d66be8eaafe" },
   "vscode-php-debug": { "branch": "main", "commit": "3025d1f01b5b7725e7c1c213d63f3de45f0534b3" }
-}

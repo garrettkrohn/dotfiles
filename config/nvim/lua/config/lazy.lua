@@ -16,51 +16,80 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
 
+	----------------------------------------------
+	--               UTILITIES                 --
+	----------------------------------------------
 	"nvim-lua/plenary.nvim",
 	"christoomey/vim-tmux-navigator", -- tmux & split window navigation
-
-	"szw/vim-maximizer", -- maximizes and restores current window
-
-	-- essential plugins
 	"tpope/vim-surround", -- add, delete, change surroundings (it's awesome)
-	"inkarkat/vim-ReplaceWithRegister", -- replace with register contents using motion (gr + motion)
-
-	-- commenting with gc
 	"numToStr/Comment.nvim",
-
-	-- file explorer
-	"nvim-tree/nvim-tree.lua",
-
-	-- vs-code like icons
 	"nvim-tree/nvim-web-devicons",
-
-	-- statusline
+	"nvim-tree/nvim-tree.lua",
 	"nvim-lualine/lualine.nvim",
-
-	-- fuzzy finding w/ telescope
 	{ "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
 	{ "nvim-telescope/telescope.nvim", branch = "0.1.x" }, -- fuzzy finder
+	{
+		"filipdutescu/renamer.nvim",
+		branch = "master",
+		requires = { { "nvim-lua/plenary.nvim" } },
+		-- Lua
+	},
 
-	-- autocompletion
-	"hrsh7th/nvim-cmp", -- completion plugin
+	{
+		"folke/todo-comments.nvim",
+		requires = {
+			"nvim-lua/plenary.nvim",
+		},
+	},
+	{ "xiyaowong/transparent.nvim" },
+
+	{ "garrettkrohn/harpoon" },
+	{
+		"FabijanZulj/blame.nvim",
+	},
+	{
+		"NvChad/nvim-colorizer.lua",
+	},
+	{ "akinsho/toggleterm.nvim", version = "*", config = true },
+	{ "jsborjesson/vim-uppercase-sql" },
+
+	----------------------------------------------
+	--               AUTOCOMPLETION             --
+	----------------------------------------------
+	{
+		{
+			"hrsh7th/nvim-cmp",
+			lazy = true,
+			opts = function(_, opts)
+				local cmp = require("cmp")
+				opts.completion = {
+					completeopt = "menu,menuone,noinsert",
+				}
+				opts.window = {
+					completion = cmp.config.window.bordered(),
+					documentation = cmp.config.window.bordered(),
+				}
+				return opts
+			end,
+		},
+	},
 	"hrsh7th/cmp-buffer", -- source for text in buffer
 	"hrsh7th/cmp-path", -- source for file system paths
 
-	-- snippets
-	-- "L3MON4D3/LuaSnip", -- snippet engine
-	-- "saadparwaiz1/cmp_luasnip", -- for autocompletion
+	----------------------------------------------
+	--               SNIPPETS                   --
+	----------------------------------------------
 	"rafamadriz/friendly-snippets", -- useful snippets
 	"honza/vim-snippets", -- vim snippets
 	"dcampos/nvim-snippy", -- custom snippets
 
-	-- managing & installing lsp servers, linters & formatters
+	----------------------------------------------
+	--               LSP                        --
+	----------------------------------------------
 	"williamboman/mason.nvim", -- in charge of managing lsp servers, linters & formatters
 	"williamboman/mason-lspconfig.nvim", -- bridges gap b/w mason & lspconfig
-
-	-- configuring lsp servers
 	"neovim/nvim-lspconfig", -- easily configure language servers
 	"hrsh7th/cmp-nvim-lsp", -- for autocompletion
-
 	{
 		"glepnir/lspsaga.nvim",
 		branch = "main",
@@ -73,6 +102,9 @@ require("lazy").setup({
 	"jose-elias-alvarez/typescript.nvim", -- additional functionality for typescript server (e.g. rename file & update imports)
 	"onsails/lspkind.nvim", -- vs-code like icons for autocompletion
 
+	----------------------------------------------
+	--         FORMATTING AND LINTING           --
+	----------------------------------------------
 	-- formatting & linting
 	"jose-elias-alvarez/null-ls.nvim", -- configure formatters & linters
 	"jayp0521/mason-null-ls.nvim", -- bridges gap b/w mason & null-ls
@@ -90,6 +122,9 @@ require("lazy").setup({
 	"windwp/nvim-autopairs", -- autoclose parens, brackets, quotes, etc...
 	{ "windwp/nvim-ts-autotag", after = "nvim-treesitter" }, -- autoclose tags
 
+	----------------------------------------------
+	--             USER INTERFACE               --
+	----------------------------------------------
 	-- git integration
 	{
 		"lewis6991/gitsigns.nvim", -- show line modifications on left hand side
@@ -116,7 +151,12 @@ require("lazy").setup({
 			return C
 		end,
 	},
-	-- nvim v0.7.2
+
+	{ "catppuccin/nvim", as = "catppuccin" },
+
+	----------------------------------------------
+	--                  TOOLS                   --
+	----------------------------------------------
 	{
 		"kdheepak/lazygit.nvim",
 		-- optional for floating window border decoration
@@ -124,18 +164,7 @@ require("lazy").setup({
 			"nvim-lua/plenary.nvim",
 		},
 	},
-
-	-- debugging
-	{ "mfussenegger/nvim-dap", commit = "b3d4408" },
-	"rcarriga/nvim-dap-ui",
-	"theHamsta/nvim-dap-virtual-text",
-	"nvim-telescope/telescope-dap.nvim",
-	"xdebug/vscode-php-debug",
-
-	{ "catppuccin/nvim", as = "catppuccin" },
-
 	{ "vimwiki/vimwiki" },
-
 	{
 		"rest-nvim/rest.nvim",
 		requires = { "nvim-lua/plenary.nvim" },
@@ -182,32 +211,6 @@ require("lazy").setup({
 		end,
 	},
 
-	-- replacer
-	{
-		"filipdutescu/renamer.nvim",
-		branch = "master",
-		requires = { { "nvim-lua/plenary.nvim" } },
-		-- Lua
-	},
-
-	{
-		"folke/todo-comments.nvim",
-		requires = {
-			"nvim-lua/plenary.nvim",
-		},
-	},
-
-	{ "xiyaowong/transparent.nvim" },
-
-	{ "garrettkrohn/harpoon" },
-	{
-		"FabijanZulj/blame.nvim",
-	},
-	{
-		"NvChad/nvim-colorizer.lua",
-	},
-	{ "akinsho/toggleterm.nvim", version = "*", config = true },
-	{ "jsborjesson/vim-uppercase-sql" },
 	{
 		"simrat39/rust-tools.nvim",
 		dependencies = {
@@ -258,7 +261,32 @@ require("lazy").setup({
 			},
 		},
 	},
+	{
+		{
+			"kristijanhusak/vim-dadbod-ui",
+			dependencies = {
+				{ "tpope/vim-dadbod", lazy = true },
+				{ "kristijanhusak/vim-dadbod-completion", lazy = true, ft = { "sql", "mysql", "plsql" } },
+				{ "pbogut/vim-dadbod-ssh", lazy = true },
+			},
+			cmd = { "DBUI", "DBUIFindBuffer" },
+		},
+	},
+
+	----------------------------------------------
+	--               DEBUGGING                  --
+	----------------------------------------------
+	-- debugging
+	{ "mfussenegger/nvim-dap", commit = "b3d4408" },
+	"rcarriga/nvim-dap-ui",
+	"theHamsta/nvim-dap-virtual-text",
+	"nvim-telescope/telescope-dap.nvim",
+	"xdebug/vscode-php-debug",
 }, {})
+
+----------------------------------------------
+--               CONFIGURATIONS             --
+----------------------------------------------
 require("config.options")
 require("config.keymaps")
 require("config.colorscheme")

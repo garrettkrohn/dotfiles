@@ -34,3 +34,5 @@ disabled = true
 disabled = true
 [git_status]
 disabled = true
+
+command_timeout = 2000
