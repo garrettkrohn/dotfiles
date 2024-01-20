@@ -37,6 +37,7 @@ alias ci="docker exec -it kippy-core ./composer.phar install"
 alias dm="docker compose exec kippy ./vendor/bin/doctrine-migrations migrations:migrate"
 alias ld="DOCKER_HOST=unix:///$HOME/.docker/run/docker.sock lazydocker"
 alias kiprun="MICRONAUT_ENVIRONMENTS=extract,load ./gradlew run"
+alias dcub="docker-compose up --build -d"
 
 # tmux
 alias ta="tmux attach -t"

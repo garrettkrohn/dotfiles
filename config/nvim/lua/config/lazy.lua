@@ -88,7 +88,7 @@ require("lazy").setup({
 	----------------------------------------------
 	"williamboman/mason.nvim", -- in charge of managing lsp servers, linters & formatters
 	"williamboman/mason-lspconfig.nvim", -- bridges gap b/w mason & lspconfig
-	"neovim/nvim-lspconfig", -- easily configure language servers
+	"neovim/nvim-lspconfig", -- easily configure language server
 	"hrsh7th/cmp-nvim-lsp", -- for autocompletion
 	{
 		"glepnir/lspsaga.nvim",
@@ -101,6 +101,8 @@ require("lazy").setup({
 
 	"jose-elias-alvarez/typescript.nvim", -- additional functionality for typescript server (e.g. rename file & update imports)
 	"onsails/lspkind.nvim", -- vs-code like icons for autocompletion
+	"L3MON4D3/LuaSnip",
+	"VonHeikemen/lsp-zero.nvim",
 
 	----------------------------------------------
 	--         FORMATTING AND LINTING           --
@@ -294,7 +296,6 @@ require("plugins.comment")
 require("plugins.nvim-tree")
 require("plugins.lualine")
 require("plugins.telescope")
-require("plugins.nvim-cmp")
 require("plugins.mason")
 require("java").setup()
 require("plugins.lspsaga")
@@ -311,3 +312,5 @@ require("plugins.todo-comments")
 require("plugins.rust-tools")
 require("plugins.gitsigns")
 require("plugins.indentscope")
+require("plugins.lspzero")
+require("plugins.nvim-cmp")
