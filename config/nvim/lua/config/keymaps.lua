@@ -77,3 +77,13 @@ keymap.set("n", "<leader>ha", "<cmd>lua require('harpoon.mark').add_file()<CR>")
 keymap.set("n", "<leader>hh", "<cmd>lua require('harpoon.ui').toggle_quick_menu()<CR>")
 keymap.set("n", "<leader>hj", "<cmd>lua require('harpoon.ui').nav_next()<CR>")
 keymap.set("n", "<leader>hk", "<cmd>lua require('harpoon.ui').nav_prev()<CR>")
+
+-- scissors
+vim.keymap.set("n", "<leader>se", function()
+	require("scissors").editSnippet()
+end)
+
+-- When used in visual mode prefills the selection as body.
+vim.keymap.set({ "n", "x" }, "<leader>sn", function()
+	require("scissors").addNewSnippet()
+end)

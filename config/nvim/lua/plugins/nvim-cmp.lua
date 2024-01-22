@@ -21,6 +21,35 @@ require("luasnip/loaders/from_vscode").lazy_load()
 
 vim.opt.completeopt = "menu,menuone,noselect"
 
+-- to try to set up later
+local kind_icons = {
+	Text = "",
+	Method = "󰆧",
+	Function = "󰊕",
+	Constructor = "",
+	Field = "󰇽",
+	Variable = "󰂡",
+	Class = "󰠱",
+	Interface = "",
+	Module = "",
+	Property = "󰜢",
+	Unit = "",
+	Value = "󰎠",
+	Enum = "",
+	Keyword = "󰌋",
+	Snippet = "",
+	Color = "󰏘",
+	File = "󰈙",
+	Reference = "",
+	Folder = "󰉋",
+	EnumMember = "",
+	Constant = "󰏿",
+	Struct = "",
+	Event = "",
+	Operator = "󰆕",
+	TypeParameter = "󰅲",
+}
+
 cmp.setup({
 	snippet = {
 		expand = function(args)
@@ -38,10 +67,10 @@ cmp.setup({
 	}),
 	-- sources for autocompletion
 	sources = cmp.config.sources({
+		{ name = "luasnip" }, -- snippets
 		{ name = "nvim_lsp" }, -- lsp
 		{ name = "buffer" }, -- text within current buffer
 		{ name = "path" }, -- file system paths
-		{ name = "luasnip" }, -- snippets
 	}),
 	-- configure lspkind for vs-code like icons
 	formatting = {

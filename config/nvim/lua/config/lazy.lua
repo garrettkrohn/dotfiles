@@ -82,6 +82,12 @@ require("lazy").setup({
 	"rafamadriz/friendly-snippets", -- useful snippets
 	"honza/vim-snippets", -- vim snippets
 	"dcampos/nvim-snippy", -- custom snippets
+	{
+		"chrisgrieser/nvim-scissors",
+		dependencies = "nvim-telescope/telescope.nvim", -- optional
+		opts = { snippetDir = vim.fn.stdpath("data") .. "/lazy/friendly-snippets" },
+	},
+	{ "saadparwaiz1/cmp_luasnip" },
 
 	----------------------------------------------
 	--               LSP                        --
