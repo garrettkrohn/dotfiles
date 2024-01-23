@@ -218,7 +218,7 @@ require("lazy").setup({
 			})
 		end,
 	},
-
+	{ "diepm/vim-rest-console" },
 	{
 		"simrat39/rust-tools.nvim",
 		dependencies = {
