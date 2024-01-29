@@ -49,7 +49,8 @@ lualine.setup({
 		theme = require("plugins.lualineTheme").theme(),
 	},
 	sections = {
-		lualine_c = { diff, diagnostics },
+		lualine_b = { diff, diagnostics },
+		lualine_c = { "filename" },
 		lualine_x = {},
 	},
 })
