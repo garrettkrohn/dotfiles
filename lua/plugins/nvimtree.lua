@@ -8,7 +8,7 @@ return {
 				open_win_config = function()
 					local screen_w = vim.opt.columns:get()
 					local screen_h = vim.opt.lines:get() - vim.opt.cmdheight:get()
-					local window_w = (screen_w * 0.5) / 1.75
+					local window_w = (screen_w * 1) / 1.75
 					local window_h = screen_h * 0.8
 					local window_w_int = math.floor(window_w)
 					local window_h_int = math.floor(window_h)
