@@ -113,6 +113,7 @@ lspconfig["emmet_ls"].setup({
 		"svelte",
 		"python",
 		"kotlin",
+		"sql",
 	},
 })
 
