@@ -87,7 +87,7 @@ require("lazy").setup({
 		dependencies = "nvim-telescope/telescope.nvim", -- optional
 		opts = { snippetDir = vim.fn.stdpath("data") .. "/lazy/friendly-snippets" },
 	},
-	{ "saadparwaiz1/cmp_luasnip" },
+	{ "saadparwaiz1/cmp_luasnip", lazy = false },
 
 	----------------------------------------------
 	--               LSP                        --
@@ -107,7 +107,7 @@ require("lazy").setup({
 
 	"jose-elias-alvarez/typescript.nvim", -- additional functionality for typescript server (e.g. rename file & update imports)
 	"onsails/lspkind.nvim", -- vs-code like icons for autocompletion
-	"L3MON4D3/LuaSnip",
+	{ "L3MON4D3/LuaSnip", lazy = false },
 	"VonHeikemen/lsp-zero.nvim",
 
 	----------------------------------------------
