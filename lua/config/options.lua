@@ -1,46 +1,44 @@
--- [[ Setting options ]]
--- See `:help vim.o`
--- NOTE: You can change these options as you wish!
+local opt = vim.opt
 
--- Set highlight on search
-vim.o.hlsearch = false
+-- line numbers
+opt.relativenumber = true
+opt.number = true
 
--- Make line numbers default
-vim.wo.number = true
+-- tabs & indentation
+opt.tabstop = 2
+opt.shiftwidth = 2
+opt.expandtab = true
+opt.autoindent = true
 
--- Enable mouse mode
-vim.o.mouse = 'a'
+-- line wrapping
+opt.wrap = false
 
--- Sync clipboard between OS and Neovim.
---  Remove this option if you want your OS clipboard to remain independent.
---  See `:help 'clipboard'`
-vim.o.clipboard = 'unnamedplus'
+-- search
+opt.ignorecase = true
+opt.smartcase = true
 
--- Enable break indent
-vim.o.breakindent = true
+-- cursor line
+opt.cursorline = true
 
--- Save undo history
-vim.o.undofile = true
+-- appearance
+opt.termguicolors = true
+opt.background = "dark"
+opt.signcolumn = "yes"
 
--- Case-insensitive searching UNLESS \C or capital in search
-vim.o.ignorecase = true
-vim.o.smartcase = true
+-- backspace
+opt.clipboard:append("unnamedplus")
 
--- Keep signcolumn on by default
-vim.wo.signcolumn = 'yes'
+-- split windows
+opt.splitright = true
+opt.splitbelow = true
 
--- Decrease update time
-vim.o.updatetime = 250
-vim.o.timeoutlen = 300
+opt.iskeyword:append("-")
 
--- Set completeopt to have a better completion experience
-vim.o.completeopt = 'menuone,noselect'
+opt.swapfile = false
+opt.backup = false
+opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
+opt.undofile = true
 
--- NOTE: You should make sure your terminal supports this
-vim.o.termguicolors = true
-
--- vim: ts=2 sts=2 sw=2 et
-
--- nvim-tree
+opt.scrolloff = 8
 vim.g.loaded = 1
 vim.g.loaded_netrwPlugin = 1
