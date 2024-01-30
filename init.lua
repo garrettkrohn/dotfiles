@@ -3,29 +3,29 @@ vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
 -- [[ Install `lazy.nvim` plugin manager ]]
-require 'lazy-bootstrap'
+require 'config.lazy-bootstrap'
 
 -- [[ Configure plugins ]]
-require 'lazy-plugins'
+require 'config.lazy-plugins'
 
 -- [[ Setting options ]]
-require 'options'
+require 'config.options'
 
 -- [[ Basic Keymaps ]]
-require 'keymaps'
+require 'config.keymaps'
 
 -- [[ Configure Telescope ]]
 -- (fuzzy finder)
-require 'telescope-setup'
+require 'config.telescope-setup'
 
 -- [[ Configure Treesitter ]]
 -- (syntax parser for highlighting)
-require 'treesitter-setup'
+require 'config.treesitter-setup'
 
 -- [[ Configure LSP ]]
 -- (Language Server Protocol)
-require 'lsp-setup'
+require 'config.lsp-setup'
 
 -- [[ Configure nvim-cmp ]]
 -- (completion)
-require 'cmp-setup'
+require 'config.cmp-setup'
