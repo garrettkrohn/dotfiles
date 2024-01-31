@@ -11,6 +11,14 @@ return {
       lualine = {
         transparent = true
       },
+      highlights = {
+        -- make floating windows transparent
+        NormalFloat = { bg = "none" },
+        FloatBorder = { bg = "none" },
+        -- but keep background for Lazy and Mason
+        LazyNormal = { fg = '$fg', bg = '$bg1' },
+        MasonNormal = { fg = '$fg', bg = '$bg1' },
+      }
     }
     require('onedark').load()
   end,
