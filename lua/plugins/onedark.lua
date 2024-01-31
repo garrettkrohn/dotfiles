@@ -16,8 +16,8 @@ return {
         NormalFloat = { bg = "none" },
         FloatBorder = { bg = "none" },
         -- but keep background for Lazy and Mason
-        LazyNormal = { fg = '$fg', bg = '$bg1' },
-        MasonNormal = { fg = '$fg', bg = '$bg1' },
+        -- LazyNormal = { fg = '$fg', bg = '$bg1' },
+        -- MasonNormal = { fg = '$fg', bg = '$bg1' },
       }
     }
     require('onedark').load()
