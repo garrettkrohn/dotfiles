@@ -24,6 +24,8 @@
       path: ./config/starship.toml
     ~/.config/alacritty/alacritty.yml:
       path: ./config/alacritty.yml
+    ~/.config/kickstart:
+      path: ./config/kickstart
 
 - shell:
     - [git submodule update --init --recursive, Installing submodules]
