@@ -189,3 +189,20 @@ export SCHEDULE_MESSAGE_API_KEY=f23dd5bf0633763d5e870e2d7abf37a46b4270f7
 
 # kip
 export YARDI_INTERFACE_LICENSE=MIIBEAYJKwYBBAGCN1gDoIIBATCB/gYKKwYBBAGCN1gDAaCB7zCB7AIDAgABAgJoAQICAIAEAAQQTXO7WZbp5n6zTq9Nf5Q4UASByHy7JM54mJdNRFCGNGVnzp4fJN/IYcLmYmSY0R6aFJjmi6mSo+fSBtPUGm9tgQ6CDXRMMgVOO1H9wUiWfIdjruwqGiVzsHkntWer9wxFJosDk9dIk78VtWHS5SUODB7KS/jg+ru+bBEi/eoU9FSoupnj1tHK3F2U4kmMvnmnhWoJ7FVvrp5KN/ci1JucDqBc/A/Dx79gDvV+mMNlkrAR3ZrAVpjdXwShFGjD4i8uF1UNi5eAqoE7f2iWThkd7VQL3kBQ8eoiaUuL
+
+
+alias kick="NVIM_APPNAME=kickstart nvim"
+
+function nvims() {
+  items=("default" "kickstart" "LazyVim" "NvChad" "AstroNvim")
+  config=$(printf "%s\n" "${items[@]}" | fzf --prompt=" Neovim Config  " --height=~50% --layout=reverse --border --exit-0)
+  if [[ -z $config ]]; then
+    echo "Nothing selected"
+    return 0
+  elif [[ $config == "default" ]]; then
+    config=""
+  fi
+  NVIM_APPNAME=$config nvim $@
+}
+
+
