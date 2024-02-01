@@ -42,3 +42,5 @@ opt.undofile = true
 opt.scrolloff = 8
 vim.g.loaded = 1
 vim.g.loaded_netrwPlugin = 1
+
+vim.g.python3_host_prog = '~/path/to/venv/with/pynvim/bin/python'
