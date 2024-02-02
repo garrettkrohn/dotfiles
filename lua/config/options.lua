@@ -44,3 +44,9 @@ vim.g.loaded = 1
 vim.g.loaded_netrwPlugin = 1
 
 vim.g.python3_host_prog = '~/path/to/venv/with/pynvim/bin/python'
+
+local icons = require("config.icons")
+vim.fn.sign_define('DiagnosticSignError', { text = icons.diagnostics.error, texthl = 'DiagnosticSignError' })
+vim.fn.sign_define('DiagnosticSignWarn', { text = icons.diagnostics.warn, texthl = 'DiagnosticSignWarn' })
+vim.fn.sign_define('DiagnosticSignInfo', { text = icons.diagnostics.info, texthl = 'DiagnosticSignInfo' })
+vim.fn.sign_define('DiagnosticSignHint', { text = icons.diagnostics.hint, texthl = 'DiagnosticSignHint' })
