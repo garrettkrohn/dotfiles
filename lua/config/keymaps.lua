@@ -79,6 +79,9 @@ keymap.set('n', '<leader>hh', "<cmd>lua require('harpoon.ui').toggle_quick_menu(
 keymap.set('n', '<leader>hj', "<cmd>lua require('harpoon.ui').nav_next()<CR>")
 keymap.set('n', '<leader>hk', "<cmd>lua require('harpoon.ui').nav_prev()<CR>")
 
+
+keymap.set("n", "<leader>ge", "<cmd>lua vim.diagnostic.open_float()<CR>") -- show  diagnostics for line
+
 -- scissors
 vim.keymap.set('n', '<leader>se', function()
   require('scissors').editSnippet()
