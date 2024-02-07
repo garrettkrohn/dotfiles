@@ -6,7 +6,7 @@ return {
   config = function()
     require('onedark').setup {
       -- Set a style preset. 'dark' is default.
-      style = 'cool', -- dark, darker, cool, deep, warm, warmer, light
+      style = 'light', -- dark, darker, cool, deep, warm, warmer, light
       transparent = true,
       lualine = {
         transparent = true
