@@ -32,7 +32,7 @@ set -g status-right "#{?client_prefix,#[fg=colour233#,bg=colour69#,bold],#[fg=co
 set -g window-status-separator "  "
  
 # Window status alignment
-set -g status-justify centre
+set -g status-justify left
  
 # Pane border
 set -g pane-border-style bg=colour0,fg=colour17
