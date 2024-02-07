@@ -18,8 +18,7 @@ set -g status-style bg=default
  
 # Left side of status bar
 set -g status-left-length 30
-set -g status-left "#{?client_prefix,#[fg=colour69#,bg=colour0#,bold],#[fg=colour255#,bg=colour69#,bold]} #S #{?client_prefix,#[fg=colour0#,bg=colour243#,nobold],#[fg=colour69#,bg=colour243#,nobold]}#[fg=colour233,bg=colour243,bold] #(whoami) 
-#{?client_prefix, #[bg=colour69#,fg=colour243],#[fg=colour243#,bg=colour0]}" 
+set -g status-left "#{?client_prefix, #[bg=colour69#,fg=colour243],#[fg=colour243#,bg=colour0]}" 
  
 # Window status (middle)
 set -g window-status-format "#[fg=colour69]#[bg=default]  #I:#W#F  "
