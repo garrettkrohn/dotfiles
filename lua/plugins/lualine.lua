@@ -94,11 +94,13 @@ return {
       options = {
         theme = theme(),
       },
-      sections = {
+      tabline = {
+        lualine_a = { "filename" },
         lualine_b = { diff, diagnostics },
-        lualine_c = { "filename" },
+        lualine_c = {},
         lualine_x = {},
-      }
+      },
+      sections = {}
     }
     return c
   end
