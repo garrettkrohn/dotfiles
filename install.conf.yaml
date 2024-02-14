@@ -22,8 +22,8 @@
       path: ./config/nvim
     ~/.config/starship.toml:
       path: ./config/starship.toml
-    ~/.config/alacritty/alacritty.yml:
-      path: ./config/alacritty.yml
+    ~/.config/alacritty/alacritty.toml:
+      path: ./config/alacritty.toml
     ~/.config/kickstart:
       path: ./config/kickstart
 
