@@ -18,7 +18,6 @@ brew install zoxide
 brew install tmux
 brew install tmuxinator
 brew install pipenv
-brew install tmux
 brew install zsh
 
 # install neovim
