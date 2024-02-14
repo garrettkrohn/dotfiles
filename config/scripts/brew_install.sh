@@ -4,7 +4,11 @@ if test ! $(which brew); then
     echo "Installing homebrew"
 fi
 
-brew install alacritty
+brew install --cask alacritty
+brew install --cask discord          
+brew install --cask postman          
+brew install --cask slack
+brew install --cask spotify
 brew install docker
 brew install fnm
 brew install fzf
@@ -21,6 +25,6 @@ brew install pipenv
 brew install zsh
 
 # install neovim
-brew install neovim/neovim/neovim
+brew install neovim
 
 exit 0
