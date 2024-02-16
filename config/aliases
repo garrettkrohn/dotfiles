@@ -53,8 +53,8 @@ alias ms='mux s'
 
 #config
 alias dot="cd ~/dotfiles/config && n"
-alias na="nvim ~/dotfiles/config/aliases"
-alias vzsh="nvim ~/.zshrc"
+alias na="kick ~/dotfiles/config/aliases"
+alias vzsh="kick ~/.zshrc"
 
 # Filesystem aliases
 alias ..='cd ..'
