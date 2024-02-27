@@ -39,7 +39,7 @@ git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-m
 git clone https://github.com/jeffreytse/zsh-vi-mode \
   $ZSH_CUSTOM/plugins/zsh-vi-mode
 
-Brew install lazygit
+brew install lazygit
 
 # install neovim
 brew install neovim
