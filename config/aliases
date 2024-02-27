@@ -22,7 +22,7 @@ alias nbm="docker exec -it kippy-core ./composer.phar install && cd ~/code/kipsu
 alias nb="docker exec -it kippy-core ./composer.phar install && cd ~/code/kipsu/assets/ && fnm use v16.17 && npm install && npm run build:widgets && npm run build:dev && cd .."
 
 # docker
-alias do="open -n ~/Applications/Docker.app"
+alias do="open -n ~/../../Applications/Docker.app"
 alias d="Docker"
 alias dcu="docker-compose up -d"
 alias dcd="docker-compose down"
@@ -52,7 +52,7 @@ alias mss='mux s sql'
 alias ms='mux s'
 
 #config
-alias dot="cd ~/dotfiles/config && n"
+alias dot="cd ~/dotfiles/config && kick ."
 alias na="kick ~/dotfiles/config/aliases"
 alias vzsh="kick ~/.zshrc"
 
