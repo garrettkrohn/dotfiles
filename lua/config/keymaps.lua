@@ -57,9 +57,10 @@ keymap.set('n', '<leader>fh', '<cmd>Telescope help_tags<cr>')   -- list availabl
 keymap.set('n', '<leader>rs', ':LspRestart<CR>') -- mapping to restart lsp if necessary
 
 -- save and quit
-keymap.set('n', '<leader>ss', ':w<CR>')
-keymap.set('n', '<leader>s', ':noa w<CR>')
-keymap.set('n', '<leader>sa', ':wa<CR>')
+keymap.set('n', '<leader>ss', ':noa w<CR>')
+keymap.set('n', '<leader>sf', ':w<CR>')
+keymap.set('n', '<leader>sa', ':noa wa<CR>')
+keymap.set('n', '<leader>sfa', ':wa<CR>')
 keymap.set('n', '<leader>q', ':q<CR>')
 
 -- bufferline tab close
@@ -69,7 +70,7 @@ keymap.set('n', '<leader>tx', ':bdelete!<CR>')
 keymap.set('n', '<leader>gg', ':LazyGit<CR>')
 
 keymap.set('n', '<leader>ca', '<cmd>Lspsaga code_action<CR>') -- see available code actions
-keymap.set('n', '<leader>gf', "<cmd>lua require'telescope.builtin'.lsp_references()<CR>")
+keymap.set('n', '<leader>gf', ":Telescope lsp_references show_line=false<CR>")
 
 keymap.set('n', '<leader>po', "<cmd>lua require('rest-nvim').run()<CR>") -- see available code actions
 
@@ -95,3 +96,6 @@ end)
 vim.keymap.set({ 'n', 'x' }, '<leader>sn', function()
   require('scissors').addNewSnippet()
 end)
+
+-- toggle wrap
+keymap.set("n", "<leader>w", ":set wrap!<CR>") -- show  diagnostics for line
