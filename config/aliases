@@ -3,6 +3,7 @@ alias awslogin="aws ecr get-login-password --region us-east-1 | docker
 login --username AWS --password-stdin 
 776290407496.dkr.ecr.us-east-1.amazonaws.com"
 alias lg="lazygit"
+alias ld="lazydocker"
 alias q="exit"
 alias nrs="npm run start"
 alias c="clear"
