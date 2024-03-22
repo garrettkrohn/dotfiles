@@ -12,13 +12,11 @@ alias sql="nvim ~/code/aep_cs_scripts"
 alias post="cd ~/code/postman && nvim ."
 alias n="nvim '+Telescope find_files'"
 alias le="cd ~/code/liv-env-scripts/scripts/"
+alias n="kick ~/notes/netspi_notes.md"
 
-# local kipsu
-alias loc="cd ~/code/kipsu"
-alias nloc="cd ~/code/kipsu && nvim ."
-alias phps="open -na "PhpStorm.app" --args "$@""
-alias pbc="php bin/console"
-alias feb="npm install && npm run build:widgets && npm run build:dev"
+# local 
+alias p="cd ~/code/offensive-security-platform"
+alias feb="corepack enable && corepack prepare yarn@3.5.1 --activate && yarn install && yarn build && yarn api && yarn startAt4444"
 alias nbm="docker exec -it kippy-core ./composer.phar install && cd ~/code/kipsu/assets/ && fnm use v16.17 && npm install && npm run build:widgets && npm run build:dev && cd .. && docker compose exec kippy ./vendor/bin/doctrine-migrations migrations:migrate"
 alias nb="docker exec -it kippy-core ./composer.phar install && cd ~/code/kipsu/assets/ && fnm use v16.17 && npm install && npm run build:widgets && npm run build:dev && cd .."
 
