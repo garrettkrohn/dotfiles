@@ -205,6 +205,12 @@ function nvims() {
   NVIM_APPNAME=$config nvim $@
 }
 
+now() {
+    timestamp=$(date +"%Y-%m-%d %H:%M:%S")
+    echo "$timestamp" | xclip -selection clipboard
+    echo "Timestamp copied to clipboard: $timestamp"
+}
+
 
 
 # Generated for envman. Do not edit.
