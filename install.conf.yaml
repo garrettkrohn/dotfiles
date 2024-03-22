@@ -11,7 +11,7 @@
     ~/.oh-my-zsh/custom/aliases.zsh~:
       path: ./config/aliases
     ~/.tmux.conf:
-      path: ./config/tmux
+      path: ./config/tmux-config/tmux.conf
     ~/.tmuxtheme:
       path: ./config/tmuxtheme
     ~/.config/yabai/yabairc:
