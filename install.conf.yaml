@@ -11,9 +11,9 @@
     ~/.oh-my-zsh/custom/aliases.zsh~:
       path: ./config/aliases
     ~/.tmux.conf:
-      path: ./config/tmux-config/tmux.conf
-    ~/.tmuxtheme:
-      path: ./config/tmuxtheme
+      path: ./config/tmux/tmux.conf
+    ~/.config/tmux/tmux-nerd-font-window-name.yml:
+      path: ./config/tmux/tmux-nerd-font-window-name.yml
     ~/.config/yabai/yabairc:
       path: ./config/yabai
     ~/.config/skhd/skhdrc:
