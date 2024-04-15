@@ -10,9 +10,8 @@ alias c="clear"
 alias w="cd ~/vimwiki && n"
 alias sql="nvim ~/code/aep_cs_scripts"
 alias post="cd ~/code/postman && nvim ."
-alias n="nvim '+Telescope find_files'"
 alias le="cd ~/code/liv-env-scripts/scripts/"
-alias n="kick ~/notes/netspi_notes.md"
+alias n="cd ~/notes && kick netspi_notes.md"
 
 # local 
 alias p="cd ~/code/offensive-security-platform"
@@ -76,4 +75,3 @@ alias westman="nvim ~/sideProjects/westman"
 alias r="ranger"
 alias rr="ranger ~"
 
-alias jenkins="echo '2346-aep-jenkins_cs_procedures' | pbcopy"
