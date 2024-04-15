@@ -30,4 +30,4 @@ require 'config.lsp-setup'
 -- (completion)
 -- require 'config.cmp-setup'
 --
-require 'config.harpoon-config'
+-- require 'config.harpoon-config'
