@@ -113,3 +113,7 @@ keymap.set("n", "<leader>tb", ":ToggleBlame<CR>") -- show  diagnostics for line
 
 -- insert date
 keymap.set("n", "<leader>id", ":pu=strftime('%m/%d/%y')<CR>") -- show  diagnostics for line
+
+-- lsp
+keymap.set("n", "<leader>li", ":LspInfo<CR>") -- show  diagnostics for line
+keymap.set("n", "<leader>lr", ":LspRestart<CR>") -- show  diagnostics for line
