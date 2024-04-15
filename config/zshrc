@@ -217,3 +217,21 @@ now() {
 [ -s "$HOME/.config/envman/load.sh" ] && source "$HOME/.config/envman/load.sh"
 export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
 export PATH="/usr/local/opt/python/libexec/bin:$PATH"
+
+# nvm 
+export NVM_DIR="$HOME/.nvm"
+  [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
+  [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
+
+
+# open nvim directly into telescope
+function fuzzy_nvim_start {
+    if [ "$#" -eq 0 ]; then
+        kick +'Telescope find_files hidden=false layout_config={height=0.9}'
+    elif [ -d "$1" ]; then
+        kick +"Telescope find_files hidden=false layout_config={height=0.9} cwd=$1"
+    else
+        kick $@
+    fi
+}
+alias k='fuzzy_nvim_start'
