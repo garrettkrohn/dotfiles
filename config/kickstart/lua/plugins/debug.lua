@@ -47,6 +47,7 @@ return {
         vim.keymap.set('n', '<F1>', dap.step_into, { desc = 'Debug: Step Into' })
         vim.keymap.set('n', '<F2>', dap.step_over, { desc = 'Debug: Step Over' })
         vim.keymap.set('n', '<F3>', dap.step_out, { desc = 'Debug: Step Out' })
+        vim.keymap.set('n', '<leader>ds', dap.close, { desc = 'Debug: Stop' })
         vim.keymap.set('n', '<leader>do', dapui.open, { desc = 'Dapui: Open' })
         vim.keymap.set('n', '<leader>dc', dapui.close, { desc = 'Dapui: Close' })
         vim.keymap.set('n', '<leader>b', dap.toggle_breakpoint, { desc = 'Debug: Toggle Breakpoint' })
@@ -79,7 +80,7 @@ return {
                     id = "scopes",
                     size = 0.25
                 }, {
-                    id = "breakpoints",
+               id = "breakpoints",
                     size = 0.25
                 }, {
                     id = "stacks",

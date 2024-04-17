@@ -34,10 +34,8 @@ keymap.set('n', '<leader>xx', ':%bd|e#<CR>')
 -- Plugin Keybinds
 ----------------------
 
--- vim-maximizer
-keymap.set('n', '<leader>sm', ':MaximizerToggle<CR>') -- toggle split window maximization
 
--- ranger
+-- nvimtree
 keymap.set('n', '<leader>e', ':NvimTreeToggle<CR>') -- toggle file explorer
 
 -- telescope
@@ -70,6 +68,7 @@ keymap.set('n', '<leader>tx', ':bdelete!<CR>')
 keymap.set('n', '<leader>gg', ':LazyGit<CR>')
 
 keymap.set('n', '<leader>ca', '<cmd>Lspsaga code_action<CR>') -- see available code actions
+keymap.set('n', '<leader>tt', '<cmd>Lspsaga term_toggle<CR>') -- see available code actions
 keymap.set('n', '<leader>gf', ":Telescope lsp_references show_line=false<CR>")
 
 keymap.set('n', '<leader>po', "<cmd>lua require('rest-nvim').run()<CR>") -- see available code actions
