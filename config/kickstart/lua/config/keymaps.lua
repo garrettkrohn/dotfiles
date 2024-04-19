@@ -70,6 +70,7 @@ keymap.set('n', '<leader>gg', ':LazyGit<CR>')
 keymap.set('n', '<leader>ca', '<cmd>Lspsaga code_action<CR>') -- see available code actions
 keymap.set('n', '<leader>tt', '<cmd>Lspsaga term_toggle<CR>') -- see available code actions
 keymap.set('n', '<leader>gf', ":Telescope lsp_references show_line=false<CR>")
+keymap.set('n', '<leader>gt', "<cmd>Lspsaga peek_type_definition<CR>")
 
 keymap.set('n', '<leader>po', "<cmd>lua require('rest-nvim').run()<CR>") -- see available code actions
 
