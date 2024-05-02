@@ -1,0 +1,24 @@
+[[session]]
+name = "github action workflow"
+path = "~/code/offensive-security-platform/"
+startup_command = "kick ."
+
+[[session]]
+name = "dotfiles"
+path = "~/dotfiles"
+startup_command = "kick ."
+
+[[session]]
+name = "mlb"
+path = "~/side/MLB-StatsAPI/"
+startup_command = "python hr-k-draft.py"
+
+[[session]]
+name = "platform lazy docker"
+path = "~/code/offensive-security-platform/"
+startup_command = "ld"
+
+[[session]]
+name = "platform front end"
+path = "~/code/offensive-security-platform/ui"
+startup_command = "feb"
