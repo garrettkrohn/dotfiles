@@ -75,3 +75,6 @@ alias westman="nvim ~/sideProjects/westman"
 alias r="ranger"
 alias rr="ranger ~"
 
+# Borders
+alias borders="brew services start borders"
+alias bordersr="brew services restart borders"
