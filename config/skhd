@@ -15,19 +15,12 @@
 #             Change Focus                #
 ###########################################
 #
-# in my current setup, alt is left red thumb
 #
 # change window focus within space
 shift + alt - j : yabai -m window --focus south || yabai -m display --focus south
 shift + alt - k : yabai -m window --focus north || yabai -m display --focus north
 shift + alt - h : yabai -m window --focus west || yabai -m display --focus west
 shift + alt - l : yabai -m window --focus east || yabai -m display --focus east
-
-#change focus between external displays
-# shift + alt - h: yabai -m display --focus west
-# shift + alt - l: yabai -m display --focus east
-# shift + alt - j: yabai -m display --focus south
-# shift + alt - k: yabai -m display --focus north
 
 # rotate layout clockwise
 shift + alt - r : yabai -m space --rotate 270
@@ -46,21 +39,6 @@ shift + alt - m : yabai -m window --toggle zoom-fullscreen
 
 # balance out tree of windows (resize to occupy same area)
 shift + alt - e : yabai -m space --balance
-
-# swap windows
-# shift + alt - j : yabai -m window --swap south
-# shift + alt - k : yabai -m window --swap north
-# shift + alt - h : yabai -m window --swap west
-# shift + alt - l : yabai -m window --swap east
-
-###########################################
-#             Move Windows                #
-###########################################
-# move window and split
-# ctrl + alt - j : yabai -m window --warp south
-# ctrl + alt - k : yabai -m window --warp north
-# ctrl + alt - h : yabai -m window --warp west
-# ctrl + alt - l : yabai -m window --warp east
 
 # move window to display left and right
 shift + alt - y : yabai -m window --display west; yabai -m display --focus west;
