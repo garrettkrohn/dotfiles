@@ -1,4 +1,5 @@
 return {
+  enabled = false,
   "vidocqh/data-viewer.nvim",
   opts = {
     columnColorEnable = false,
