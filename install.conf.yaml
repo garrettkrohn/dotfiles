@@ -5,6 +5,8 @@
 
 - clean: ["~"]
 
+# first is the path where you want it to go on the system
+# second is where it is within the dotfiles repo
 - link:
     ~/.zshrc:
       path: ./config/zshrc
@@ -26,6 +28,8 @@
       path: ./config/alacritty.toml
     ~/.config/kickstart:
       path: ./config/kickstart
+    ~/.config/sesh/sesh.toml:
+      path: ./config/sesh.toml
 
 - shell:
     - [git submodule update --init --recursive, Installing submodules]
