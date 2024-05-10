@@ -19,6 +19,21 @@ path = "~/code/offensive-security-platform/"
 startup_command = "ld"
 
 [[session]]
-name = "platform front end"
+name = "platform node"
 path = "~/code/offensive-security-platform/ui"
 startup_command = "feb"
+
+[[session]]
+name = "platform front end"
+path = "~/code/offensive-security-platform/ui"
+startup_command = "kick ."
+
+[[session]]
+name = "platform back end"
+path = "~/code/offensive-security-platform/parent"
+startup_command = "kick ."
+
+[[session]]
+name = "platform parent"
+path = "~/code/offensive-security-platform/parent"
+startup_command = ""
