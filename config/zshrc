@@ -235,3 +235,5 @@ function fuzzy_nvim_start {
     fi
 }
 alias k='fuzzy_nvim_start'
+
+export PATH="/opt/homebrew/opt/postgresql@15/bin:$PATH"
