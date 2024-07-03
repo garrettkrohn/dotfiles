@@ -4,4 +4,5 @@ return {
   requires = {
     "nvim-lua/plenary.nvim",
   },
+  event = "BufEnter *"
 }

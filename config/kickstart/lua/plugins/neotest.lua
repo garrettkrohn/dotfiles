@@ -12,11 +12,12 @@ return {
         require("neotest").setup({
             adapters = {
                 require("neotest-java")({
-                    ignore_wrapper = true, -- whether to ignore maven/gradle wrapper
+                    ignore_wrapper = false, -- whether to ignore maven/gradle wrapper
                     junit_jar = "/Users/gkrohn/.local/share/kickstart/neotest-java/junit-platform-console-standalone-1.10.1.jar"
                     -- default: .local/share/nvim/neotest-java/junit-platform-console-standalone-[version].jar
                 })
             }
         })
-    end
+    end,
+    event = "BufEnter *.java"
 }

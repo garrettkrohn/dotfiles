@@ -1,15 +1,5 @@
--- debug.lua
---
--- Shows how to use the DAP plugin to debug your code.
---
--- Primarily focused on configuring the debugger for Go, but can
--- be extended to other languages as well. That's why it's called
--- kickstart.nvim and not kitchen-sink.nvim ;)
-
 return {
-    -- NOTE: Yes, you can install new plugins here!
     'mfussenegger/nvim-dap',
-    -- NOTE: And you can specify dependencies as well
     dependencies = {
         -- Creates a beautiful debugger UI
         'rcarriga/nvim-dap-ui',
@@ -18,8 +8,6 @@ return {
         'williamboman/mason.nvim',
         'jay-babu/mason-nvim-dap.nvim',
 
-        -- Add your own debuggers here
-        'leoluz/nvim-dap-go',
     },
     config = function()
         local dap = require 'dap'
@@ -41,6 +29,22 @@ return {
                 -- 'delve',
             },
         }
+
+        dap.adapters.java = {
+            type = 'server';
+            port = 8082;
+        }
+
+        dap.configurations.java = {
+            {
+                type = 'java',
+                request = 'attach',
+                name = "Debug (Attach) - Remote test",
+                hostName = '127.0.0.1',
+                port = 8082
+            }
+        }
+
 
         -- Basic debugging keymaps, feel free to change to your liking!
         vim.keymap.set('n', '<leader>dg', dap.continue, { desc = 'Debug: Start/Continue' })
@@ -80,7 +84,7 @@ return {
                     id = "scopes",
                     size = 0.25
                 }, {
-               id = "breakpoints",
+                    id = "breakpoints",
                     size = 0.25
                 }, {
                     id = "stacks",
@@ -92,10 +96,10 @@ return {
                 position = "left",
                 size = 40
             }, {
-                elements = {{
+                elements = { {
                     id = "console",
                     size = 1
-                }},
+                } },
                 position = "bottom",
                 size = 10
             } },
@@ -108,8 +112,5 @@ return {
         dap.listeners.after.event_initialized['dapui_config'] = dapui.open
         dap.listeners.before.event_terminated['dapui_config'] = dapui.close
         dap.listeners.before.event_exited['dapui_config'] = dapui.close
-
-        -- Install golang specific config
-        require('dap-go').setup()
     end,
 }
