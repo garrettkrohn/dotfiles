@@ -67,8 +67,8 @@ keymap.set('n', '<leader>tx', ':bdelete!<CR>')
 -- lazygit keybind
 keymap.set('n', '<leader>gg', ':LazyGit<CR>')
 
-keymap.set('n', '<leader>ca', '<cmd>Lspsaga code_action<CR>') -- see available code actions
-keymap.set('n', '<leader>tt', '<cmd>Lspsaga term_toggle<CR>') -- see available code actions
+-- keymap.set('n', '<leader>ca', '<cmd>Lspsaga code_action<CR>') -- see available code actions
+-- keymap.set('n', '<leader>tt', '<cmd>Lspsaga term_toggle<CR>') 
 keymap.set('n', '<leader>gf', ":Telescope lsp_references show_line=false<CR>")
 keymap.set('n', '<leader>gt', "<cmd>Lspsaga peek_type_definition<CR>")
 
@@ -115,5 +115,21 @@ keymap.set("n", "<leader>tb", ":ToggleBlame<CR>") -- show  diagnostics for line
 keymap.set("n", "<leader>id", ":pu=strftime('%m/%d/%y')<CR>") -- show  diagnostics for line
 
 -- lsp
-keymap.set("n", "<leader>li", ":LspInfo<CR>") -- show  diagnostics for line
-keymap.set("n", "<leader>lr", ":LspRestart<CR>") -- show  diagnostics for line
+-- keymap.set("n", "<leader>li", ":LspInfo<CR>") -- show  diagnostics for line
+-- keymap.set("n", "<leader>lr", ":LspRestart<CR>") -- show  diagnostics for line
+
+-- testing
+
+keymap.set("n", "<leader>tf", ":lua require('neotest').run.run(vim.fn.expand(\"%\"))<CR>") -- run tests for file
+keymap.set("n", "<leader>tt", ":lua require('neotest').run.run()<CR>") -- run tests for file
+keymap.set("n", "<leader>tr", ":lua require('neotest').output_panel.open()<CR>") -- run tests for file
+
+-- copilotchat
+keymap.set("n", "<leader>cc", ":CopilotChatToggle<CR>") -- toggle chat
+
+-- Type peaking
+keymap.set("n", "<leader>ty", ":lua vim.lsp.buf.hover()<CR>") -- peak at type
+
+-- quickfix errors
+keymap.set("n", "<leader>fe", vim.diagnostic.open_float, { desc = "Show diagnostic [E]rror messages" })
+keymap.set("n", "<leader>eq", vim.diagnostic.setloclist, { desc = "Open diagnostic [Q]uickfix list" })
