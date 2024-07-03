@@ -15,9 +15,16 @@ alias n="cd ~/notes && kick netspi_notes.md"
 
 # local 
 alias p="cd ~/code/offensive-security-platform"
-alias feb="corepack enable && corepack prepare yarn@3.5.1 --activate && yarn install && yarn build && yarn api && yarn startAt4444"
+alias feb="corepack enable && corepack prepare yarn@3.5.1 --activate && yarn cache clean && yarn install && fnm use 18.16.0 && yarn api && yarn build && yarn startAt4444 --no-open"
+alias beb="mvn install && java -jar -Dspring.profiles.active=local ./application/target/application-1.0-SNAPSHOT.jar"
+alias dbd="docker stop db && docker rm db && docker rmi offensive-security-platform-db && docker volume rm offensive-security-platform_db_data && docker-compose up db authenticator bootstrap -d --rm"
+alias boot="docker-compose up bootstrap -d"
+alias lr="bash /Users/gkrohn/dotfiles/config/scripts/local_reset.sh"
+alias mci="mvn clean install"
+alias mt="mvn test"
 alias nbm="docker exec -it kippy-core ./composer.phar install && cd ~/code/kipsu/assets/ && fnm use v16.17 && npm install && npm run build:widgets && npm run build:dev && cd .. && docker compose exec kippy ./vendor/bin/doctrine-migrations migrations:migrate"
 alias nb="docker exec -it kippy-core ./composer.phar install && cd ~/code/kipsu/assets/ && fnm use v16.17 && npm install && npm run build:widgets && npm run build:dev && cd .."
+alias ys="fnm use 18.16.0 && yarn startAt4444 --no-open"
 
 # docker
 alias do="open -n ~/../../Applications/Docker.app"
