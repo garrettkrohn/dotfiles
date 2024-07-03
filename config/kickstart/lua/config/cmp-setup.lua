@@ -45,6 +45,7 @@ cmp.setup {
     end, { 'i', 's' }),
   },
   sources = {
+    { name = "copilot", group_index = 2},
     { name = 'vim-dadbod-completion'},
     { name = 'nvim_lsp' },
     { name = 'luasnip' },
@@ -52,8 +53,10 @@ cmp.setup {
   },
   formatting = {
     format = lspkind.cmp_format({
+      mode = "symbol",
       maxwidth = 50,
       ellipsis_char = "...",
+      symbol_map = { Copilot = "C"}
     }),
   },
 }
