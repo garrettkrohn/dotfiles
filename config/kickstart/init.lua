@@ -26,8 +26,3 @@ require 'config.treesitter-setup'
 -- (Language Server Protocol)
 require 'config.lsp-setup'
 
--- [[ Configure nvim-cmp ]]
--- (completion)
--- require 'config.cmp-setup'
---
--- require 'config.harpoon-config'
