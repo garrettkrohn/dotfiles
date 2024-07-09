@@ -18,9 +18,11 @@ alias n="cd ~/notes && kick netspi_notes.md"
 # -db to destroy db
 # -skipTests to skip tests
 alias beb="back_end_build.sh"
+alias bebh="echo '-db to destroy db\n-skipTests to skip test'"
 
 # -skipbuild skips the build process
 alias feb="front_end_build.sh"
+alias febh="echo '-skipBuild to skip build'"
 
 alias boot="docker-compose up bootstrap -d --build"
 
