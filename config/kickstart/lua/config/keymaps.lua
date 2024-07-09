@@ -124,9 +124,6 @@ keymap.set("n", "<leader>tf", ":lua require('neotest').run.run(vim.fn.expand(\"%
 keymap.set("n", "<leader>tt", ":lua require('neotest').run.run()<CR>") -- run tests for file
 keymap.set("n", "<leader>tr", ":lua require('neotest').output_panel.open()<CR>") -- run tests for file
 
--- copilotchat
-keymap.set("n", "<leader>cc", ":CopilotChatToggle<CR>") -- toggle chat
-
 -- Type peaking
 keymap.set("n", "<leader>ty", ":lua vim.lsp.buf.hover()<CR>") -- peak at type
 
