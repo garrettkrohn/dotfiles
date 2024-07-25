@@ -24,7 +24,8 @@ alias bebh="echo '-db to destroy db\n-skipTests to skip test'"
 alias feb="front_end_build.sh"
 alias febh="echo '-skipBuild to skip build'"
 
-alias boot="docker-compose up bootstrap -d --build"
+
+alias boot="bootstrap.sh"
 
 alias mci="mvn clean install"
 alias mt="mvn test"
