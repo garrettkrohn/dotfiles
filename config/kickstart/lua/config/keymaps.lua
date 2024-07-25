@@ -72,7 +72,7 @@ keymap.set('n', '<leader>gg', ':LazyGit<CR>')
 keymap.set('n', '<leader>gf', ":Telescope lsp_references show_line=false<CR>")
 keymap.set('n', '<leader>gt', "<cmd>Lspsaga peek_type_definition<CR>")
 
-keymap.set('n', '<leader>po', "<cmd>lua require('rest-nvim').run()<CR>") -- see available code actions
+-- keymap.set('n', '<leader>po', "<cmd>lua require('rest-nvim').run()<CR>") -- see available code actions
 
 -- harpoon
 local harpoon = require("harpoon")
@@ -130,3 +130,6 @@ keymap.set("n", "<leader>ty", ":lua vim.lsp.buf.hover()<CR>") -- peak at type
 -- quickfix errors
 keymap.set("n", "<leader>fe", vim.diagnostic.open_float, { desc = "Show diagnostic [E]rror messages" })
 keymap.set("n", "<leader>eq", vim.diagnostic.setloclist, { desc = "Open diagnostic [Q]uickfix list" })
+
+-- filepath
+keymap.set("n", "<leader>p", ":lua print(vim.api.nvim_buf_get_name(0))<CR>")
