@@ -1,9 +1,19 @@
 skipBuild=false
 
+print_help() {
+    echo -e "\nScript for running Platform's frontend\n"
+    echo "Flags:"
+    echo "  -skipBuild         -- will skip the build process and just run"
+    exit 0
+}
+
 ## Parse the arguments
 for arg in "$@"
 do
     case $arg in
+        -h)
+            print_help
+            ;;
         -skipBuild)
             skipBuild=true
             ;;
