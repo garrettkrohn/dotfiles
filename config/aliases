@@ -12,6 +12,8 @@ alias sql="nvim ~/code/aep_cs_scripts"
 alias post="cd ~/code/postman && nvim ."
 alias le="cd ~/code/liv-env-scripts/scripts/"
 alias n="cd ~/notes && kick netspi_notes.md"
+alias kick="nvim -c ':Telescope find_files'"
+alias review="nvim -c ':Octo pr edit "
 
 # local 
 

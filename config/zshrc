@@ -128,53 +128,6 @@ eval "$(starship init zsh)"
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-# Kipsu commands
-
-quore_token() {
-    QUORE_TOKEN=${1:-"0"}
-    if [ $QUORE_TOKEN = "0" ]
-    then
-        echo "Enter a Quore Token"
-        read TOKEN_INPUT
-        QUORE_TOKEN="$TOKEN_INPUT"
-    fi
-
-    QUORE_TOKEN_ID=$(curl -s -X POST \
-                          -H "Accept: application/json" \
-                          -H "Version: 2" \
-                          -H  "Authorization: OAuth oauth_token=$QUORE_TOKEN" \
-                          "https://api.quore.com/api.php?action=getTokenInfo" | \
-                         python3 -c "import sys, json; print(json.load(sys.stdin)[0]['id'])")
-    echo "Quore Token ID: $QUORE_TOKEN_ID\nQuore Token: $QUORE_TOKEN"
-}
-
-restartbackpack() {
-    aws ecs update-service --cluster ticket-service-prod --service ticket-service-prod --force-new-deployment --region us-east-1 &> /dev/null
-    aws ecs update-service --cluster ticket-service-prod --service ticket-service-cron-prod --force-new-deployment --region us-east-1 &> /dev/null
-}
-
-ap() {
-	  pipenv run ansible-playbook $1
-}
-
-versions() {
-cd ~/code/scripts
-./environment_health_checker.sh versions
-}
-
-repos() {
-cd ~/code/scripts
-bash environment_health_checker.sh repos
-}
-
-help() {
-cd ~/code/scripts
-bash environment_health_checker.sh help
-} 
-
-# github key for kipsu local docker
-export GITHUB_KEY=/Users/garrettkrohn/.ssh/docker_github
-
 # zoxide init
 eval "$(zoxide init zsh)"
 
@@ -182,28 +135,20 @@ eval "$(zoxide init zsh)"
 export PATH=/home/$USER/.fnm:$PATH
 eval "$(fnm env --use-on-cd --version-file-strategy=recursive)"
 
-# npm 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
-
-# message_scheduler
-export SCHEDULE_MESSAGE_API_KEY=f23dd5bf0633763d5e870e2d7abf37a46b4270f7
-
-# kip
-export YARDI_INTERFACE_LICENSE=MIIBEAYJKwYBBAGCN1gDoIIBATCB/gYKKwYBBAGCN1gDAaCB7zCB7AIDAgABAgJoAQICAIAEAAQQTXO7WZbp5n6zTq9Nf5Q4UASByHy7JM54mJdNRFCGNGVnzp4fJN/IYcLmYmSY0R6aFJjmi6mSo+fSBtPUGm9tgQ6CDXRMMgVOO1H9wUiWfIdjruwqGiVzsHkntWer9wxFJosDk9dIk78VtWHS5SUODB7KS/jg+ru+bBEi/eoU9FSoupnj1tHK3F2U4kmMvnmnhWoJ7FVvrp5KN/ci1JucDqBc/A/Dx79gDvV+mMNlkrAR3ZrAVpjdXwShFGjD4i8uF1UNi5eAqoE7f2iWThkd7VQL3kBQ8eoiaUuL
-
-
-alias kick="NVIM_APPNAME=kickstart nvim"
-
-function nvims() {
-  items=("default" "kickstart" "LazyVim" "NvChad" "AstroNvim")
-  config=$(printf "%s\n" "${items[@]}" | fzf --prompt=" Neovim Config  " --height=~50% --layout=reverse --border --exit-0)
-  if [[ -z $config ]]; then
-    echo "Nothing selected"
-    return 0
-  elif [[ $config == "default" ]]; then
-    config=""
-  fi
-  NVIM_APPNAME=$config nvim $@
-}
+# code to have multiple configs
+# alias kick="NVIM_APPNAME=kickstart nvim"
+#
+# function nvims() {
+#   items=("default" "kickstart" "LazyVim" "NvChad" "AstroNvim")
+#   config=$(printf "%s\n" "${items[@]}" | fzf --prompt=" Neovim Config  " --height=~50% --layout=reverse --border --exit-0)
+#   if [[ -z $config ]]; then
+#     echo "Nothing selected"
+#     return 0
+#   elif [[ $config == "default" ]]; then
+#     config=""
+#   fi
+#   NVIM_APPNAME=$config nvim $@
+# }
 
 now() {
     timestamp=$(date +"%Y-%m-%d %H:%M:%S")
