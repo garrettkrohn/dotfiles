@@ -30,6 +30,8 @@
       path: ./config/kickstart
     ~/.config/sesh/sesh.toml:
       path: ./config/sesh.toml
+    ~/.config/gh-dash/config.yml:
+      path: ./config/gh-dash.yml
 
 - shell:
     - [git submodule update --init --recursive, Installing submodules]
