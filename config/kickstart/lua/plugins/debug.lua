@@ -1,4 +1,5 @@
 return {
+    lazy = true,
     'mfussenegger/nvim-dap',
     dependencies = {
         -- Creates a beautiful debugger UI
