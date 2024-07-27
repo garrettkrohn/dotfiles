@@ -75,14 +75,14 @@ keymap.set('n', '<leader>gt', "<cmd>Lspsaga peek_type_definition<CR>")
 -- keymap.set('n', '<leader>po', "<cmd>lua require('rest-nvim').run()<CR>") -- see available code actions
 
 -- harpoon
-local harpoon = require("harpoon")
-keymap.set("n", "<leader>ha", function() harpoon:list():add() end)
-keymap.set("n", "<leader>hh", function() harpoon.ui:toggle_quick_menu(harpoon:list()) end)
-
-vim.keymap.set("n", "<leader>j", function() harpoon:list():select(1) end)
-vim.keymap.set("n", "<leader>k", function() harpoon:list():select(2) end)
-vim.keymap.set("n", "<leader>l", function() harpoon:list():select(3) end)
-vim.keymap.set("n", "<leader>;", function() harpoon:list():select(4) end)
+-- local harpoon = require("harpoon")
+-- keymap.set("n", "<leader>ha", function() harpoon:list():add() end)
+-- keymap.set("n", "<leader>hh", function() harpoon.ui:toggle_quick_menu(harpoon:list()) end)
+--
+-- vim.keymap.set("n", "<leader>j", function() harpoon:list():select(1) end)
+-- vim.keymap.set("n", "<leader>k", function() harpoon:list():select(2) end)
+-- vim.keymap.set("n", "<leader>l", function() harpoon:list():select(3) end)
+-- vim.keymap.set("n", "<leader>;", function() harpoon:list():select(4) end)
 
 -- Toggle previous & next buffers stored within Harpoon list
 -- vim.keymap.set("n", "<C-S-P>", function() harpoon:list():prev() end)
