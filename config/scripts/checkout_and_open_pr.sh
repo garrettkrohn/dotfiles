@@ -1,5 +1,24 @@
 #!/bin/bash
 
+# Initialize checkout variable
+checkout=false
+
+# Parse flags
+while getopts "c" opt; do
+  case $opt in
+    c)
+      checkout=true
+      ;;
+    *)
+      echo "Invalid option: -$OPTARG" >&2
+      exit 1
+      ;;
+  esac
+done
+
+# Remove the processed options from the arguments
+shift $((OPTIND-1))
+
 # Check if an argument is provided
 if [ -z "$1" ]; then
   echo "No PR Number provided"
@@ -18,10 +37,14 @@ fi
 # Print the pr_number variable to verify the result
 echo "PR Number: $pr_number"
 
+# Change directory
 cd ~/code/platform_work/review/
 
-# checkout branch
-gh pr checkout $pr_number
+# Conditionally checkout branch
+if [ "$checkout" = true ]; then
+  gh pr checkout $pr_number
+fi
 
-# open pr in Octo
+# Open pr in Octo
 nvim -c ":Octo pr edit $pr_number"
+

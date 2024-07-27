@@ -13,7 +13,8 @@ alias post="cd ~/code/postman && nvim ."
 alias le="cd ~/code/liv-env-scripts/scripts/"
 alias n="cd ~/notes && kick netspi_notes.md"
 alias kick="nvim -c ':Telescope find_files'"
-alias review="nvim -c ':Octo pr edit "
+alias or="nvim -c ':Octo pr edit " #open review
+alias review="checkout_and_open_pr.sh" # checkout the branch and open the pr # include the -c flag to checkout
 
 # local 
 
@@ -72,9 +73,9 @@ alias mss='mux s sql'
 alias ms='mux s'
 
 #config
-alias dot="cd ~/dotfiles/config && kick ."
-alias na="kick ~/dotfiles/config/aliases"
-alias vzsh="kick ~/.zshrc"
+alias dot="cd ~/dotfiles/config && nvim ."
+alias na="nvim ~/dotfiles/config/aliases"
+alias vzsh="nvim ~/.zshrc"
 
 # Filesystem aliases
 alias ..='cd ..'
