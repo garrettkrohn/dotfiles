@@ -3,7 +3,7 @@ return {
     lazy = false,
     name = "catppuccin",
     priority = 1000,
-    flavour = "macchiato",
+    flavour = "mocha",
     transparent_background = true,
     config = function()
         require("catppuccin").setup({
