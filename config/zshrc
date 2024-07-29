@@ -183,4 +183,4 @@ alias k='fuzzy_nvim_start'
 
 export PATH="/opt/homebrew/opt/postgresql@15/bin:$PATH"
 export PATH="$PATH":~/dotfiles/config/scripts
-export GH_DASH_CONFIG="~/.config/gh-dash/config.yml"
+export GH_DASH_CONFIG="$HOME/.config/gh-dash/config.yml"
