@@ -38,7 +38,7 @@ fi
 echo "PR Number: $pr_number"
 
 # Change directory
-cd ~/code/platform_work/review/
+# cd ~/code/platform_work/review/
 
 # Conditionally checkout branch
 if [ "$checkout" = true ]; then
