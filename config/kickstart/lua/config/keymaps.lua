@@ -55,10 +55,10 @@ keymap.set('n', '<leader>fh', '<cmd>Telescope help_tags<cr>')   -- list availabl
 keymap.set('n', '<leader>rs', ':LspRestart<CR>') -- mapping to restart lsp if necessary
 
 -- save and quit
-keymap.set('n', '<leader>ss', ':noa w<CR>')
-keymap.set('n', '<leader>sf', ':w<CR>')
-keymap.set('n', '<leader>sa', ':noa wa<CR>')
-keymap.set('n', '<leader>sfa', ':wa<CR>')
+keymap.set('n', '<leader>ss', ':noa w!<CR>')
+keymap.set('n', '<leader>sf', ':w!<CR>')
+keymap.set('n', '<leader>sa', ':noa wa!<CR>')
+keymap.set('n', '<leader>sfa', ':wa!<CR>')
 keymap.set('n', '<leader>q', ':q<CR>')
 
 -- bufferline tab close
