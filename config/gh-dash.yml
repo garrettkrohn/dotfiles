@@ -4,7 +4,9 @@ prSections:
 - title: Needs My Review
   filters: is:open review-requested:@me
 - title: My Closed Requests
-  filters: is:closed author:@me
+  filters: is:closed author:@me repo:netspi/offensive-security-platform
+- title: Platform prs
+  filters: is:pr is:open repo:netspi/offensive-security-platform
 issuesSections:
 - title: My Issues
   filters: is:open author:@me
@@ -15,7 +17,7 @@ issuesSections:
 defaults:
   preview:
     open: true
-    width: 80
+    width: 150
   prsLimit: 20
   issuesLimit: 20
   view: prs
@@ -50,15 +52,14 @@ keybindings:
   universal: []
   issues: []
   prs: 
-    - key: o
+    - key: O
       command: >
-        tmux new-window -c ~/code/platform_work/review '
-          nvim -c ":silent Octo pr open {{.PrNumber}}"
-        '
+        tmux new-window -c . 'nvim -c ":silent Octo pr edit {{.PrNumber}}"'
     - key: c
       command: >
         gh pr checkout {{.PrNumber}}
-repoPaths: {}
+repoPaths: 
+  netspi/offensive-security-platform: ~/code/platform_work
 theme:
   ui:
     sectionsShowCount: true
