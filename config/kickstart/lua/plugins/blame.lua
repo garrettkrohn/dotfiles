@@ -1,4 +1,7 @@
 return {
+  lazy = false,
   "FabijanZulj/blame.nvim",
-  event = "BufEnter *"
+  config = function()
+    require("blame").setup()
+  end
 }
