@@ -45,10 +45,8 @@ cmp.setup {
     end, { 'i', 's' }),
   },
   sources = {
-    { name = "copilot", group_index = 2},
-    { name = 'vim-dadbod-completion'},
     { name = 'nvim_lsp' },
-    { name = 'luasnip' },
+    -- { name = 'luasnip' },
     { name = 'path' },
   },
   formatting = {
