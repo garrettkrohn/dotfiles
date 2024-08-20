@@ -26,3 +26,4 @@ require 'config.treesitter-setup'
 -- (Language Server Protocol)
 require 'config.lsp-setup'
 
+require 'config.autocommands'
