@@ -20,13 +20,13 @@ do
         -h)
             print_help
             ;;
-        -db)
+        -db|-d)
             destroy_db=true
             ;;
-        -skipTests)
+        -skipTests|-s)
             skip_tests=true
             ;;
-        -clean)
+        -clean|-c)
             clean=true
             ;;
     esac

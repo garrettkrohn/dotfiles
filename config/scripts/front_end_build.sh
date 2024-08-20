@@ -14,7 +14,7 @@ do
         -h)
             print_help
             ;;
-        -skipBuild)
+        -skipBuild|-s)
             skipBuild=true
             ;;
     esac
@@ -36,4 +36,4 @@ if ! $skipBuild; then
     yarn api 
     yarn build 
 fi
-yarn startAt4444 --no-open
+yarn start-4444 --no-open
