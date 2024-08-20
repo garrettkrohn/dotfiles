@@ -32,6 +32,10 @@
       path: ./config/sesh.toml
     ~/.config/gh-dash/config.yml:
       path: ./config/gh-dash.yml
+    ~/.config/aerospace/aerospace.toml:
+      path: ./config/aerospace.toml
+    ~/.config/borders/bordersrc:
+      path: ./config/borders
 
 - shell:
     - [git submodule update --init --recursive, Installing submodules]
