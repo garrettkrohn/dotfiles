@@ -32,20 +32,20 @@ return {
             },
         }
 
-        dap.adapters.java = {
-            type = 'server';
-            port = 8082;
-        }
-
-        dap.configurations.java = {
-            {
-                type = 'java',
-                request = 'attach',
-                name = "Debug (Attach) - Remote test",
-                hostName = '127.0.0.1',
-                port = 8082
-            }
-        }
+        -- dap.adapters.java = {
+        --     type = 'server';
+        --     port = 8082;
+        -- }
+        --
+        -- dap.configurations.java = {
+        --     {
+        --         type = 'java',
+        --         request = 'attach',
+        --         name = "Debug (Attach) - Remote test",
+        --         hostName = '127.0.0.1',
+        --         port = 8082
+        --     }
+        -- }
 
 
         -- Basic debugging keymaps, feel free to change to your liking!

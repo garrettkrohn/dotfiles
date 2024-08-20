@@ -38,7 +38,12 @@
 -- new way?
 return {
     "nvim-java/nvim-java",
-    lazy = true,
+    lazy = false,
+    opts = {
+        java_debug_adapter = {
+            enabled = true
+        }
+    },
     config = function()
         require('java').setup()
         require('lspconfig').jdtls.setup({})
