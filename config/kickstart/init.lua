@@ -14,10 +14,6 @@ require 'config.options'
 -- [[ Basic Keymaps ]]
 require 'config.keymaps'
 
--- [[ Configure Telescope ]]
--- (fuzzy finder)
-require 'config.telescope-setup'
-
 -- [[ Configure Treesitter ]]
 -- (syntax parser for highlighting)
 require 'config.treesitter-setup'
