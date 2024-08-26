@@ -1,9 +1,4 @@
 [[session]]
-name = "github action workflow"
-path = "~/code/offensive-security-platform/"
-startup_command = "kick"
-
-[[session]]
 name = "dotfiles"
 path = "~/dotfiles"
 startup_command = "kick"
@@ -14,26 +9,11 @@ path = "~/side/MLB-StatsAPI/"
 startup_command = "python hr-k-draft.py"
 
 [[session]]
-name = "platform lazy docker"
-path = "~/code/offensive-security-platform/"
-startup_command = "ld"
-
-[[session]]
-name = "platform node"
-path = "~/code/offensive-security-platform/ui"
-startup_command = "feb"
-
-[[session]]
-name = "platform front end"
-path = "~/code/offensive-security-platform/ui"
-startup_command = "kick"
-
-[[session]]
-name = "platform back end"
-path = "~/code/offensive-security-platform/parent"
-startup_command = "kick"
-
-[[session]]
-name = "platform parent"
-path = "~/code/offensive-security-platform/parent"
+name = "platform node / java"
+path = "~/code/platform_work"
 startup_command = ""
+
+[[session]]
+name = "Rest"
+path = "~/code/rest"
+startup_command = "kick"
