@@ -16,6 +16,7 @@ alias kick="nvim -c ':Telescope find_files'"
 alias or="nvim -c ':silent Octo pr edit " #open review
 alias review="checkout_and_open_pr.sh" # checkout the branch and open the pr # include the -c flag to checkout
 alias ghd="gh dash"
+alias auth="~/code/rest/auth.sh"
 
 # local 
 
