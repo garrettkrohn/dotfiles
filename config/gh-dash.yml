@@ -5,8 +5,12 @@ prSections:
   filters: is:open review-requested:@me
 - title: My Closed Requests
   filters: is:closed author:@me repo:netspi/offensive-security-platform
-- title: Platform prs
+- title: All Platform prs
   filters: is:pr is:open repo:netspi/offensive-security-platform
+- title: My Reviewed (open)
+  filters: is:pr is:open reviewed-by:@me 
+- title: My Reviewed (closed)
+  filters: is:pr is:closed reviewed-by:@me 
 issuesSections:
 - title: My Issues
   filters: is:open author:@me
