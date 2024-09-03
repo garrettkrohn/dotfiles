@@ -1,15 +1,15 @@
 [[session]]
-name = "dotfiles"
+name = "Dotfiles"
 path = "~/dotfiles"
 startup_command = "kick"
 
 [[session]]
-name = "mlb"
+name = "MLB"
 path = "~/side/MLB-StatsAPI/"
 startup_command = "python hr-k-draft.py"
 
 [[session]]
-name = "platform node / java"
+name = "Local"
 path = "~/code/platform_work"
 startup_command = ""
 
