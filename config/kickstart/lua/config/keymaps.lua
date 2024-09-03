@@ -58,7 +58,7 @@ keymap.set('n', '<leader>ss', ':w!<CR>')
 keymap.set('n', '<leader>sf', ':noa w!<CR>')
 keymap.set('n', '<leader>sa', ':wa!<CR>')
 keymap.set('n', '<leader>sfa', ':noa wa!<CR>')
-keymap.set('n', '<leader>q', ':q<CR>')
+keymap.set('n', 'q', ':q<CR>')
 
 -- bufferline tab close
 keymap.set('n', '<leader>tx', ':bdelete!<CR>')
