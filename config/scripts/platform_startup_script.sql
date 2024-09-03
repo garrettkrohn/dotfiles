@@ -38,10 +38,14 @@ where not exists (
     select 1 from user_role_authorization_scope where authorization_scope_id = (select id from authorization_scope where name = 'AuthScope_1_null_1') and user_id = 1 and role_id = 42
 );
 
-insert into task_template (id, name)
-values (1, 'test template');
+-- add permissions to Tasks / task templates
+insert into user_role_authorization_scope (authorization_scope_id, user_id, role_id, has_all_clients)
+select (select id from authorization_scope where name = 'AuthScope_1_null_1'), 1, 53, true
+where not exists (
+    select 1 from user_role_authorization_scope where authorization_scope_id = (select id from authorization_scope where name = 'AuthScope_1_null_1') and user_id = 1 and role_id = 53
+);
 
-insert client (name) 
+insert into client (name) 
 values ('test client');
 
 INSERT INTO task (id, name, description, notes, client_id, status_id, due_by, completed_at, created_by, updated_by, updated_at, created_at, instructions, recurring, started_at, priority_id, assignee) 

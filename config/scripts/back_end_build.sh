@@ -105,8 +105,9 @@ if [ $? -ne 0 ]; then
 fi
 
 print_pink "run java container"
+
 java -jar -Dspring.profiles.active=local ./application/target/application-1.0-SNAPSHOT.jar &
-java_pid=$!
+java_pid=$! 
 
 # Wait for the Java process to finish
 wait $java_pid
