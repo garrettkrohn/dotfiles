@@ -61,8 +61,13 @@ semantic_escape_chars = ",│`|:\"' ()[]{}<>\t"
 [window]
 decorations = "buttonless"
 dynamic_padding = true
-opacity = 0.8
+opacity = 0.7
 
 [window.padding]
 x = 5
 y = 5
+
+[[keyboard.bindings]]
+chars = "\u0002c"
+key = "T"
+mods = "Command"
