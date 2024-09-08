@@ -104,9 +104,9 @@ if [ $? -ne 0 ]; then
   exit 1
 fi
 
-print_pink "run java container"
+print_pink "run java container" 
 
-java -jar -Dspring.profiles.active=local ./application/target/application-1.0-SNAPSHOT.jar &
+java -jar -agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=*:5005 -Dspring.profiles.active=local ./application/target/application-1.0-SNAPSHOT.jar &
 java_pid=$! 
 
 # Wait for the Java process to finish
