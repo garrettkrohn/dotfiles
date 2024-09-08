@@ -13,10 +13,12 @@ alias post="cd ~/code/postman && nvim ."
 alias le="cd ~/code/liv-env-scripts/scripts/"
 alias n="cd ~/notes && kick netspi_notes.md"
 alias kick="nvim -c ':Telescope find_files'"
+alias term="nvim -c ':terminal'"
 alias or="nvim -c ':silent Octo pr edit " #open review
 alias review="checkout_and_open_pr.sh" # checkout the branch and open the pr # include the -c flag to checkout
 alias ghd="gh dash"
 alias auth="~/code/rest/auth.sh"
+alias dap="nvim application/src/main/java/com/netspi/platform/Application.java"
 
 # local 
 
