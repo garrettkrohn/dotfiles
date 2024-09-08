@@ -59,6 +59,10 @@ keymap.set('n', '<leader>sf', ':noa w!<CR>')
 keymap.set('n', '<leader>sa', ':wa!<CR>')
 keymap.set('n', '<leader>sfa', ':noa wa!<CR>')
 keymap.set('n', 'q', ':q<CR>')
+keymap.set('n', 'Q', ':q!<CR>')
+
+-- move the macro to m
+vim.api.nvim_set_keymap('n', 'm', 'q', { noremap = true })
 
 -- bufferline tab close
 keymap.set('n', '<leader>tx', ':bdelete!<CR>')
@@ -144,3 +148,6 @@ keymap.set('n', '<leader>eq', vim.diagnostic.setloclist, { desc = 'Open diagnost
 
 -- filepath
 keymap.set('n', '<leader>p', ':lua print(vim.api.nvim_buf_get_name(0))<CR>')
+
+-- auth
+keymap.set('n', '<leader>au', ':terminal ~/code/rest/auth.sh<CR>')
