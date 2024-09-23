@@ -22,11 +22,25 @@ function M.setup()
   --   args = {},
   -- }
 
-  dap.set_log_level 'TRACE'
+  dap.set_log_level 'ERROR'
 end
 
-vim.cmd 'command! Dc lua require("user_functions.custom_dap").setup()'
+function M.globalServiceSetup()
+  dap.configurations.java = {
+    {
+      args = '',
+      mainClass = 'com.netspi.platform.Application',
+      name = 'application -> com.netspi.platform.Application',
+      projectName = 'application',
+      request = 'attach',
+      hostname = 'localhost',
+      port = 5005,
+      type = 'java',
+      vmArgs = '-Dspring.profiles.active=local',
+    },
+  }
+end
 
-vim.cmd 'command! Test lua require("user_functions.test").test()'
+vim.cmd 'command! Dap lua require("user_functions.custom_dap").setup()'
 
 return M
