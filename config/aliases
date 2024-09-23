@@ -12,13 +12,20 @@ alias sql="nvim ~/code/aep_cs_scripts"
 alias post="cd ~/code/postman && nvim ."
 alias le="cd ~/code/liv-env-scripts/scripts/"
 alias n="cd ~/notes && kick netspi_notes.md"
-alias kick="nvim -c ':Telescope find_files'"
 alias term="nvim -c ':terminal'"
 alias or="nvim -c ':silent Octo pr edit " #open review
 alias review="checkout_and_open_pr.sh" # checkout the branch and open the pr # include the -c flag to checkout
 alias ghd="gh dash"
 alias auth="~/code/rest/auth.sh"
 alias dap="nvim application/src/main/java/com/netspi/platform/Application.java"
+alias rg="mvn clean install && java -jar -Dspring.profiles.active=local ./target/global-service-0.0.1-SNAPSHOT.jar"
+alias s="sesh connect Dotfiles"
+
+# opening neovim
+alias kick="nvim"
+alias kf="nvim -c ':Telescope find_files'"
+alias ks="nvim -c ':Telescope live_grep'"
+alias k="nvim -c ':NvimTreeToggle'"
 
 # local 
 
@@ -71,6 +78,7 @@ alias tn="tmux new -s"
 alias td="tmux detach"
 alias tls='tmux ls'
 alias tk='tmux kill-session -t'
+alias tka='tmux kill-server'
 alias mux='tmuxinator'
 alias msl='mux s loc'
 alias mss='mux s sql'
@@ -105,3 +113,6 @@ alias rr="ranger ~"
 # Borders
 alias borders="brew services start borders"
 alias bordersr="brew services restart borders"
+
+# Astro
+alias nrd="npm run dev"
