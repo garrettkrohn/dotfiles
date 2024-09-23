@@ -27,6 +27,7 @@ keymap.set('n', '<leader>to', ':tabnew<CR>') -- open new tab
 keymap.set('n', '<leader>tx', ':tabclose<CR>') -- close current tab
 keymap.set('n', '<leader>tn', ':tabn<CR>') --  go to next tab
 keymap.set('n', '<leader>tp', ':tabp<CR>') --  go to previous tab
+keymap.set('n', '<leader>sg', ':lua require("telescope.builtin").lsp_definitions()<CR>|<C-w>v')
 
 -- bufferline clear all buffers except this one
 keymap.set('n', '<leader>xx', ':%bd|e#<CR>')
@@ -54,9 +55,10 @@ keymap.set('n', '<leader>fh', '<cmd>Telescope help_tags<cr>') -- list available 
 keymap.set('n', '<leader>rs', ':LspRestart<CR>') -- mapping to restart lsp if necessary
 
 -- save and quit
-keymap.set('n', '<leader>ss', ':w!<CR>')
+-- moved save to a user function to check filetype
+-- keymap.set('n', '<leader>ss', ':w!<CR>')
 keymap.set('n', '<leader>sf', ':noa w!<CR>')
-keymap.set('n', '<leader>sa', ':wa!<CR>')
+-- keymap.set('n', '<leader>sa', ':wa!<CR>')
 keymap.set('n', '<leader>sfa', ':noa wa!<CR>')
 keymap.set('n', 'q', ':q<CR>')
 keymap.set('n', 'Q', ':q!<CR>')
@@ -121,13 +123,13 @@ vim.keymap.set({ 'n', 'x' }, '<leader>sn', function()
 end)
 
 -- toggle wrap
-keymap.set('n', '<leader>w', ':set wrap!<CR>') -- show  diagnostics for line
+keymap.set('n', '<leader>w', ':set wrap!<CR>')
 
 -- toggle blame
-keymap.set('n', '<leader>tb', ':BlameToggle<CR>') -- show  diagnostics for line
+keymap.set('n', '<leader>tb', ':BlameToggle<CR>')
 
 -- insert date
-keymap.set('n', '<leader>id', ":pu=strftime('%m/%d/%y')<CR>") -- show  diagnostics for line
+keymap.set('n', '<leader>id', ":pu=strftime('%m/%d/%y')<CR>")
 
 -- lsp
 -- keymap.set("n", "<leader>li", ":LspInfo<CR>") -- show  diagnostics for line
