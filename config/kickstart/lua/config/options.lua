@@ -22,21 +22,21 @@ opt.cursorline = true
 
 -- appearance
 opt.termguicolors = true
-opt.background = "dark"
-opt.signcolumn = "yes"
+opt.background = 'dark'
+opt.signcolumn = 'yes'
 
 -- backspace
-opt.clipboard:append("unnamedplus")
+opt.clipboard:append 'unnamedplus'
 
 -- split windows
 opt.splitright = true
 opt.splitbelow = true
 
-opt.iskeyword:append("-")
+opt.iskeyword:append '-'
 
 opt.swapfile = false
 opt.backup = false
-opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
+opt.undodir = os.getenv 'HOME' .. '/.vim/undodir'
 opt.undofile = true
 
 opt.scrolloff = 8
@@ -47,17 +47,8 @@ vim.g.python3_host_prog = '~/path/to/venv/with/pynvim/bin/python'
 
 opt.laststatus = 0
 
-local icons = require("config.icons")
+local icons = require 'config.icons'
 vim.fn.sign_define('DiagnosticSignError', { text = icons.diagnostics.error, texthl = 'DiagnosticSignError' })
 vim.fn.sign_define('DiagnosticSignWarn', { text = icons.diagnostics.warn, texthl = 'DiagnosticSignWarn' })
 vim.fn.sign_define('DiagnosticSignInfo', { text = icons.diagnostics.info, texthl = 'DiagnosticSignInfo' })
 vim.fn.sign_define('DiagnosticSignHint', { text = icons.diagnostics.hint, texthl = 'DiagnosticSignHint' })
-
--- open into telescope
--- vim.api.nvim_create_autocmd("VimEnter", {
---   callback = function()
---     if vim.fn.argv(0) == "" then
---       require("telescope.builtin").find_files()
---     end
---   end,
--- })
