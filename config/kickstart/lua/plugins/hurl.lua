@@ -17,7 +17,7 @@ return {
     -- Show notification on run
     show_notification = false,
     -- Show response in popup or split
-    mode = 'split',
+    mode = 'popup',
     -- Default formatter
     formatters = {
       json = { 'jq' }, -- Make sure you have install jq in your system, e.g: brew install jq
@@ -42,8 +42,8 @@ return {
   },
   keys = {
     -- Run API request
-    { '<leader>A', '<cmd>HurlRunner<CR>', desc = 'Run All requests' },
-    { '<leader>a', '<cmd>HurlRunnerAt<CR>', desc = 'Run Api request' },
+    { '<leader>z', '<cmd>HurlRunner<CR>', desc = 'Run All requests' },
+    { '<leader>A', '<cmd>HurlRunnerAt<CR>', desc = 'Run Api request' },
     { '<leader>te', '<cmd>HurlRunnerToEntry<CR>', desc = 'Run Api request to entry' },
     { '<leader>tm', '<cmd>HurlToggleMode<CR>', desc = 'Hurl Toggle Mode' },
     { '<leader>tv', '<cmd>HurlVerbose<CR>', desc = 'Run Api in verbose mode' },
