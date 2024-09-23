@@ -36,6 +36,11 @@
       path: ./config/aerospace.toml
     ~/.config/borders/bordersrc:
       path: ./config/borders
+    ~/.config/yazi/yazi.toml:
+      path: ./config/yazi/yazi.toml
+    ~/.config/wezterm:
+      path: ./config/wezterm/
+
 
 - shell:
     - [git submodule update --init --recursive, Installing submodules]
