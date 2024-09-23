@@ -22,10 +22,10 @@ do
         -h)
             print_help
             ;;
-        -rebuild)
+        -rebuild|-r)
             rebuild=true
             ;;
-        -clean)
+        -clean|-c)
             start_up_script=false
             ;;
     esac

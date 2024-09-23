@@ -1,23 +1,23 @@
 -- testing for asn association
-insert into domain (client_id, name, is_monitored)
-select 1, 'www.test.com', true
-where not exists (
-    select 1 from domain where client_id = 1 and name = 'www.test.com'
-);
-
-insert into asn_company (start_ip, end_ip, join_key, name, domain, type, asn, as_name, as_domain, as_type, country)
-select '1.1.1.1', '1.1.100.9', null, 'www.test.com', 'www.test.com', 'business', 'AB1234', 'www.test.com', 'www.test.com', 'business', 'USA'
-where not exists (
-    select 1 from asn_company where start_ip = '1.1.1.1' and end_ip = '1.1.100.9' and name = 'www.test.com'
-);
-
-insert into asset_dedup (client_id, domain, domain_id)
-select 1, 'www.test.com', (
-    select id from domain where name = 'www.test.com'
-)
-where not exists (
-    select 1 from asset_dedup where client_id = 1 and domain = 'www.test.com'
-);
+-- insert into domain (client_id, name, is_monitored)
+-- select 1, 'www.test.com', true
+-- where not exists (
+    -- select 1 from domain where client_id = 1 and name = 'www.test.com'
+-- );
+-- 
+-- insert into asn_company (start_ip, end_ip, join_key, name, domain, type, asn, as_name, as_domain, as_type, country)
+-- select '1.1.1.1', '1.1.100.9', null, 'www.test.com', 'www.test.com', 'business', 'AB1234', 'www.test.com', 'www.test.com', 'business', 'USA'
+-- where not exists (
+    -- select 1 from asn_company where start_ip = '1.1.1.1' and end_ip = '1.1.100.9' and name = 'www.test.com'
+-- );
+-- 
+-- insert into asset_dedup (client_id, domain, domain_id)
+-- select 1, 'www.test.com', (
+    -- select id from domain where name = 'www.test.com'
+-- )
+-- where not exists (
+    -- select 1 from asset_dedup where client_id = 1 and domain = 'www.test.com'
+-- );
 
 insert into tag (name, created_by, client_id)
 select 'test tag', 1, 1
@@ -72,4 +72,18 @@ values ('test client');
 
 -- add operations role
 insert into user_role_authorization_scope (authorization_scope_id, user_id, role_id)
-values (5, 0, 10);
+values (1, 1, 53), (1, 1, 54);
+
+insert into global.finding_template (name, source_identifier)
+values ('test', 'abc');
+insert into global.intermediate_finding(source_identifier, source_code, finding_template_uid)
+select 'abc', 'abc', (
+    select uid from global.finding_template where name = 'test'
+    );
+insert into cloud_account (id, name)
+values (123, 'test');
+insert into asset_dedup (client_id, ip_address, domain, cloud_account_id)
+values (1, '192.168.1.1', 'example.com', 123);
+
+-- make client 1 a standard asm client
+insert into client_client_type (client_id, client_type_id) values (1, 1);

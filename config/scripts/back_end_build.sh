@@ -3,6 +3,7 @@
 destroy_db=false
 skip_tests=false
 clean=false
+debug=false
 
 print_help() {
     echo -e "\nScript for running Platform's backend\n"
@@ -10,6 +11,7 @@ print_help() {
     echo "  -db         -- will destroy the database and authenticator"
     echo "  -skipTests  -- will skip the tests in the maven build process"
     echo "  -clean      -- perform mvn clean install"
+    echo "  -debug      -- enable debug level trace"
     exit 0
 }
 
@@ -28,6 +30,9 @@ do
             ;;
         -clean|-c)
             clean=true
+            ;;
+        -debug)
+            debug=true
             ;;
     esac
 done
@@ -106,8 +111,13 @@ fi
 
 print_pink "run java container" 
 
-java -jar -agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=*:5005 -Dspring.profiles.active=local ./application/target/application-1.0-SNAPSHOT.jar &
-java_pid=$! 
+if $debug; then
+    java -jar -agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=*:5005 -Dspring.profiles.active=local ./application/target/application-1.0-SNAPSHOT.jar --logging.level.root=DEBUG &
+    java_pid=$! 
+else
+    java -jar -agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=*:5005 -Dspring.profiles.active=local ./application/target/application-1.0-SNAPSHOT.jar &
+    java_pid=$! 
+fi
 
 # Wait for the Java process to finish
 wait $java_pid
