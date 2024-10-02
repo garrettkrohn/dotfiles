@@ -242,6 +242,10 @@ run = "move-node-to-workspace Z"
 if.app-id = 'com.microsoft.teams2'
 run = "move-node-to-workspace Z"
 
+[[on-window-detected]]
+if.app-id = 'com.apple.Safari'
+run = "move-node-to-workspace Z"
+
 # built-in for the laptop, LG for the wide screen, Dell for the secondary
 [workspace-to-monitor-force-assignment]
 B = 'DELL'
