@@ -23,11 +23,13 @@ alias s="sesh connect Dotfiles"
 
 # opening neovim
 alias kick="nvim"
-alias kf="nvim -c ':Telescope find_files'"
-alias ks="nvim -c ':Telescope live_grep'"
+alias kf="nvim -c ':FzfLua files'" #TODO: change this to fzf
+alias ks="nvim -c ':FzfLua live_grep'"
 alias k="nvim -c ':NvimTreeToggle'"
 
 # local 
+#
+# alias feb="corepack enable && corepack prepare yarn@3.5.1 --activate && yarn cache clean && yarn install && yarn api && yarn build && yarn start-4444 --no-open"
 
 # -db to destroy db
 # -skipTests to skip tests
@@ -54,6 +56,7 @@ alias gw="git worktree"
 alias gwa="git worktree add"
 alias gwr="git worktree remove -f"
 alias gwl="git worktree list"
+alias tk="~/code/treekanga/treekanga"
 
 # docker
 alias do="open -n ~/../../Applications/Docker.app"
@@ -77,8 +80,8 @@ alias ta="tmux attach -t"
 alias tn="tmux new -s"
 alias td="tmux detach"
 alias tls='tmux ls'
-alias tk='tmux kill-session -t'
-alias tka='tmux kill-server'
+alias tkill='tmux kill-session -t'
+alias tkilla='tmux kill-server'
 alias mux='tmuxinator'
 alias msl='mux s loc'
 alias mss='mux s sql'
