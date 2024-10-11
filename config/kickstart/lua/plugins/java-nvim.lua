@@ -1,6 +1,6 @@
 return {
   'nvim-java/nvim-java',
-  lazy = false,
+  ft = { 'java' },
   opts = {
     java_debug_adapter = {
       enabled = true,
