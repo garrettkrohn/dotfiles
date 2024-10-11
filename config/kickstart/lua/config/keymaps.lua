@@ -36,13 +36,13 @@ keymap.set('n', '<leader>xx', ':%bd|e#<CR>')
 ----------------------
 
 -- nvimtree
-keymap.set('n', '<leader>e', ':NvimTreeToggle<CR>') -- toggle file explorer
+keymap.set('n', '<leader>e', ':Oil<CR>') -- toggle file explorer
 
 -- telescope
-keymap.set('n', '<leader>ff', '<cmd>Telescope find_files<cr>') -- find files within current working directory, respects .gitignore
-keymap.set('n', '<leader>fs', '<cmd>Telescope live_grep<cr>') -- find string in current working directory as you type
+keymap.set('n', '<leader>ff', '<cmd>FzfLua files<cr>') -- find files within current working directory, respects .gitignore
+keymap.set('n', '<leader>fs', '<cmd>FzfLua live_grep<cr>') -- find string in current working directory as you type
 keymap.set('n', '<leader>fc', '<cmd>Telescope grep_string<cr>') -- find string under cursor in current working directory
-keymap.set('n', '<leader>fb', '<cmd>Telescope buffers<cr>') -- list open buffers in current neovim instance
+keymap.set('n', '<leader>fb', '<cmd>FzfLua buffers<cr>') -- list open buffers in current neovim instance
 keymap.set('n', '<leader>fh', '<cmd>Telescope help_tags<cr>') -- list available help tags
 
 -- telescope git commands (not on youtube nvim video)
@@ -72,7 +72,7 @@ keymap.set('n', '<leader>tx', ':bdelete!<CR>')
 -- lazygit keybind
 keymap.set('n', '<leader>gg', ':LazyGit<CR>')
 
--- keymap.set('n', '<leader>ca', '<cmd>Lspsaga code_action<CR>') -- see available code actions
+keymap.set('n', '<leader>ca', "<cmd>lua require('fastaction').code_action()<CR>") -- see available code actions
 -- keymap.set('n', '<leader>tt', '<cmd>Lspsaga term_toggle<CR>')
 keymap.set('n', '<leader>gf', ':Telescope lsp_references show_line=false<CR>')
 keymap.set('n', '<leader>gt', '<cmd>Lspsaga peek_type_definition<CR>')
