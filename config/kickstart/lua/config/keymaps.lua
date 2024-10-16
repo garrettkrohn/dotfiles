@@ -14,20 +14,20 @@ keymap.set('n', '<leader>nh', ':nohl<CR>')
 keymap.set('n', 'x', '"_x')
 
 -- increment/decrement numbers
-keymap.set('n', '<leader>+', '<C-a>') -- increment
-keymap.set('n', '<leader>-', '<C-x>') -- decrement
+-- keymap.set('n', '<leader>+', '<C-a>') -- increment
+-- keymap.set('n', '<leader>-', '<C-x>') -- decrement
 
 -- window management
-keymap.set('n', '<leader>sv', '<C-w>v') -- split window vertically
-keymap.set('n', '<leader>sh', '<C-w>s') -- split window horizontally
-keymap.set('n', '<leader>se', '<C-w>=') -- make split windows equal width & height
-keymap.set('n', '<leader>sx', ':close<CR>') -- close current split window
+keymap.set('n', 'sv', '<C-w>v') -- split window vertically
+keymap.set('n', 'sh', '<C-w>s') -- split window horizontally
+keymap.set('n', 'se', '<C-w>=') -- make split windows equal width & height
+keymap.set('n', 'sx', ':close<CR>') -- close current split window
 
-keymap.set('n', '<leader>to', ':tabnew<CR>') -- open new tab
-keymap.set('n', '<leader>tx', ':tabclose<CR>') -- close current tab
-keymap.set('n', '<leader>tn', ':tabn<CR>') --  go to next tab
-keymap.set('n', '<leader>tp', ':tabp<CR>') --  go to previous tab
-keymap.set('n', '<leader>sg', ':lua require("telescope.builtin").lsp_definitions()<CR>|<C-w>v')
+-- keymap.set('n', '<leader>to', ':tabnew<CR>') -- open new tab
+-- keymap.set('n', '<leader>tx', ':tabclose<CR>') -- close current tab
+-- keymap.set('n', '<leader>tn', ':tabn<CR>') --  go to next tab
+-- keymap.set('n', '<leader>tp', ':tabp<CR>') --  go to previous tab
+keymap.set('n', 'sg', ':lua require("telescope.builtin").lsp_definitions()<CR>|<C-w>v')
 
 -- bufferline clear all buffers except this one
 keymap.set('n', '<leader>xx', ':%bd|e#<CR>')
@@ -35,15 +35,18 @@ keymap.set('n', '<leader>xx', ':%bd|e#<CR>')
 -- Plugin Keybinds
 ----------------------
 
--- nvimtree
 keymap.set('n', '<leader>e', ':Oil<CR>') -- toggle file explorer
 
 -- telescope
-keymap.set('n', '<leader>ff', '<cmd>FzfLua files<cr>') -- find files within current working directory, respects .gitignore
-keymap.set('n', '<leader>fs', '<cmd>FzfLua live_grep<cr>') -- find string in current working directory as you type
-keymap.set('n', '<leader>fc', '<cmd>Telescope grep_string<cr>') -- find string under cursor in current working directory
-keymap.set('n', '<leader>fb', '<cmd>FzfLua buffers<cr>') -- list open buffers in current neovim instance
-keymap.set('n', '<leader>fh', '<cmd>Telescope help_tags<cr>') -- list available help tags
+keymap.set('n', 'ff', '<cmd>FzfLua files<cr>') -- find files within current working directory, respects .gitignore
+keymap.set('n', 'fs', '<cmd>FzfLua live_grep<cr>') -- find string in current working directory as you type
+keymap.set('n', 'fc', '<cmd>FzfLua grep_string<cr>') -- find string under cursor in current working directory
+keymap.set('n', 'fb', '<cmd>FzfLua buffers<cr>') -- list open buffers in current neovim instance
+keymap.set('n', 'fh', '<cmd>FzfLua help_tags<cr>') -- list available help tags
+keymap.set('n', 'gd', function()
+  vim.cmd 'FzfLua lsp_definitions'
+  vim.fn.feedkeys(vim.api.nvim_replace_termcodes('<CR>', true, true, true))
+end)
 
 -- telescope git commands (not on youtube nvim video)
 -- keymap.set("n", "<leader>gc", "<cmd>Telescope git_commits<cr>") -- list all git commits (use <cr> to checkout) ["gc" for git commits]
@@ -72,9 +75,9 @@ keymap.set('n', '<leader>tx', ':bdelete!<CR>')
 -- lazygit keybind
 keymap.set('n', '<leader>gg', ':LazyGit<CR>')
 
-keymap.set('n', '<leader>ca', "<cmd>lua require('fastaction').code_action()<CR>") -- see available code actions
+keymap.set('n', 'ca', "<cmd>lua require('fastaction').code_action()<CR>") -- see available code actions
 -- keymap.set('n', '<leader>tt', '<cmd>Lspsaga term_toggle<CR>')
-keymap.set('n', '<leader>gf', ':Telescope lsp_references show_line=false<CR>')
+keymap.set('n', '<leader>gf', ':FzfLua lsp_references show_line=false<CR>')
 keymap.set('n', '<leader>gt', '<cmd>Lspsaga peek_type_definition<CR>')
 
 -- keymap.set('n', '<leader>po', "<cmd>lua require('rest-nvim').run()<CR>") -- see available code actions
