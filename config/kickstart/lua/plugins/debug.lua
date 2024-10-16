@@ -1,6 +1,6 @@
 return {
-  lazy = false,
   'mfussenegger/nvim-dap',
+  ft = { 'java' },
   dependencies = {
     -- Creates a beautiful debugger UI
     'rcarriga/nvim-dap-ui',

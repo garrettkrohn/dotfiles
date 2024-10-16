@@ -1,5 +1,5 @@
 return {
-  lazy = false,
+  ft = { 'java' },
   'nvim-neotest/neotest',
   dependencies = {
     'marilari88/neotest-vitest',
