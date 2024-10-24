@@ -25,6 +25,7 @@ alias s="sesh connect Dotfiles"
 alias kick="nvim"
 alias kf="nvim -c ':FzfLua files formatter=path.filename_first'" #TODO: change this to fzf
 alias ks="nvim -c ':FzfLua live_grep'"
+alias kc="nvim -c ':CopilotChat'"
 alias k="nvim -c ':Oil'"
 
 # local 
