@@ -1,19 +1,39 @@
 [[session]]
-name = "Dotfiles"
+name = "dotfiles"
 path = "~/dotfiles"
 startup_command = "kick"
 
-[[session]]
-name = "MLB"
-path = "~/side/MLB-StatsAPI/"
-startup_command = "python hr-k-draft.py"
+# [[session]]
+# name = "MLB"
+# path = "~/side/MLB-StatsAPI/"
+# startup_command = "python hr-k-draft.py"
 
 [[session]]
-name = "Local"
+name = "local"
 path = "~/code/platform_work"
 startup_command = ""
 
 [[session]]
-name = "Rest"
+name = "rest"
 path = "~/code/rest"
 startup_command = "kick"
+
+[[session]]
+name = "wezterm"
+path = "~/dotfiles/config/wezterm"
+startup_command = "kick wezterm.lua"
+
+[[session]]
+name = "aerospace"
+path = "~/dotfiles/config"
+startup_command = "kick aerospace.toml"
+
+[[session]]
+name = "lazy"
+path = "~/.local/share/nvim/lazy"
+startup_command = "kf"
+
+[[session]]
+name = "zshrc"
+path = "~/dotfiles/config/"
+startup_command = "k zshrc"
