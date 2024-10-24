@@ -23,9 +23,9 @@ alias s="sesh connect Dotfiles"
 
 # opening neovim
 alias kick="nvim"
-alias kf="nvim -c ':FzfLua files'" #TODO: change this to fzf
+alias kf="nvim -c ':FzfLua files formatter=path.filename_first'" #TODO: change this to fzf
 alias ks="nvim -c ':FzfLua live_grep'"
-alias k="nvim -c ':NvimTreeToggle'"
+alias k="nvim -c ':Oil'"
 
 # local 
 #
