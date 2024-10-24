@@ -36,4 +36,4 @@ startup_command = "kf"
 [[session]]
 name = "zshrc"
 path = "~/dotfiles/config/"
-startup_command = "k zshrc"
+startup_command = "kick .zshrc"
