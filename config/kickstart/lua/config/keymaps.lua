@@ -38,15 +38,16 @@ keymap.set('n', '<leader>xx', ':%bd|e#<CR>')
 keymap.set('n', '<leader>e', ':Oil<CR>') -- toggle file explorer
 
 -- telescope
-keymap.set('n', 'ff', '<cmd>FzfLua files<cr>') -- find files within current working directory, respects .gitignore
+keymap.set('n', 'ff', '<cmd>FzfLua files formatter=path.filename_first<cr>') -- find files within current working directory, respects .gitignore
 keymap.set('n', 'fs', '<cmd>FzfLua live_grep<cr>') -- find string in current working directory as you type
 keymap.set('n', 'fc', '<cmd>FzfLua grep_string<cr>') -- find string under cursor in current working directory
 keymap.set('n', 'fb', '<cmd>FzfLua buffers<cr>') -- list open buffers in current neovim instance
 keymap.set('n', 'fh', '<cmd>FzfLua help_tags<cr>') -- list available help tags
-keymap.set('n', 'gd', function()
-  vim.cmd 'FzfLua lsp_definitions'
-  vim.fn.feedkeys(vim.api.nvim_replace_termcodes('<CR>', true, true, true))
-end)
+keymap.set('n', 'gd', '<cmd>FzfLua lsp_definitions<cr>') -- list available help tags
+-- keymap.set('n', 'gd', function()
+--   vim.cmd 'FzfLua lsp_definitions'
+--   vim.fn.feedkeys(vim.api.nvim_replace_termcodes('<CR>', true, true, true))
+-- end)
 
 -- telescope git commands (not on youtube nvim video)
 -- keymap.set("n", "<leader>gc", "<cmd>Telescope git_commits<cr>") -- list all git commits (use <cr> to checkout) ["gc" for git commits]
