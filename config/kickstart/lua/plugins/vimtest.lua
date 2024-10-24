@@ -1,1 +1,1 @@
-return { 'vim-test/vim-test', lazy = false }
+return { 'vim-test/vim-test', lazy = true }
