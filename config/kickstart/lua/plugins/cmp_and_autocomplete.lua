@@ -14,12 +14,15 @@ return {
       'onsails/lspkind.nvim',
       'windwp/nvim-ts-autotag',
       'windwp/nvim-autopairs',
+      'zbirenbaum/copilot-cmp',
     },
     config = function()
       local cmp_autopairs = require 'nvim-autopairs.completion.cmp'
       local cmp = require 'cmp'
       local luasnip = require 'luasnip'
       local lspkind = require 'lspkind'
+      local copilotCmp = require 'copilot_cmp'
+      copilotCmp.setup {}
 
       require('nvim-autopairs').setup()
 
@@ -68,11 +71,12 @@ return {
         },
         -- sources for autocompletion
         sources = cmp.config.sources {
+          { name = 'copilot', max_item_count = 2 },
           { name = 'vim-dadbod-completion' },
           { name = 'nvim_lsp' }, -- lsp
           { name = 'buffer', max_item_count = 5 }, -- text within current buffer
           { name = 'path', max_item_count = 3 }, -- file system paths
-          { name = 'luasnip', max_item_count = 3 }, -- snippets
+          -- { name = 'luasnip', max_item_count = 3 }, -- snippets
         },
         -- Enable pictogram icons for lsp/autocompletion
         formatting = {
