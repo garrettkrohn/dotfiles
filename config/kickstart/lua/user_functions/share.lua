@@ -17,6 +17,6 @@ function M.toggleShare()
   end
 end
 
-vim.cmd 'command! Share lua require("user_functions.share").toggleShare()'
+vim.cmd 'command! Krchmode lua require("user_functions.share").toggleShare()'
 
 return M
