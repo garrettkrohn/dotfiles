@@ -103,43 +103,66 @@ function y() {
 	rm -f -- "$tmp"
 }
 
+add_to_path() {
+    for dir in "$@"; do
+        if [[ -d "$dir" && ":$PATH:" != *":$dir:"* ]]; then
+            export PATH="$dir:$PATH"
+        fi
+    done
+}
+
 # Node.js paths
-export PATH="$HOME/.npm-global/bin:$PATH"
-export PATH="$HOME/.nvm/versions/node/v16.0.0/bin:$PATH"
+node_paths=(
+  "$HOME/.npm-global/bin"
+  "$HOME/.nvm/versions/node/v16.0.0/bin"
+)
 
 # Python paths
-export PATH="$HOME/.local/bin:$PATH"
-export PATH="/usr/local/opt/python/libexec/bin:$PATH"
+python_paths=(
+  "$HOME/.local/bin"
+  "/usr/local/opt/python/libexec/bin"
+)
 
 # Go paths
-export PATH="$HOME/go/bin:$PATH"
+go_paths=(
+  "$HOME/go/bin"
+)
 
 # Custom application paths
-export PATH="/usr/local/bin:$PATH"
-export PATH="/usr/local/sbin:$PATH"
-export PATH="$HOME/bin:$PATH"
-export PATH="/Users/gkrohn/.pyenv/bin:$PATH"
-export PATH="/opt/homebrew/bin:$PATH"
-export PATH="/Users/gkrohn/.pyenv/shims:$PATH"
-export PATH="/Users/gkrohn/Library/Caches/fnm_multishells/4356_1726235403350/bin:$PATH"
-export PATH="$HOME/dotfiles/config/scripts:$PATH"
-export PATH="/sbin:$PATH"
-export PATH="/usr/local/bin:$PATH"
-export PATH="/Users/gkrohn/Library/Caches/fnm_multishells/5556_1726235576088/bin:$PATH"
-export PATH="/Users/gkrohn/.tmux/plugins/t-smart-tmux-session-manager/bin:$PATH"
-export PATH="/opt/homebrew/sbin:$PATH"
-export PATH="/System/Cryptexes/App/usr/bin:$PATH"
-export PATH="/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin:$PATH"
-export PATH="/Users/gkrohn/Library/Caches/fnm_multishells/66978_1726581958252/bin:$PATH"
-export PATH="/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin:$PATH"
-export PATH="/usr/local/opt/python/libexec/bin:$PATH"
-export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
-export PATH="/Users/gkrohn/.local/bin:$PATH"
-export PATH="/opt/homebrew/opt/postgresql@15/bin:$PATH"
-export PATH="/Users/gkrohn/Library/Caches/fnm_multishells/4707_1726502124921/bin:$PATH"
-export PATH="/Users/gkrohn/.fnm:$PATH"
-export PATH="/usr/bin:$PATH"
-export PATH="/usr/sbin:$PATH"
-export PATH="/Users/gkrohn/go/bin:$PATH"
-export PATH="/Users/gkrohn/Library/Caches/fnm_multishells/4903_1726502128152/bin:$PATH"
-export PATH="/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin:$PATH"
+custom_paths=(
+  "/usr/local/bin"
+  "/usr/local/sbin"
+  "$HOME/bin"
+  "/Users/gkrohn/.pyenv/bin"
+  "/opt/homebrew/bin"
+  "/Users/gkrohn/.pyenv/shims"
+  "/Users/gkrohn/Library/Caches/fnm_multishells/4356_1726235403350/bin"
+  "$HOME/dotfiles/config/scripts"
+  "/sbin"
+  "/usr/local/bin"
+  "/Users/gkrohn/Library/Caches/fnm_multishells/5556_1726235576088/bin"
+  "/Users/gkrohn/.tmux/plugins/t-smart-tmux-session-manager/bin"
+  "/opt/homebrew/sbin"
+  "/System/Cryptexes/App/usr/bin"
+  "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin"
+  "/Users/gkrohn/Library/Caches/fnm_multishells/66978_1726581958252/bin"
+  "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin"
+  "/usr/local/opt/python/libexec/bin"
+  "/opt/homebrew/opt/openjdk/bin"
+  "/Users/gkrohn/.local/bin"
+  "/opt/homebrew/opt/postgresql@15/bin"
+  "/Users/gkrohn/Library/Caches/fnm_multishells/4707_1726502124921/bin"
+  "/Users/gkrohn/.fnm"
+  "/usr/bin"
+  "/usr/sbin"
+  "/Users/gkrohn/go/bin"
+  "/Users/gkrohn/Library/Caches/fnm_multishells/4903_1726502128152/bin"
+  "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin"
+)
+
+# Add all the paths
+add_to_path "${node_paths[@]}"
+add_to_path "${python_paths[@]}"
+add_to_path "${go_paths[@]}"
+add_to_path "${custom_paths[@]}"
+
