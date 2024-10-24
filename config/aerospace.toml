@@ -256,7 +256,7 @@ run = "move-node-to-workspace Z"
 
 # built-in for the laptop, LG for the wide screen, Dell for the secondary
 [workspace-to-monitor-force-assignment]
-B = 'DELL'
+B = ['DELL', '2']
 T = 'LG'
 M = 'LG'
 S = 'LG'
