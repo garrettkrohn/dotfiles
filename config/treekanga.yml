@@ -1,0 +1,12 @@
+repos:
+  offensive-security-platform:
+    defaultBranch: development
+    zoxideFolders:
+      - ui
+      - parent
+      - parent/application/src/main/resources/db/migration
+  treekanga:
+    defaultBranch: main
+    zoxideFolders:
+      - cmd
+      - git

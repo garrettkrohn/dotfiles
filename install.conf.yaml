@@ -40,6 +40,8 @@
       path: ./config/yazi/yazi.toml
     ~/.config/wezterm:
       path: ./config/wezterm/
+    ~/.config/treekanga/treekanga.yml:
+      path: ./config/treekanga.yml
 
 
 - shell:

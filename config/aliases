@@ -57,7 +57,8 @@ alias gw="git worktree"
 alias gwa="git worktree add"
 alias gwr="git worktree remove -f"
 alias gwl="git worktree list"
-alias tk="~/code/treekanga/treekanga"
+alias tkd="~/code/treekanga/treekanga"
+alias tk="treekanga"
 
 # docker
 alias do="open -n ~/../../Applications/Docker.app"
