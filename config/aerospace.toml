@@ -261,6 +261,7 @@ T = 'LG'
 M = 'LG'
 S = 'LG'
 D = 'LG'
+G = 'LG'
 Z = 'built-in'
 
 # borders bootstrap
