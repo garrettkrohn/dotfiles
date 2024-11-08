@@ -37,3 +37,8 @@ startup_command = "kf"
 name = "zshrc"
 path = "~/dotfiles/config/"
 startup_command = "kick .zshrc"
+
+[[session]]
+name = "root"
+path = "~/"
+startup_command = ""
