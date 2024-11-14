@@ -42,3 +42,8 @@ startup_command = "kick .zshrc"
 name = "root"
 path = "~/"
 startup_command = ""
+
+[[session]]
+name = "tmux"
+path = "~/dotfiles/config/tmux/"
+startup_command = "kick tmux.conf"
