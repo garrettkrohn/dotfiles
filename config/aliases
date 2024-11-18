@@ -19,12 +19,18 @@ alias ghd="gh dash"
 alias auth="~/code/rest/auth.sh"
 alias dap="nvim application/src/main/java/com/netspi/platform/Application.java"
 alias rg="mvn clean install && java -jar -Dspring.profiles.active=local ./target/global-service-0.0.1-SNAPSHOT.jar"
-alias s="sesh connect Dotfiles"
+alias s="sesh connect dotfiles"
+alias sd="~/code/sesh/sesh"
 
 # opening neovim
 alias kick="nvim"
-alias kf="nvim -c ':FzfLua files formatter=path.filename_first'" #TODO: change this to fzf
-alias ks="nvim -c ':FzfLua live_grep'"
+kf() {
+  nvim -c ":FzfLua files formatter=path.filename_first query=$1"
+}
+
+ks() {
+  nvim -c ":FzfLua live_grep query=$1"
+}
 alias kc="nvim -c ':CopilotChat'"
 alias k="nvim -c ':Oil'"
 
