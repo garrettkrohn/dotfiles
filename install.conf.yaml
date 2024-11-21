@@ -16,16 +16,16 @@
       path: ./config/tmux/tmux.conf
     ~/.config/tmux/tmux-nerd-font-window-name.yml:
       path: ./config/tmux/tmux-nerd-font-window-name.yml
-    ~/.config/yabai/yabairc:
-      path: ./config/yabai
-    ~/.config/skhd/skhdrc:
-      path: ./config/skhd
+    # ~/.config/yabai/yabairc:
+    #   path: ./config/yabai
+    # ~/.config/skhd/skhdrc:
+    #   path: ./config/skhd
     # ~/.config/nvim:
     #   path: ./config/nvim
     ~/.config/starship.toml:
       path: ./config/starship.toml
-    ~/.config/alacritty/alacritty.toml:
-      path: ./config/alacritty.toml
+    # ~/.config/alacritty/alacritty.toml:
+    #   path: ./config/alacritty.toml
     ~/.config/nvim:
       path: ./config/kickstart
     ~/.config/sesh/sesh.toml:
