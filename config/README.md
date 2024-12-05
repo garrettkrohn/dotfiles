@@ -12,3 +12,13 @@ dot files for Garrett Krohn
 ## changes I want to make 
 - different look for breakpoints on debugging
 - Figure out database connection either with dbee or dadbod
+
+## changes to install scripts:
+- Need to add commands to add the necessary folders to the ./install command
+mkdir tmux
+mkdir sesh
+mkdir gh-dash
+mkdir aerospace
+mkdir borders
+mkdir yazi
+mkdir treekanga
