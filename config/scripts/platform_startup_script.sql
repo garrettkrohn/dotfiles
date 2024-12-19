@@ -223,3 +223,13 @@ INSERT INTO public.asn_company (id, start_ip, end_ip, join_key, name, domain, ty
 INSERT INTO public.asn_company (id, start_ip, end_ip, join_key, name, domain, type, asn, as_name) VALUES (143, '1.179.128.152', '1.179.128.159', '1.179.0.0', 'Static IP addresses for Leased Internet service', 'totbb.net', 'isp', 'AS131293', 'TOT Public Company Limited');
 INSERT INTO public.asn_company (id, start_ip, end_ip, join_key, name, domain, type, asn, as_name) VALUES (144, '1.179.128.160', '1.179.128.167', '1.179.0.0', 'nikon,Lop Buri Province', 'nikon.com', 'business', 'AS131293', 'TOT Public Company Limited');
 INSERT INTO public.asn_company (id, start_ip, end_ip, join_key, name, domain, type, asn, as_name) VALUES (145, '1.179.128.168', '1.179.128.199', '1.179.0.0', 'Static IP addresses for Leased Internet service', 'totbb.net', 'isp', 'AS131293', 'TOT Public Company Limited');
+
+
+-- add netspi operations roles
+insert into user_role_authorization_scope (authorization_scope_id, user_id, role_id, client_id, project_id)
+select 5, 1, role.id, null, null
+from role
+where role.name like 'Netspi Operations%';
+
+
+
