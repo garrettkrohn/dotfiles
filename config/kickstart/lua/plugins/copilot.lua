@@ -29,7 +29,8 @@ return {
         question_header = '  ' .. user .. ' ',
         answer_header = '  Copilot ',
         window = {
-          width = 0.4,
+          open = 'vsplit',
+          --   width = 0.4,
         },
         selection = function(source)
           local select = require 'CopilotChat.select'
