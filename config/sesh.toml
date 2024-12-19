@@ -47,3 +47,18 @@ startup_command = ""
 name = "tmux"
 path = "~/dotfiles/config/tmux/"
 startup_command = "kick tmux.conf"
+
+[[session]]
+name = "ghd"
+path = "~/"
+startup_command = "ghd"
+
+[[session]]
+name = "journal"
+path = "~/notes/journal"
+startup_command = "kf"
+
+[[session]]
+name = "notes"
+path = "~/notes"
+startup_command = "kf"
