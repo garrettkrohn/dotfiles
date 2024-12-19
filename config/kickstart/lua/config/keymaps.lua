@@ -41,9 +41,9 @@ keymap.set('n', '<leader>e', ':Oil<CR>') -- toggle file explorer
 keymap.set('n', 'ff', '<cmd>FzfLua files formatter=path.filename_first<cr>') -- find files within current working directory, respects .gitignore
 keymap.set('n', 'fs', '<cmd>FzfLua live_grep<cr>') -- find string in current working directory as you type
 keymap.set('n', 'fc', '<cmd>FzfLua grep_string<cr>') -- find string under cursor in current working directory
-keymap.set('n', 'fb', '<cmd>FzfLua buffers<cr>') -- list open buffers in current neovim instance
+keymap.set('n', 'fb', '<cmd>FzfLua buffers formatter=path.filename_first<cr>') -- list open buffers in current neovim instance
 keymap.set('n', 'fh', '<cmd>FzfLua help_tags<cr>') -- list available help tags
-keymap.set('n', 'gd', '<cmd>FzfLua lsp_definitions<cr>') -- list available help tags
+keymap.set('n', 'gd', ':lua vim.lsp.buf.definition()<cr>') -- list available help tags
 -- keymap.set('n', 'gd', function()
 --   vim.cmd 'FzfLua lsp_definitions'
 --   vim.fn.feedkeys(vim.api.nvim_replace_termcodes('<CR>', true, true, true))
@@ -141,9 +141,9 @@ keymap.set('n', '<leader>id', ":pu=strftime('%m/%d/%y')<CR>")
 
 -- testing
 
-keymap.set('n', '<leader>tf', ':lua require(\'neotest\').run.run(vim.fn.expand("%"))<CR>') -- run tests for file
-keymap.set('n', '<leader>tt', ":lua require('neotest').run.run()<CR>") -- run tests for file
-keymap.set('n', '<leader>tr', ":lua require('neotest').output_panel.open()<CR>") -- run tests for file
+-- keymap.set('n', '<leader>tf', ':lua require(\'neotest\').run.run(vim.fn.expand("%"))<CR>') -- run tests for file
+-- keymap.set('n', '<leader>tt', ":lua require('neotest').run.run()<CR>") -- run tests for file
+-- keymap.set('n', '<leader>tr', ":lua require('neotest').output_panel.open()<CR>") -- run tests for file
 
 -- Type peaking
 keymap.set('n', '<leader>ty', ':lua vim.lsp.buf.hover()<CR>') -- peak at type
@@ -157,3 +157,13 @@ keymap.set('n', '<leader>p', ':lua print(vim.api.nvim_buf_get_name(0))<CR>')
 
 -- auth
 keymap.set('n', '<leader>au', ':terminal ~/code/rest/auth.sh<CR>')
+
+-- diagnostics
+keymap.set('n', '<leader>tc', ':lua vim.diagnostic.hide()<CR>')
+keymap.set('n', '<leader>to', ':lua vim.diagnostic.show()<CR>')
+-- suppress all vim diagnostics besides ERROR
+keymap.set(
+  'n',
+  '<leader>ts',
+  ':lua vim.diagnostic.config({ virtual_text = { severity = { min = vim.diagnostic.severity.ERROR } }, signs = { severity = { min = vim.diagnostic.severity.ERROR } }, underline = { severity = { min = vim.diagnostic.severity.ERROR } }, update_in_insert = false })<CR>'
+)
