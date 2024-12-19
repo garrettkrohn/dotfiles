@@ -1,5 +1,8 @@
+#!/bin/bash
+
 rebuild=false
 start_up_script=true
+exit_script=false
 
 print_help() {
     echo -e "\nScript to bootstrap db with user info and possibly start up script\n"
@@ -7,13 +10,15 @@ print_help() {
     echo "  -rebuild    -- rebuilds the bootstrap container"
     echo "  -clean      -- bootstraps without seed data"
     exit 0
-    
 }
 
 print_pink() {
     local text="$1"
     echo -e "\033[1;35m\n$text\n\033[0m"
 }
+
+# Trap SIGINT (Ctrl-C) and set exit_script flag
+trap 'exit_script=true' SIGINT
 
 ## Parse the arguments
 for arg in "$@"
@@ -32,18 +37,20 @@ do
 done
 
 if $rebuild; then
-
     print_pink "destroying bootstrap container"
     docker ps -a --filter "name=bootstrap" --format "{{.ID}}" | xargs docker stop 
     docker ps -a --filter "name=bootstrap" --format "{{.ID}}" | xargs docker rmi --force
-
     docker images --format '{{.Repository}}:{{.Tag}} {{.ID}}' | grep "bootstrap" | awk '{print$2}' | xargs docker rmi --force
-
     docker rm $(docker ps -a --filter "name=^/bootstrap$" --format "{{.ID}}")
-
     docker-compose up bootstrap -d --build
 else
     docker-compose up bootstrap -d 
+fi
+
+# Check if the script was interrupted
+if $exit_script; then
+    echo "Script interrupted. Exiting."
+    exit 1
 fi
 
 if $start_up_script; then
