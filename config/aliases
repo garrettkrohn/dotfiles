@@ -21,6 +21,7 @@ alias dap="nvim application/src/main/java/com/netspi/platform/Application.java"
 alias rg="mvn clean install && java -jar -Dspring.profiles.active=local ./target/global-service-0.0.1-SNAPSHOT.jar"
 alias s="sesh connect dotfiles"
 alias sd="~/code/sesh/sesh"
+alias sn="eval '$(fnm env)' && fnm use v18.16.0"
 
 # opening neovim
 alias kick="nvim"
@@ -64,7 +65,7 @@ alias gwa="git worktree add"
 alias gwr="git worktree remove -f"
 alias gwl="git worktree list"
 alias tkd="~/code/treekanga/treekanga"
-alias tk="treekanga"
+alias tk="/opt/homebrew/bin/treekanga"
 
 # docker
 alias do="open -n ~/../../Applications/Docker.app"
