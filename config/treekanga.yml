@@ -5,6 +5,7 @@ repos:
       - ui
       - parent
       - parent/application/src/main/resources/db/migration
+      - .github/workflows
   treekanga:
     defaultBranch: main
     zoxideFolders:
