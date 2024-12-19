@@ -143,3 +143,11 @@ export PATH="/Users/gkrohn/go/bin:$PATH"
 export PATH="/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin:$PATH"
 
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+if [[ $- == *i* ]]; then
+  eval "$(starship init zsh)"
+  eval "$(zoxide init zsh)"
+  eval "$(pyenv init -)"
+  eval "$(pyenv virtualenv-init -)"
+  eval "$(fnm env --use-on-cd --shell zsh)"
+fi
