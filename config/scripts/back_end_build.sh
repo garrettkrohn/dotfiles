@@ -8,10 +8,10 @@ debug=false
 print_help() {
     echo -e "\nScript for running Platform's backend\n"
     echo "Flags:"
-    echo "  -db         -- will destroy the database and authenticator"
-    echo "  -skipTests  -- will skip the tests in the maven build process"
-    echo "  -clean      -- perform mvn clean install"
-    echo "  -debug      -- enable debug level trace"
+    echo "  -db or -d         -- will destroy the database and authenticator"
+    echo "  -skipTests or -s  -- will skip the tests in the maven build process"
+    echo "  -clean or -c      -- perform mvn clean install"
+    echo "  -debug            -- enable debug level trace"
     exit 0
 }
 
@@ -61,7 +61,6 @@ destroy_db_and_auth() {
     docker images --format '{{.Repository}}:{{.Tag}} {{.ID}}' | grep "authenticator" | awk '{print$2}' | xargs docker rmi --force
 
     docker rm $(docker ps -a --filter "name=^/authenticator$" --format "{{.ID}}")
-
 
     docker-compose up db authenticator -d --build
 }
