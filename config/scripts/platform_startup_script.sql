@@ -226,10 +226,10 @@ INSERT INTO public.asn_company (id, start_ip, end_ip, join_key, name, domain, ty
 
 
 -- add netspi operations roles
-insert into user_role_authorization_scope (authorization_scope_id, user_id, role_id, client_id, project_id)
-select 5, 1, role.id, null, null
-from role
-where role.name like 'Netspi Operations%';
+-- insert into user_role_authorization_scope (authorization_scope_id, user_id, role_id, client_id, project_id)
+-- select 5, 1, role.id, null, null
+-- from role
+-- where role.name like 'Netspi Operations%';
 
 
 
