@@ -57,7 +57,7 @@ alias bare="cd ~/code/platform_work/platform_bare"
 
 alias mci="mvn clean install"
 alias mt="mvn test"
-alias ys="fnm use 18.16.0 && yarn startAt4444 --no-open"
+alias ys="fnm use 18.16.0 && yarn start-4444 --no-open"
 
 # git worktree
 alias gw="git worktree"
