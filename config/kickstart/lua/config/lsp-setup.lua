@@ -58,7 +58,7 @@ require('mason-lspconfig').setup()
 local servers = {
   -- pyright = {},
   basedpyright = {},
-  tsserver = {},
+  ts_ls = {},
   html = { filetypes = { 'html', 'twig', 'hbs' } },
 
   lua_ls = {
