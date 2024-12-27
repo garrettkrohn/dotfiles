@@ -62,3 +62,9 @@ startup_command = "kf"
 name = "notes"
 path = "~/notes"
 startup_command = "kf"
+
+[[session]]
+name = "plugins"
+path = "~/.local/share/nvim/lazy"
+startup_command = "kf"
+
