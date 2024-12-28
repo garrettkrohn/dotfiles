@@ -17,15 +17,14 @@ end
 return {
   {
     'CopilotC-Nvim/CopilotChat.nvim',
-    branch = 'canary',
     cmd = 'CopilotChat',
     opts = function()
       local user = vim.env.USER or 'User'
       user = user:sub(1, 1):upper() .. user:sub(2)
       return {
-        model = 'gpt-4',
+        model = 'gpt-4o',
         auto_insert_mode = true,
-        show_help = false,
+        show_help = true,
         question_header = '  ' .. user .. ' ',
         answer_header = '  Copilot ',
         window = {
