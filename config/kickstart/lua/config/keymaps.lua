@@ -151,7 +151,7 @@ keymap.set('n', '<leader>id', ":pu=strftime('%m/%d/%y')<CR>")
 -- keymap.set("n", "<leader>lr", ":LspRestart<CR>") -- show  diagnostics for line
 
 -- testing
-
+keymap.set('n', '<leader>tw', "<cmd>lua require('neotest').run.run({ jestCommand = 'yarn test-watch' })<cr>")
 -- keymap.set('n', '<leader>tf', ':lua require(\'neotest\').run.run(vim.fn.expand("%"))<CR>') -- run tests for file
 -- keymap.set('n', '<leader>tt', ":lua require('neotest').run.run()<CR>") -- run tests for file
 -- keymap.set('n', '<leader>tr', ":lua require('neotest').output_panel.open()<CR>") -- run tests for file
