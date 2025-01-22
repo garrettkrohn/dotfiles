@@ -60,7 +60,7 @@ local servers = {
   basedpyright = {},
   ts_ls = {},
   html = { filetypes = { 'html', 'twig', 'hbs' } },
-
+  jdtls = {},
   lua_ls = {
     Lua = {
       workspace = { checkThirdParty = false },
