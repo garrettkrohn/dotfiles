@@ -42,7 +42,7 @@ if $rebuild; then
     docker ps -a --filter "name=bootstrap" --format "{{.ID}}" | xargs docker rmi --force
     docker images --format '{{.Repository}}:{{.Tag}} {{.ID}}' | grep "bootstrap" | awk '{print$2}' | xargs docker rmi --force
     docker rm $(docker ps -a --filter "name=^/bootstrap$" --format "{{.ID}}")
-    docker-compose up bootstrap -d --build
+    docker-compose up bootstrap -d --build --no-deps
 else
     docker-compose up bootstrap -d 
 fi

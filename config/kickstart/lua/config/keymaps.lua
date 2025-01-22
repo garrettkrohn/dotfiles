@@ -10,6 +10,9 @@ local keymap = vim.keymap -- for conciseness
 -- clear search highlights
 keymap.set('n', '<leader>nh', ':nohl<CR>')
 
+-- source current file
+keymap.set('n', '<leader>x', ':source %<cr>')
+
 -- delete single character without copying into register
 keymap.set('n', 'x', '"_x')
 
@@ -38,12 +41,20 @@ keymap.set('n', '<leader>xx', ':%bd|e#<CR>')
 keymap.set('n', '<leader>e', ':Oil<CR>') -- toggle file explorer
 
 -- telescope
-keymap.set('n', 'ff', '<cmd>FzfLua files formatter=path.filename_first<cr>') -- find files within current working directory, respects .gitignore
-keymap.set('n', 'fs', '<cmd>FzfLua live_grep<cr>') -- find string in current working directory as you type
-keymap.set('n', 'fc', '<cmd>FzfLua grep_string<cr>') -- find string under cursor in current working directory
-keymap.set('n', 'fb', '<cmd>FzfLua buffers formatter=path.filename_first<cr>') -- list open buffers in current neovim instance
-keymap.set('n', 'fh', '<cmd>FzfLua help_tags<cr>') -- list available help tags
+-- keymap.set('n', 'ff', '<cmd>Telescope frecency workspace=CWD path_display={"shorten"}<cr>') -- find files within current working directory, respects .gitignore
+-- keymap.set('n', 'fs', '<cmd>Telescope live_grep<cr>') -- find string in current working directory as you type
+-- keymap.set('n', 'fc', '<cmd>Telescope grep_string<cr>') -- find string under cursor in current working directory
+-- keymap.set('n', 'fb', '<cmd>Telescope buffers formatter=path.filename_first<cr>') -- list open buffers in current neovim instance
+-- keymap.set('n', 'fh', '<cmd>Telescope help_tags<cr>') -- list available help tags
 keymap.set('n', 'gd', ':lua vim.lsp.buf.definition()<cr>') -- list available help tags
+
+-- fzf commands
+-- keymap.set('n', 'ff', '<cmd>FzfLua files formatter=path.filename_first<cr>') -- find files within current working directory, respects .gitignore
+-- keymap.set('n', 'fs', '<cmd>FzfLua live_grep<cr>') -- find string in current working directory as you type
+-- keymap.set('n', 'fc', '<cmd>FzfLua grep_string<cr>') -- find string under cursor in current working directory
+-- keymap.set('n', 'fb', '<cmd>FzfLua buffers formatter=path.filename_first<cr>') -- list open buffers in current neovim instance
+-- keymap.set('n', 'fh', '<cmd>FzfLua help_tags<cr>') -- list available help tags
+-- keymap.set('n', 'gd', ':lua vim.lsp.buf.definition()<cr>') -- list available help tags
 -- keymap.set('n', 'gd', function()
 --   vim.cmd 'FzfLua lsp_definitions'
 --   vim.fn.feedkeys(vim.api.nvim_replace_termcodes('<CR>', true, true, true))
@@ -74,7 +85,7 @@ vim.api.nvim_set_keymap('n', 'm', 'q', { noremap = true })
 keymap.set('n', '<leader>tx', ':bdelete!<CR>')
 
 -- lazygit keybind
-keymap.set('n', '<leader>gg', ':LazyGit<CR>')
+-- keymap.set('n', '<leader>gg', ':LazyGit<CR>')
 
 keymap.set('n', 'ca', "<cmd>lua require('fastaction').code_action()<CR>") -- see available code actions
 -- keymap.set('n', '<leader>tt', '<cmd>Lspsaga term_toggle<CR>')
@@ -140,10 +151,10 @@ keymap.set('n', '<leader>id', ":pu=strftime('%m/%d/%y')<CR>")
 -- keymap.set("n", "<leader>lr", ":LspRestart<CR>") -- show  diagnostics for line
 
 -- testing
-
--- keymap.set('n', '<leader>tf', ':lua require(\'neotest\').run.run(vim.fn.expand("%"))<CR>') -- run tests for file
--- keymap.set('n', '<leader>tt', ":lua require('neotest').run.run()<CR>") -- run tests for file
--- keymap.set('n', '<leader>tr', ":lua require('neotest').output_panel.open()<CR>") -- run tests for file
+keymap.set('n', '<leader>tw', "<cmd>lua require('neotest').run.run({ jestCommand = 'yarn test-watch' })<cr>")
+keymap.set('n', '<leader>tf', ":lua require('neotest').run.run(vim.fn.expand('%'))<CR>") -- run tests for file
+keymap.set('n', '<leader>tt', ":lua require('neotest').run.run()<CR>") -- run tests for file
+keymap.set('n', '<leader>ts', ":lua require('neotest').summary.toggle()<CR>") -- run tests for file
 
 -- Type peaking
 keymap.set('n', '<leader>ty', ':lua vim.lsp.buf.hover()<CR>') -- peak at type
@@ -164,6 +175,9 @@ keymap.set('n', '<leader>to', ':lua vim.diagnostic.show()<CR>')
 -- suppress all vim diagnostics besides ERROR
 keymap.set(
   'n',
-  '<leader>ts',
+  '<leader>v',
   ':lua vim.diagnostic.config({ virtual_text = { severity = { min = vim.diagnostic.severity.ERROR } }, signs = { severity = { min = vim.diagnostic.severity.ERROR } }, underline = { severity = { min = vim.diagnostic.severity.ERROR } }, update_in_insert = false })<CR>'
 )
+
+-- pyrun
+keymap.set('n', '<leader>pr', ':Pyrun<cr>')

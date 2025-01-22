@@ -25,6 +25,9 @@ alias sn="eval '$(fnm env)' && fnm use v18.16.0"
 
 # opening neovim
 alias kick="nvim"
+f() {
+    nvim $(fzf --filter="$1" | head -n 1)
+}
 kf() {
   nvim -c ":FzfLua files formatter=path.filename_first query=$1"
 }
@@ -128,3 +131,7 @@ alias bordersr="brew services restart borders"
 
 # Astro
 alias nrd="npm run dev"
+
+# python
+alias pyt='pytest -v -m "not integration"'
+alias activate='source .venv/bin/activate'

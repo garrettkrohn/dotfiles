@@ -3,7 +3,7 @@ local M = {}
 
 local function saveFile()
   local filetype = vim.bo.filetype
-  if filetype == 'java' then
+  if filetype == 'java' or filetype == 'markdown' then
     vim.cmd ':noa w'
   else
     vim.cmd ':w'
@@ -14,7 +14,7 @@ vim.keymap.set('n', '<leader>ss', saveFile)
 
 local function saveAll()
   local filetype = vim.bo.filetype
-  if filetype == 'java' then
+  if filetype == 'java' or filetype == 'markdown' then
     vim.cmd ':noa wa'
   else
     vim.cmd ':wa'

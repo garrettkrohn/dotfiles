@@ -8,7 +8,7 @@
 -- A GPU-accelerated cross-platform terminal emulator
 -- https://wezfurlong.org/wezterm/
 
-local dark_opacity = 0.70
+local dark_opacity = 0.95
 local light_opacity = 0.9
 
 local wallpapers_glob = os.getenv 'HOME' .. '/wallpapers/**'
@@ -24,6 +24,7 @@ local wezterm = require 'wezterm'
 local act = wezterm.action
 
 ---@type Config
+---@diagnostic disable: missing-fields
 local config = {
   background = {
     w.get_wallpaper(wallpapers_glob),
@@ -48,7 +49,7 @@ local config = {
   color_scheme = cs.get_color_scheme(),
 
   window_padding = {
-    left = 8,
+    left = 0,
     right = 8,
     top = 8,
     bottom = 0,
@@ -67,6 +68,9 @@ local config = {
   native_macos_fullscreen_mode = false,
   window_close_confirmation = 'NeverPrompt',
   window_decorations = 'RESIZE',
+  front_end = 'WebGpu',
+  max_fps = 120,
+  webgpu_power_preference = 'HighPerformance',
 
   -- keys
   keys = {

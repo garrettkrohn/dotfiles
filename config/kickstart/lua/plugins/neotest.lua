@@ -1,50 +1,48 @@
 return {
-  ft = { 'java' },
+  lazy = false,
   'nvim-neotest/neotest',
   dependencies = {
-    'marilari88/neotest-vitest',
-    {
-      'fredrikaverpil/neotest-golang',
-      lazy = false,
-    },
+    'nvim-neotest/neotest-jest',
+    'nvim-neotest/neotest-python',
   },
-  opts = {
-    adapters = {
-      ['neotest-vitest'] = {},
-      ['neotest-golang'] = {
-        -- FIX: doesn't work when in subdirectory of repo (ex: "sesh/v2/namer")
-        args = { '-coverprofile=' .. vim.fn.getcwd() .. '/coverage.out' },
+  config = function()
+    ---@diagnostic disable: missing-fields
+    require('neotest').setup {
+      adapters = {
+        require 'neotest-jest' {
+          jestCommand = 'yarn test --',
+          jestConfigFile = 'jest.config.js',
+          env = { CI = true, NODE_VERSION = 'v18.16.0' },
+          cwd = function(path)
+            return vim.fn.getcwd()
+          end,
+        },
+        require 'neotest-python' {
+          -- Extra arguments for nvim-dap configuration
+          -- See https://github.com/microsoft/debugpy/wiki/Debug-configuration-settings for values
+          dap = { justMyCode = false },
+          -- Command line arguments for runner
+          -- Can also be a function to return dynamic values
+          args = { '--log-level', 'DEBUG' },
+          -- Runner to use. Will use pytest if available by default.
+          -- Can be a function to return dynamic value.
+          runner = 'pytest',
+          -- Custom python path for the runner.
+          -- Can be a string or a list of strings.
+          -- Can also be a function to return dynamic value.
+          -- If not provided, the path will be inferred by checking for
+          -- virtual envs in the local directory and for Pipenev/Poetry configs
+          -- python = '.venv/bin/python',
+          -- Returns if a given file path is a test file.
+          -- NB: This function is called a lot so don't perform any heavy tasks within it.
+          -- is_test_file = function(file_path)
+          --   ...
+          -- end,
+          -- !!EXPERIMENTAL!! Enable shelling out to `pytest` to discover test
+          -- instances for files containing a parametrize mark (default: false)
+          pytest_discover_instances = true,
+        },
       },
-    },
-  },
-  keys = {
-    -- { '<leader>ta', "<cmd>lua require('neotest').run.attach()<cr>", desc = 'Attach to the nearest test' },
-    -- { '<leader>tl', "<cmd>lua require('neotest').run.run_last()<cr>", desc = 'Toggle Test Summary' },
-    -- { '<leader>to', "<cmd>lua require('neotest').output_panel.toggle()<cr>", desc = 'Toggle Test Output Panel' },
-    -- { '<leader>tp', "<cmd>lua require('neotest').run.stop()<cr>", desc = 'Stop the nearest test' },
-    -- { '<leader>ts', "<cmd>lua require('neotest').summary.toggle()<cr>", desc = 'Toggle Test Summary' },
-    -- { '<leader>tt', "<cmd>lua require('neotest').run.run()<cr>", desc = 'Run the nearest test' },
-    -- {
-    --   '<leader>tT',
-    --   "<cmd>lua require('neotest').run.run(vim.fn.expand('%'))<cr>",
-    --   desc = 'Run test the current file',
-    -- },
-    -- {
-    --   '<leader>td',
-    --   function()
-    --     require('neotest').run.run { suite = false, strategy = 'dap' }
-    --   end,
-    --   desc = 'Debug nearest test',
-    -- },
-  },
-  cmd = {
-    'NeotestRun',
-    'NeotestAttach',
-    'NeotestRunLast',
-    'NeotestOutputPanelToggle',
-    'NeotestStop',
-    'NeotestSummaryToggle',
-    'NeotestRunFile',
-    'NeotestDebug',
-  },
+    }
+  end,
 }
