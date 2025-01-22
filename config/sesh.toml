@@ -59,6 +59,11 @@ path = "~/notes/journal"
 startup_command = "kf"
 
 [[session]]
+name = "daily"
+path = "~/notes/journal"
+startup_command = "kick daily_checklist.md"
+
+[[session]]
 name = "notes"
 path = "~/notes"
 startup_command = "kf"
