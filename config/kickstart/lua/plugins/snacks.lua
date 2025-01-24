@@ -87,13 +87,13 @@ return {
       end,
       desc = 'Command History',
     },
-    {
-      '<leader><space>',
-      function()
-        Snacks.picker.files()
-      end,
-      desc = 'Find Files',
-    },
+    -- {
+    --   '<leader><space>',
+    --   function()
+    --     Snacks.picker.files()
+    --   end,
+    --   desc = 'Find Files',
+    -- },
     -- find
     {
       '<leader>fb',

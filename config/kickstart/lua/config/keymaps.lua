@@ -21,9 +21,9 @@ keymap.set('n', 'x', '"_x')
 -- keymap.set('n', '<leader>-', '<C-x>') -- decrement
 
 -- window management
-keymap.set('n', 'sv', '<C-w>v') -- split window vertically
-keymap.set('n', 'sh', '<C-w>s') -- split window horizontally
-keymap.set('n', 'se', '<C-w>=') -- make split windows equal width & height
+keymap.set('n', 'sv', '<C-w>v')     -- split window vertically
+keymap.set('n', 'sh', '<C-w>s')     -- split window horizontally
+keymap.set('n', 'se', '<C-w>=')     -- make split windows equal width & height
 keymap.set('n', 'sx', ':close<CR>') -- close current split window
 
 -- keymap.set('n', '<leader>to', ':tabnew<CR>') -- open new tab
@@ -38,7 +38,7 @@ keymap.set('n', '<leader>xx', ':%bd|e#<CR>')
 -- Plugin Keybinds
 ----------------------
 
-keymap.set('n', '<leader>e', ':Oil<CR>') -- toggle file explorer
+keymap.set('n', '<leader><leader>', ':Oil<CR>') -- toggle file explorer
 
 -- telescope
 -- keymap.set('n', 'ff', '<cmd>Telescope frecency workspace=CWD path_display={"shorten"}<cr>') -- find files within current working directory, respects .gitignore
@@ -97,23 +97,23 @@ keymap.set('n', '<leader>gt', '<cmd>Lspsaga peek_type_definition<CR>')
 -- harpoon
 local harpoon = require 'harpoon'
 keymap.set('n', '<leader>ha', function()
-  harpoon:list():add()
+    harpoon:list():add()
 end)
 keymap.set('n', '<leader>hh', function()
-  harpoon.ui:toggle_quick_menu(harpoon:list())
+    harpoon.ui:toggle_quick_menu(harpoon:list())
 end)
 
 vim.keymap.set('n', '<leader>j', function()
-  harpoon:list():select(1)
+    harpoon:list():select(1)
 end)
 vim.keymap.set('n', '<leader>k', function()
-  harpoon:list():select(2)
+    harpoon:list():select(2)
 end)
 vim.keymap.set('n', '<leader>l', function()
-  harpoon:list():select(3)
+    harpoon:list():select(3)
 end)
 vim.keymap.set('n', '<leader>;', function()
-  harpoon:list():select(4)
+    harpoon:list():select(4)
 end)
 
 -- Toggle previous & next buffers stored within Harpoon list
@@ -129,12 +129,12 @@ keymap.set('n', 'gk', '<cmd>Gitsigns prev_hunk<CR>') -- show  diagnostics for li
 
 -- scissors
 vim.keymap.set('n', '<leader>se', function()
-  require('scissors').editSnippet()
+    require('scissors').editSnippet()
 end)
 
 -- When used in visual mode prefills the selection as body.
 vim.keymap.set({ 'n', 'x' }, '<leader>sn', function()
-  require('scissors').addNewSnippet()
+    require('scissors').addNewSnippet()
 end)
 
 -- toggle wrap
@@ -153,15 +153,15 @@ keymap.set('n', '<leader>id', ":pu=strftime('%m/%d/%y')<CR>")
 -- testing
 keymap.set('n', '<leader>tw', "<cmd>lua require('neotest').run.run({ jestCommand = 'yarn test-watch' })<cr>")
 keymap.set('n', '<leader>tf', ":lua require('neotest').run.run(vim.fn.expand('%'))<CR>") -- run tests for file
-keymap.set('n', '<leader>tt', ":lua require('neotest').run.run()<CR>") -- run tests for file
-keymap.set('n', '<leader>ts', ":lua require('neotest').summary.toggle()<CR>") -- run tests for file
+keymap.set('n', '<leader>tt', ":lua require('neotest').run.run()<CR>")                   -- run tests for file
+keymap.set('n', '<leader>ts', ":lua require('neotest').summary.toggle()<CR>")            -- run tests for file
 
 -- Type peaking
 keymap.set('n', '<leader>ty', ':lua vim.lsp.buf.hover()<CR>') -- peak at type
 
 -- quickfix errors
 keymap.set('n', '<leader>fe', vim.diagnostic.open_float, { desc = 'Show diagnostic [E]rror messages' })
-keymap.set('n', '<leader>eq', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })
+-- keymap.set('n', '<leader>eq', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })
 
 -- filepath
 keymap.set('n', '<leader>p', ':lua print(vim.api.nvim_buf_get_name(0))<CR>')
@@ -174,9 +174,9 @@ keymap.set('n', '<leader>tc', ':lua vim.diagnostic.hide()<CR>')
 keymap.set('n', '<leader>to', ':lua vim.diagnostic.show()<CR>')
 -- suppress all vim diagnostics besides ERROR
 keymap.set(
-  'n',
-  '<leader>v',
-  ':lua vim.diagnostic.config({ virtual_text = { severity = { min = vim.diagnostic.severity.ERROR } }, signs = { severity = { min = vim.diagnostic.severity.ERROR } }, underline = { severity = { min = vim.diagnostic.severity.ERROR } }, update_in_insert = false })<CR>'
+    'n',
+    '<leader>v',
+    ':lua vim.diagnostic.config({ virtual_text = { severity = { min = vim.diagnostic.severity.ERROR } }, signs = { severity = { min = vim.diagnostic.severity.ERROR } }, underline = { severity = { min = vim.diagnostic.severity.ERROR } }, update_in_insert = false })<CR>'
 )
 
 -- pyrun
