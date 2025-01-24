@@ -29,11 +29,6 @@ path = "~/dotfiles/config"
 startup_command = "kick aerospace.toml"
 
 [[session]]
-name = "lazy"
-path = "~/.local/share/nvim/lazy"
-startup_command = "kf"
-
-[[session]]
 name = "zshrc"
 path = "~/dotfiles/config/"
 startup_command = "kick .zshrc"
@@ -69,7 +64,7 @@ path = "~/notes"
 startup_command = "kf"
 
 [[session]]
-name = "plugins"
+name = "lazy plugins"
 path = "~/.local/share/nvim/lazy"
-startup_command = "kf"
+startup_command = "sesh connect $(ls | fzf --ansi --no-border --preview 'glow -s light {}/README.md' --preview-window=right:70,border-none) && exit"
 
