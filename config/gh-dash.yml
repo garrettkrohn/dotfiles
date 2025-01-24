@@ -4,7 +4,7 @@ prSections:
 - title: My Closed Requests
   filters: is:closed author:@me repo:netspi/offensive-security-platform
 - title: All Open Platform prs
-  filters: is:pr is:open repo:netspi/offensive-security-platform
+  filters: is:pr is:open PFASM in:title 
 - title: All Closed Platform prs
   filters: is:pr is:closed repo:netspi/offensive-security-platform
 - title: My Reviewed (open)
