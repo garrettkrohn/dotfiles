@@ -50,22 +50,22 @@ return {
       end,
       desc = 'Toggle Scratch Buffer',
     },
-    {
-      ']]',
-      function()
-        Snacks.words.jump(vim.v.count1)
-      end,
-      desc = 'Next Reference',
-      mode = { 'n', 't' },
-    },
-    {
-      '[[',
-      function()
-        Snacks.words.jump(-vim.v.count1)
-      end,
-      desc = 'Prev Reference',
-      mode = { 'n', 't' },
-    },
+    -- {
+    --   ']]',
+    --   function()
+    --     Snacks.words.jump(vim.v.count1)
+    --   end,
+    --   desc = 'Next Reference',
+    --   mode = { 'n', 't' },
+    -- },
+    -- {
+    --   '[[',
+    --   function()
+    --     Snacks.words.jump(-vim.v.count1)
+    --   end,
+    --   desc = 'Prev Reference',
+    --   mode = { 'n', 't' },
+    -- },
     {
       '<leader>,',
       function()
@@ -116,13 +116,13 @@ return {
       end,
       desc = 'Find Files',
     },
-    {
-      '<leader>fg',
-      function()
-        Snacks.picker.git_files()
-      end,
-      desc = 'Find Git Files',
-    },
+    -- {
+    --   '<leader>fg',
+    --   function()
+    --     Snacks.picker.git_files()
+    --   end,
+    --   desc = 'Find Git Files',
+    -- },
     {
       '<leader>fr',
       function()
@@ -132,19 +132,19 @@ return {
     },
     -- git
     {
-      '<leader>gc',
+      '<leader>fg',
       function()
         Snacks.picker.git_log()
       end,
       desc = 'Git Log',
     },
-    {
-      '<leader>gs',
-      function()
-        Snacks.picker.git_status()
-      end,
-      desc = 'Git Status',
-    },
+    -- {
+    --   '<leader>gs',
+    --   function()
+    --     Snacks.picker.git_status()
+    --   end,
+    --   desc = 'Git Status',
+    -- },
     {
       '<leader>sb',
       function()
