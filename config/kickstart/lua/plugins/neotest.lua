@@ -1,5 +1,4 @@
 return {
-  lazy = false,
   'nvim-neotest/neotest',
   dependencies = {
     'nvim-neotest/neotest-jest',
@@ -42,6 +41,9 @@ return {
           -- instances for files containing a parametrize mark (default: false)
           pytest_discover_instances = true,
         },
+      },
+      floating = {
+        enter = true,
       },
     }
   end,
