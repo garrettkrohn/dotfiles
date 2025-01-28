@@ -62,7 +62,6 @@ vim.cmd.colorscheme(vim.g.colors_name)
 vim.api.nvim_create_autocmd('FileType', {
   pattern = 'markdown',
   callback = function()
-    print 'setting text width to 80'
     vim.opt.textwidth = 80
   end,
 })
@@ -70,7 +69,6 @@ vim.api.nvim_create_autocmd('BufReadPost', {
   pattern = '*',
   callback = function()
     if vim.bo.filetype ~= 'markdown' then
-      print 'Resetting text width for non-markdown file'
       vim.opt.textwidth = 0
     end
   end,
