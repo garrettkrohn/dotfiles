@@ -22,6 +22,7 @@ alias rg="mvn clean install && java -jar -Dspring.profiles.active=local ./target
 alias s="sesh connect dotfiles"
 alias sd="~/code/sesh/sesh"
 alias sn="eval '$(fnm env)' && fnm use v18.16.0"
+alias j='function _j(){ javac "$1" && java "${1%.*}"; }; _j'
 
 # opening neovim
 alias kick="nvim"
