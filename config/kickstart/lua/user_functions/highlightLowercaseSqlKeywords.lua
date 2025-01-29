@@ -23,6 +23,7 @@ end
 
 -- List of SQL keywords
 local sql_keywords = {
+  'and',
   'select',
   'insert',
   'update',
