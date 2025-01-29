@@ -44,7 +44,7 @@ if $rebuild; then
     docker rm $(docker ps -a --filter "name=^/bootstrap$" --format "{{.ID}}")
     docker-compose up bootstrap -d --build --no-deps
 else
-    docker-compose up bootstrap -d 
+    docker-compose up bootstrap -d --no-deps 
 fi
 
 # Check if the script was interrupted
