@@ -7,7 +7,7 @@ return {
   transparent_background = true,
   config = function()
     require('catppuccin').setup {
-      flavour = 'auto', -- latte, frappe, macchiato, mocha
+      flavour = 'mocha', -- latte, frappe, macchiato, mocha
       background = { -- :h background
         light = 'latte',
         dark = 'mocha',
@@ -44,10 +44,15 @@ return {
       integrations = {
         blink_cmp = true,
         cmp = true,
+        diffview = true,
         gitsigns = true,
-        nvimtree = true,
+        mason = true,
+        neotest = true,
         treesitter = true,
         notify = false,
+        telescope = {
+          enabled = true,
+        },
         mini = {
           enabled = true,
           indentscope_color = '',
