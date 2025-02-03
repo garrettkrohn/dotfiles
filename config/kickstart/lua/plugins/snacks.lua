@@ -26,7 +26,9 @@ return {
       enabled = true,
       configure = true,
     },
-    picker = {},
+    picker = {
+      enabled = false,
+    },
     notifier = {
       enabled = true,
       timeout = 2000,

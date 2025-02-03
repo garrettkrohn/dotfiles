@@ -72,3 +72,8 @@ startup_command = "sesh connect $(ls | fzf --ansi --no-border --preview 'glow -s
 name = "new blog post"
 path = "/Users/gkrohn/side/new_blog/src/content/blog"
 startup_command = "kick"
+
+[[session]]
+name = "neovim test"
+path = "~/.config/nvimtest"
+startup_command = "kick"

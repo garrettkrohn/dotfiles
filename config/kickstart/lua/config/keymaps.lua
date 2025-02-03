@@ -41,11 +41,11 @@ keymap.set('n', '<leader>xx', ':%bd|e#<CR>', { desc = 'clear all buffers except 
 keymap.set('n', '<leader><leader>', ':Oil<CR>', { desc = 'Toggle oil' }) -- toggle file explorer
 
 -- telescope
--- keymap.set('n', 'ff', '<cmd>Telescope frecency workspace=CWD path_display={"shorten"}<cr>') -- find files within current working directory, respects .gitignore
--- keymap.set('n', 'fs', '<cmd>Telescope live_grep<cr>') -- find string in current working directory as you type
--- keymap.set('n', 'fc', '<cmd>Telescope grep_string<cr>') -- find string under cursor in current working directory
--- keymap.set('n', 'fb', '<cmd>Telescope buffers formatter=path.filename_first<cr>') -- list open buffers in current neovim instance
--- keymap.set('n', 'fh', '<cmd>Telescope help_tags<cr>') -- list available help tags
+keymap.set('n', '<leader>ff', '<cmd>Telescope frecency workspace=CWD path_display={"shorten"}<cr>') -- find files within current working directory, respects .gitignore
+keymap.set('n', '<leader>/', '<cmd>Telescope live_grep<cr>') -- find string in current working directory as you type
+keymap.set('n', '<leader>fc', '<cmd>Telescope grep_string<cr>') -- find string under cursor in current working directory
+keymap.set('n', '<leader>fb', '<cmd>Telescope buffers formatter=path.filename_first<cr>') -- list open buffers in current neovim instance
+keymap.set('n', '<leader>fh', '<cmd>Telescope help_tags<cr>') -- list available help tags
 -- TODO: not a huge fan of this
 keymap.set('n', 'gd', ':lua vim.lsp.buf.definition()<cr>', { desc = 'goto definition' }) -- list available help tags
 
@@ -153,11 +153,10 @@ keymap.set('n', '<leader>id', ":pu=strftime('%m/%d/%y')<CR>", { desc = 'insert d
 -- keymap.set("n", "<leader>lr", ":LspRestart<CR>") -- show  diagnostics for line
 
 -- testing
-keymap.set('n', '<leader>tw', "<cmd>lua require('neotest').run.run({ jestCommand = 'yarn test-watch' })<cr>",
-    { desc = 'Neotest Watch' })
+keymap.set('n', '<leader>tw', "<cmd>lua require('neotest').run.run({ jestCommand = 'yarn test-watch' })<cr>", { desc = 'Neotest Watch' })
 keymap.set('n', '<leader>tf', ":lua require('neotest').run.run(vim.fn.expand('%'))<CR>", { desc = 'Neotest run file' }) -- run tests for file
-keymap.set('n', '<leader>tt', ":lua require('neotest').run.run()<CR>", { desc = 'Neotest run test' })                   -- run tests for file
-keymap.set('n', '<leader>ts', ":lua require('neotest').summary.toggle()<CR>", { desc = 'Neotest toggle summary' })      -- run tests for file
+keymap.set('n', '<leader>tt', ":lua require('neotest').run.run()<CR>", { desc = 'Neotest run test' }) -- run tests for file
+keymap.set('n', '<leader>ts', ":lua require('neotest').summary.toggle()<CR>", { desc = 'Neotest toggle summary' }) -- run tests for file
 
 -- Type peaking
 -- TODO: I would like to do this with a border
@@ -179,10 +178,10 @@ keymap.set('n', '<leader>tc', ':lua vim.diagnostic.hide()<CR>', { desc = 'Hide d
 keymap.set('n', '<leader>to', ':lua vim.diagnostic.show()<CR>', { desc = 'Show diagnostics' })
 -- suppress all vim diagnostics besides ERROR
 keymap.set(
-    'n',
-    '<leader>v',
-    ':lua vim.diagnostic.config({ virtual_text = { severity = { min = vim.diagnostic.severity.ERROR } }, signs = { severity = { min = vim.diagnostic.severity.ERROR } }, underline = { severity = { min = vim.diagnostic.severity.ERROR } }, update_in_insert = false })<CR>',
-    { desc = 'Hide all diagnostics besides error' }
+  'n',
+  '<leader>v',
+  ':lua vim.diagnostic.config({ virtual_text = { severity = { min = vim.diagnostic.severity.ERROR } }, signs = { severity = { min = vim.diagnostic.severity.ERROR } }, underline = { severity = { min = vim.diagnostic.severity.ERROR } }, update_in_insert = false })<CR>',
+  { desc = 'Hide all diagnostics besides error' }
 )
 
 -- pyrun

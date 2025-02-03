@@ -1,11 +1,12 @@
 return {
   'nvim-java/nvim-java',
-  ft = { 'java' },
+  enabled = false,
+  -- ft = { 'java' },
   opts = {
     java_debug_adapter = {
-      enabled = true,
+      enabled = false,
       notifications = {
-        dap = false,
+        dap = true,
       },
     },
   },

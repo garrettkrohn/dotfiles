@@ -14,3 +14,9 @@ require 'config.lsp-setup'
 require 'config.autocommands'
 require 'config.snippets'
 require 'config.user_functions'
+
+vim.cmd [[
+    highlight TelescopeBorder guifg=#89b4fa 
+    highlight TelescopePromptBorder guifg=#a6e3a1
+    highlight TelescopePreviewBorder guifg=#f5c2e7
+]]

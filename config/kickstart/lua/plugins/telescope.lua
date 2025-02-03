@@ -1,114 +1,120 @@
 return {
-    {
-        'nvim-telescope/telescope.nvim',
-        enabled = true,
-        tag = '0.1.8',
-        lazy = false,
-        dependencies = {
-            'nvim-lua/plenary.nvim',
-            { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
-            {
-                'nvim-telescope/telescope-frecency.nvim',
-                version = '*',
-            },
-        },
-        config = function()
-            require('telescope').setup {
-                defaults = {
-                    mappings = {
-                        i = {
-                            ['<C-u>'] = false,
-                            ['<C-d>'] = false,
-                            ['<C-k>'] = require('telescope.actions').move_selection_previous,
-                            ['<C-j>'] = require('telescope.actions').move_selection_next,
-                            ['<C-q>'] = require('telescope.actions').send_selected_to_qflist + require('telescope.actions').open_qflist,
-                        },
-                    },
-                    file_ignore_patterns = { '.git/', 'node_modules' },
-                    layout_config = {
-                        height = 0.90,
-                        width = 0.90,
-                        preview_cutoff = 0,
-                        horizontal = { preview_width = 0.60 },
-                        vertical = { width = 0.55, height = 0.9, preview_cutoff = 0 },
-                        prompt_position = 'top',
-                    },
-                    path_display = { 'smart' },
-                    prompt_position = 'top',
-                    prompt_prefix = ' ',
-                    selection_caret = ' ',
-                    sorting_strategy = 'ascending',
-                    vimgrep_arguments = {
-                        'rg',
-                        '--color=never',
-                        '--no-heading',
-                        '--hidden',
-                        '--with-filename',
-                        '--line-number',
-                        '--column',
-                        '--smart-case',
-                        '--trim',
-                    },
-                },
-                pickers = {
-                    buffers = {
-                        prompt_prefix = '󰸩 ',
-                    },
-                    commands = {
-                        prompt_prefix = ' ',
-                        layout_config = {
-                            height = 0.63,
-                            width = 0.78,
-                        },
-                    },
-                    command_history = {
-                        prompt_prefix = ' ',
-                        layout_config = {
-                            height = 0.63,
-                            width = 0.58,
-                        },
-                    },
-                    git_files = {
-                        prompt_prefix = '󰊢 ',
-                        show_untracked = true,
-                    },
-                    find_files = {
-                        prompt_prefix = ' ',
-                        find_command = { 'fd', '-H' },
-                    },
-                    live_grep = {
-                        prompt_prefix = '󰱽 ',
-                    },
-                    grep_string = {
-                        prompt_prefix = '󰱽 ',
-                    },
-                },
-                extensions = {
-                    fzf = {},
-                    smart_open = {
-                        cwd_only = true,
-                        filename_first = true,
-                    },
-                },
-            }
-
-            require('telescope').load_extension 'fzf'
-            require('telescope').load_extension 'frecency'
-
-            vim.keymap.set('n', '<space>fh', require('telescope.builtin').help_tags)
-            vim.keymap.set('n', '<space>fd', require('telescope.builtin').find_files)
-            vim.keymap.set('n', '<space>en', function()
-                require('telescope.builtin').find_files {
-                    cwd = vim.fn.stdpath 'config',
-                }
-            end)
-            vim.keymap.set('n', '<space>ep', function()
-                require('telescope.builtin').find_files {
-                    cwd = vim.fs.joinpath(vim.fn.stdpath 'data', 'lazy'),
-                }
-            end)
-        end,
+  {
+    'nvim-telescope/telescope.nvim',
+    enabled = true,
+    tag = '0.1.8',
+    lazy = false,
+    dependencies = {
+      'nvim-lua/plenary.nvim',
+      { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
+      {
+        'nvim-telescope/telescope-frecency.nvim',
+        version = '*',
+      },
     },
+    config = function()
+      require('telescope').setup {
+        defaults = {
+          mappings = {
+            i = {
+              ['<C-u>'] = false,
+              ['<C-d>'] = false,
+              ['<C-k>'] = require('telescope.actions').move_selection_previous,
+              ['<C-j>'] = require('telescope.actions').move_selection_next,
+              ['<C-q>'] = require('telescope.actions').send_selected_to_qflist + require('telescope.actions').open_qflist,
+            },
+          },
+          file_ignore_patterns = { '.git/', 'node_modules' },
+          layout_config = {
+            height = 0.90,
+            width = 0.90,
+            preview_cutoff = 0,
+            horizontal = { preview_width = 0.60 },
+            vertical = { width = 0.55, height = 0.9, preview_cutoff = 0 },
+            prompt_position = 'top',
+          },
+          path_display = { 'smart' },
+          prompt_position = 'top',
+          prompt_prefix = ' ',
+          selection_caret = ' ',
+          sorting_strategy = 'ascending',
+          vimgrep_arguments = {
+            'rg',
+            '--color=never',
+            '--no-heading',
+            '--hidden',
+            '--with-filename',
+            '--line-number',
+            '--column',
+            '--smart-case',
+            '--trim',
+          },
+        },
+        pickers = {
+          buffers = {
+            prompt_prefix = '󰸩 ',
+          },
+          commands = {
+            prompt_prefix = ' ',
+            layout_config = {
+              height = 0.63,
+              width = 0.78,
+            },
+          },
+          command_history = {
+            prompt_prefix = ' ',
+            layout_config = {
+              height = 0.63,
+              width = 0.58,
+            },
+          },
+          git_files = {
+            prompt_prefix = '󰊢 ',
+            show_untracked = true,
+          },
+          find_files = {
+            prompt_prefix = ' ',
+            find_command = { 'fd', '-H' },
+          },
+          live_grep = {
+            prompt_prefix = '󰱽 ',
+          },
+          grep_string = {
+            prompt_prefix = '󰱽 ',
+          },
+        },
+        extensions = {
+          fzf = {},
+          smart_open = {
+            cwd_only = true,
+            filename_first = true,
+          },
+        },
+      }
+
+      require('telescope').load_extension 'fzf'
+      require('telescope').load_extension 'frecency'
+
+      vim.cmd [[
+                highlight TelescopeBorder guifg=#40a02b
+                highlight TelescopePromptBorder guifg=#179299
+                highlight TelescopePreviewBorder guifg=#ea76cb
+            ]]
+
+      vim.keymap.set('n', '<space>fh', require('telescope.builtin').help_tags)
+      vim.keymap.set('n', '<space>fd', require('telescope.builtin').find_files)
+      vim.keymap.set('n', '<space>en', function()
+        require('telescope.builtin').find_files {
+          cwd = vim.fn.stdpath 'config',
+        }
+      end)
+      vim.keymap.set('n', '<space>ep', function()
+        require('telescope.builtin').find_files {
+          cwd = vim.fs.joinpath(vim.fn.stdpath 'data', 'lazy'),
+        }
+      end)
+    end,
+  },
 }
 
 -- return {

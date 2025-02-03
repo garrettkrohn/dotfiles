@@ -23,6 +23,7 @@ alias s="sesh connect dotfiles"
 alias sd="~/code/sesh/sesh"
 alias sn="eval '$(fnm env)' && fnm use v18.16.0"
 alias j='function _j(){ javac "$1" && java "${1%.*}"; }; _j'
+alias nvimt='NVIM_APPNAME=nvimtest nvim'
 
 # opening neovim
 alias kick="nvim"
@@ -30,11 +31,11 @@ f() {
     nvim $(fzf --filter="$1" | head -n 1)
 }
 kf() {
-  nvim -c ":FzfLua files formatter=path.filename_first query=$1"
+  nvim -c ":Telescope find_files default_text=$1"
 }
 
 ks() {
-  nvim -c ":FzfLua live_grep query=$1"
+  nvim -c ":Telescope live_grep default_text=$1"
 }
 alias kc="nvim -c ':CopilotChat'"
 alias k="nvim -c ':Oil'"
