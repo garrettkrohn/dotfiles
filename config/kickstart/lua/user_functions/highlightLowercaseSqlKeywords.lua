@@ -145,9 +145,9 @@ vim.cmd 'command! ResetHighlight lua require("user_functions.highlightLowercaseS
 
 vim.keymap.set('n', '<leader>hi', function()
   M.highlight_words(sql_keywords)
-end, { remap = true, silent = false })
+end, { remap = true, silent = false, desc = 'Highlight sql keywords' })
 vim.keymap.set('n', '<leader>hc', function()
   M.reset_highlight()
-end, { remap = true, silent = false })
+end, { remap = true, silent = false, desc = 'Cancel sql keyword highlight' })
 
 return M
