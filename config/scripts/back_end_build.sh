@@ -93,7 +93,7 @@ cd parent
 
 if $skip_tests; then
     print_pink "Maven Install, skip tests"
-    mvn install -DskipTests
+    mvn install -DskipTests -Djacoco.skip=true
 elif $clean; then
     print_pink "Maven Install Clean"
     mvn clean install 
