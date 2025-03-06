@@ -12,3 +12,8 @@ repos:
     zoxideFolders:
       - cmd
       - git
+  attack-surface-management:
+    defaultBranch: development
+    zoxideFolders:
+      - frontend
+      - backend
